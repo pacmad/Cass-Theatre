@@ -1,0 +1,49 @@
+{
+  "name": "v-casstheatre",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "core-js": "^3.1.2",
+    "firebase": "^7.2.2",
+    "vue": "^2.6.10",
+    "vue-router": "^3.0.6",
+    "vuefire": "^2.2.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.6.3",
+    "@vue/cli-plugin-babel": "^4.0.0",
+    "@vue/cli-plugin-eslint": "^4.0.0",
+    "@vue/cli-plugin-router": "^4.0.0",
+    "@vue/cli-service": "^4.0.0",
+    "@vue/eslint-config-standard": "^4.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-preset-minify": "^0.5.1",
+    "css-mqpacker": "^7.0.0",
+    "cssnano": "^4.1.10",
+    "doiuse": "^4.2.0",
+    "eslint": "^5.16.0",
+    "eslint-plugin-vue": "^5.0.0",
+    "lint-staged": "^8.1.5",
+    "postcss-grouper": "^0.0.5",
+    "postcss-loader": "^3.0.0",
+    "postcss-merge-rules": "^4.0.3",
+    "postcss-preset-env": "^6.7.0",
+    "sass": "^1.19.0",
+    "sass-loader": "^8.0.0",
+    "vue-template-compiler": "^2.6.10"
+  },
+  "gitHooks": {
+    "pre-commit": "lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,vue}": [
+      "vue-cli-service lint",
+      "git add"
+    ]
+  }
+}

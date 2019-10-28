@@ -1,2 +1,2 @@
-# Cass-Theatre
-Cass Theatre website
+# Cass Theatre
+## Created with love by Drew Markel

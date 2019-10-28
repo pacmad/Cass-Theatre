@@ -1,0 +1,19 @@
+/* Variables */
+:root {
+  /* Font Stacks */
+  --font-system-ui: system-ui;
+  /* Colors */
+  /* Brand Colors */
+  --color-brand: black;
+  --color-brand-2: #272d2d;
+  --color-brand-3: #0a0c0c;
+  --color-brand-4: #ccc;
+  /* Text Colors */
+  --color-text-light: #eff9f0;
+  /* Border Radii */
+  --border-radius: 5px;
+  /* Paddings */
+  --padding: 10px 20px;
+  /* Font Weights */
+  --font-weight: 400;
+}
