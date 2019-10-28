@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import { auth } from '@/main'
+import PagePublicHome from '@/pages/public/Home'
 
 Vue.use(VueRouter)
 
@@ -12,8 +13,7 @@ const routes = [
   {
     path: '/',
     name: 'PagePublicHome',
-    component: () =>
-      import('@/pages/public/Home')
+    component: PagePublicHome
   },
   {
     path: '/login',

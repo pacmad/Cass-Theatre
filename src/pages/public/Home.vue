@@ -52,15 +52,18 @@
 
 <script>
 import { db } from '@/main'
+import HeroCurrentMovieImage from '@/components/heros/CurrentMovieImage'
+import HeroWhatIsPlaying from '@/components/heros/WhatIsPlaying'
+import HeroMediumLarge from '@/components/heros/MediumLarge'
+import HeroMedium from '@/components/heros/Medium'
 
 export default {
   name: 'PagePublicHome',
   components: {
-    HeroCurrentMovieImage: () =>
-      import('@/components/heros/CurrentMovieImage'),
-    HeroWhatIsPlaying: () => import('@/components/heros/WhatIsPlaying'),
-    HeroMediumLarge: () => import('@/components/heros/MediumLarge'),
-    HeroMedium: () => import('@/components/heros/Medium')
+    HeroCurrentMovieImage,
+    HeroWhatIsPlaying,
+    HeroMediumLarge,
+    HeroMedium
   },
   data() {
     return {
