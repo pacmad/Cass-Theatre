@@ -11,10 +11,13 @@
 </style>
 
 <script>
+import GlobalHeader from '@/components/global/Header'
+import GlobalFooter from '@/components/global/Footer'
+
 export default {
   components: {
-    GlobalHeader: () => import('@/components/global/Header'),
-    GlobalFooter: () => import('@/components/global/Footer')
+    GlobalHeader,
+    GlobalFooter
   }
 }
 </script>

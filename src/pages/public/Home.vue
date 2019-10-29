@@ -45,7 +45,7 @@
       :text1="`${datas.bText1}`"
       :text2="`${datas.bText2}`"
       :text3="`${datas.bText3}`"
-      img=""
+      img="gift"
     />
     <HeroMedium
       title="Address"

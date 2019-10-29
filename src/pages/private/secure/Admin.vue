@@ -285,6 +285,45 @@
             </FormFieldset>
           </transition>
         </FormSection>
+        <!-- Benefits -->
+        <FormSection>
+          <FormButton
+            @click.native="toggleBenefitsSectionShown"
+            text="Benefits section"
+            typeName="button"
+          />
+          <transition name="fade">
+            <FormFieldset v-if="benefitsSectionShown">
+              <FormLabel title="Benefit 1" forName="admin-form-benefits-input-1" />
+              <FormInput
+                typeName="text"
+                placeholderName="Benefit"
+                :valueName="adminFormData[7].text1"
+                idName="admin-form-benefits-input-1"
+                isRequired="true"
+                v-model="adminFormData[7].text1"
+              />
+              <FormLabel title="Benefit 2" forName="admin-form-benefits-input-2" />
+              <FormInput
+                typeName="text"
+                placeholderName="Benefit"
+                :valueName="adminFormData[7].text2"
+                idName="admin-form-benefits-input-2"
+                isRequired="true"
+                v-model="adminFormData[7].text2"
+              />
+              <FormLabel title="Benefit 3" forName="admin-form-benefits-input-3" />
+              <FormInput
+                typeName="text"
+                placeholderName="Benefit"
+                :valueName="adminFormData[7].text3"
+                idName="admin-form-benefits-input-3"
+                isRequired="true"
+                v-model="adminFormData[7].text3"
+              />
+            </FormFieldset>
+          </transition>
+        </FormSection>
         <!-- Address -->
         <FormSection>
           <FormButton
@@ -298,28 +337,28 @@
               <FormInput
                 typeName="text"
                 placeholderName="Name/Phone"
-                :valueName="adminFormData[7].text1"
+                :valueName="adminFormData[8].text1"
                 idName="admin-form-address-input-1"
                 isRequired="true"
-                v-model="adminFormData[7].text1"
+                v-model="adminFormData[8].text1"
               />
               <FormLabel title="Street" forName="admin-form-address-input-2" />
               <FormInput
                 typeName="text"
                 placeholderName="Street"
-                :valueName="adminFormData[7].text2"
+                :valueName="adminFormData[8].text2"
                 idName="admin-form-address-input-2"
                 isRequired="true"
-                v-model="adminFormData[7].text2"
+                v-model="adminFormData[8].text2"
               />
               <FormLabel title="Town" forName="admin-form-address-input-3" />
               <FormInput
                 typeName="text"
                 placeholderName="Town"
-                :valueName="adminFormData[7].text3"
+                :valueName="adminFormData[8].text3"
                 idName="admin-form-address-input-3"
                 isRequired="true"
-                v-model="adminFormData[7].text3"
+                v-model="adminFormData[8].text3"
               />
             </FormFieldset>
           </transition>
@@ -362,9 +401,12 @@
           :fText1="adminFormData[6].text1"
           :fText2="adminFormData[6].text2"
           :fText3="adminFormData[6].text3"
-          :aText1="adminFormData[7].text1"
-          :aText2="adminFormData[7].text2"
-          :aText3="adminFormData[7].text3"
+          :bText1="adminFormData[7].text1"
+          :bText2="adminFormData[7].text2"
+          :bText3="adminFormData[7].text3"
+          :aText1="adminFormData[8].text1"
+          :aText2="adminFormData[8].text2"
+          :aText3="adminFormData[8].text3"
         />
       </div>
     </transition>
@@ -383,8 +425,7 @@ export default {
     FormLabel: () => import('@/components/form/Label'),
     FormInput: () => import('@/components/form/Input'),
     FormButton: () => import('@/components/form/Button'),
-    PreviewSiteChanges: () =>
-      import('@/pages/private/secure/PreviewSiteChanges')
+    PreviewSiteChanges: () => import('@/pages/private/secure/PreviewSiteChanges')
   },
   data() {
     return {
@@ -430,6 +471,12 @@ export default {
           text2: '',
           text3: ''
         },
+        /* Benefits */
+        {
+          text1: '',
+          text2: '',
+          text3: ''
+        },
         /* Address */
         {
           text1: '',
@@ -444,6 +491,7 @@ export default {
       timesSectionShown: false,
       paymentSectionShown: false,
       featuresSectionShown: false,
+      benefitsSectionShown: false,
       addressSectionShown: false,
       previewSiteChangesShown: false
     }
@@ -484,10 +532,14 @@ export default {
         this.adminFormData[6].text1 = this.datas.fText1
         this.adminFormData[6].text2 = this.datas.fText2
         this.adminFormData[6].text3 = this.datas.fText3
+        /* Benefits */
+        this.adminFormData[7].text1 = this.datas.bText1
+        this.adminFormData[7].text2 = this.datas.bText2
+        this.adminFormData[7].text3 = this.datas.bText3
         /* Address */
-        this.adminFormData[7].text1 = this.datas.aText1
-        this.adminFormData[7].text2 = this.datas.aText2
-        this.adminFormData[7].text3 = this.datas.aText3
+        this.adminFormData[8].text1 = this.datas.aText1
+        this.adminFormData[8].text2 = this.datas.aText2
+        this.adminFormData[8].text3 = this.datas.aText3
       })
   },
   methods: {
@@ -511,6 +563,9 @@ export default {
     },
     toggleFeaturesSectionShown() {
       this.featuresSectionShown = !this.featuresSectionShown
+    },
+    toggleBenefitsSectionShown() {
+      this.benefitsSectionShown = !this.benefitsSectionShown
     },
     toggleAddressSectionShown() {
       this.addressSectionShown = !this.addressSectionShown
@@ -546,9 +601,12 @@ export default {
           fText1: this.adminFormData[6].text1,
           fText2: this.adminFormData[6].text2,
           fText3: this.adminFormData[6].text3,
-          aText1: this.adminFormData[7].text1,
-          aText2: this.adminFormData[7].text2,
-          aText3: this.adminFormData[7].text3
+          bText1: this.adminFormData[7].text1,
+          bText2: this.adminFormData[7].text2,
+          bText3: this.adminFormData[7].text3,
+          aText1: this.adminFormData[8].text1,
+          aText2: this.adminFormData[8].text2,
+          aText3: this.adminFormData[8].text3
         })
         .then(() => {
           this.logout()

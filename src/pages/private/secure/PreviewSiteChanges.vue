@@ -41,6 +41,13 @@
       img="list"
     />
     <HeroMedium
+      title="Benefits"
+      :text1="`${bText1}`"
+      :text2="`${bText2}`"
+      :text3="`${bText3}`"
+      img="gift"
+    />
+    <HeroMedium
       title="Address"
       :text1="`${aText1}`"
       :text2="`${aText2}`"
@@ -73,6 +80,9 @@ export default {
     'fText1',
     'fText2',
     'fText3',
+    'bText1',
+    'bText2',
+    'bText3',
     'aText1',
     'aText2',
     'aText3'

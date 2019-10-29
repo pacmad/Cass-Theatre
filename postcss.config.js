@@ -4,7 +4,7 @@ module.exports = {
     'postcss-preset-env': {
       stage: 0,
       browsers: ['>= 1%'],
-      importFrom: ['src/styles/-media-queries.css']
+      importFrom: ['src/styles/postcss/-media-queries.css']
     },
     'postcss-merge-rules': {},
     'postcss-grouper': {},
