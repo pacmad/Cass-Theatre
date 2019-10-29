@@ -6,29 +6,8 @@
   </div>
 </template>
 
-<style lang="scss">
-@import '@/styles/-variables';
-
-*,
-::before,
-::after {
-  padding: 0;
-  margin: 0;
-  border: 0;
-  box-sizing: border-box;
-  font-family: var(--font-system-ui);
-}
-html,
-body {
-  min-height: 100%;
-  height: 100%;
-}
-body {
-  background-color: var(--color-brand-3);
-}
-
-@import '@/styles/_forms';
-@import '@/styles/_transitions';
+<style lang="postcss">
+@import './styles/_styles.css';
 </style>
 
 <script>

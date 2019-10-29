@@ -1,5 +1,5 @@
 <template>
-  <div :class="$style.preview_site_changes">
+  <div class="preview_site_changes">
     <HeroCurrentMovieImage
       :backgroundImg="`${cmImage}`"
     />
@@ -85,9 +85,3 @@ export default {
   }
 }
 </script>
-
-<style module lang="scss">
-.preview_site_changes {
-  margin: 50px 50px;
-}
-</style>

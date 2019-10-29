@@ -557,13 +557,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-.preview_site_changes__wrapper {
-  background: rgba(0, 0, 0, 0.5);
-  width: 100%;
-  position: absolute;
-  z-index: 1000000;
-  top: 0;
-}
-</style>

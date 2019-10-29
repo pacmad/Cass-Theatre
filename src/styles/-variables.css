@@ -4,12 +4,12 @@
   --font-system-ui: system-ui;
   /* Colors */
   /* Brand Colors */
-  --color-brand: black;
+  --color-brand: lab(0 0 0);
   --color-brand-2: #272d2d;
   --color-brand-3: #0a0c0c;
-  --color-brand-4: #ccc;
+  --color-brand-4: gray(20);
   /* Text Colors */
-  --color-text-light: #eff9f0;
+  --color-text-light: gray(90);
   /* Border Radii */
   --border-radius: 5px;
   /* Paddings */
