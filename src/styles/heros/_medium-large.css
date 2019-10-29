@@ -18,8 +18,7 @@
     padding: var(--padding);
     background-color: var(--color-brand-2);
     border-radius: var(--border-radius);
-    display: flex;
-    flex-direction: column;
+    @mixin layout-flex-column;
     @media (--viewport-mobile) {
       margin: 10px 0px;
     }

@@ -1,8 +1,7 @@
 .global__header {
   background-color: var(--color-brand);
   box-shadow: 1px 1px 5px #0000009c;
-  display: flex;
-  flex-direction: row;
+  @mixin layout-flex-row;
   justify-content: center;
   position: fixed;
   z-index: 1000;

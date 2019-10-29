@@ -1,5 +1,4 @@
 .form__fieldset {
-  display: flex;
-  flex-direction: column;
+  @mixin layout-flex-column;
   margin: 9.85px 0;
 }

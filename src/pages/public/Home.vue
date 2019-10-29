@@ -41,6 +41,13 @@
       img="list"
     />
     <HeroMedium
+      title="Benefits"
+      :text1="`${datas.bText1}`"
+      :text2="`${datas.bText2}`"
+      :text3="`${datas.bText3}`"
+      img=""
+    />
+    <HeroMedium
       title="Address"
       :text1="`${datas.aText1}`"
       :text2="`${datas.aText2}`"
