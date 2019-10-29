@@ -15,7 +15,7 @@
     @media (--viewport-desktop) {
       font-size: 2.65em;
     }
-    a {
+    & a {
       text-decoration: none;
       color: inherit;
     }
