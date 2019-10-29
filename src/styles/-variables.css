@@ -1,19 +1,26 @@
 /* Variables */
 :root {
+  /* Mixins */
+
+  
   /* Font Stacks */
   --font-system-ui: system-ui;
+
   /* Colors */
   /* Brand Colors */
   --color-brand: lab(0 0 0);
-  --color-brand-2: #272d2d;
-  --color-brand-3: #0a0c0c;
+  --color-brand-2: lab(17.91 -2.61 -0.89);
+  --color-brand-3: lab(3.2 -0.55 -0.2);
   --color-brand-4: gray(80);
   /* Text Colors */
   --color-text-light: gray(90);
+
   /* Border Radii */
   --border-radius: 5px;
+
   /* Paddings */
   --padding: 10px 20px;
+
   /* Font Weights */
   --font-weight: 400;
 }

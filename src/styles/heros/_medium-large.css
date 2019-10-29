@@ -58,16 +58,18 @@
   }
   & .hero__medium_large__img__wrapper {
     @media (--viewport-desktop) {
-      min-width: 50%;
-      width: 50%;
-      max-width: 50%;
+      --width: 50%;
+      min-width: var(--width);
+      width: var(--width);
+      max-width: var(--width);
     }
     & .hero__medium_large__img {
       width: 100%;
       @media (--viewport-mobile) {
-        min-height: 50vh;
-        height: 50vh;
-        max-height: 50vh;
+        --height: 50vh;
+        min-height: var(--height);
+        height: var(--height);
+        max-height: var(--height);
       }
       @media (--viewport-desktop) {
         border-radius: var(--border-radius);

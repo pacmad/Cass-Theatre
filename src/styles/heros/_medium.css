@@ -6,7 +6,7 @@
   background-color: var(--color-brand-2);
   & .hero__medium__content {
     background-color: var(--color-brand-2);
-    padding: 10px 20px;
+    padding: var(--padding);
     border-radius: var(--border-radius);
     margin: 10px 20px;
     display: flex;
@@ -44,8 +44,9 @@
       }
     }
     & .hero__medium__content__img {
-      width: 100px;
-      height: 100px;
+      --width-height: 100px;
+      width: var(--width-height);
+      height: var(--width-height);
       text-align: right;
       align-self: flex-end;
     }
