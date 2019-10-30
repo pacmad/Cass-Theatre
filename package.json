@@ -32,7 +32,7 @@
     "postcss-grouper": "0.0.5",
     "postcss-loader": "3.0.0",
     "postcss-merge-rules": "4.0.3",
-    "postcss-mixins": "6.2.2",
+    "postcss-mixins": "6.2.3",
     "postcss-preset-env": "6.7.0",
     "vue-template-compiler": "2.6.10"
   },
