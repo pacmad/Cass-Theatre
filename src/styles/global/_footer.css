@@ -15,8 +15,7 @@
       font-size: 2.65em;
     }
     & a {
-      text-decoration: none;
-      color: inherit;
+      @mixin element-a;
     }
   }
   & .global__footer__copyright {

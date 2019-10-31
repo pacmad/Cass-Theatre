@@ -1,3 +1,0 @@
-/* Media Queries */
-@custom-media --viewport-mobile (width <= 849px);
-@custom-media --viewport-desktop (width >= 850px);
