@@ -1,14 +1,14 @@
 .form__button {
-  padding: var(--padding);
-  border-radius: var(--border-radius);
+  padding: var(--p-default);
+  border-radius: var(--br-default);
   width: 100%;
   margin: 25.35px 0px;
   cursor: pointer;
   transition: 0.25s all;
-  background-color: var(--color-brand-4);
+  background-color: var(--c-brand-4);
   &:hover {
-    background-color: var(--color-brand);
-    color: var(--color-text-light);
+    background-color: var(--c-brand);
+    color: var(--c-text-light);
   }
   @media (--viewport-mobile) {
     font-size: 1.25em;
