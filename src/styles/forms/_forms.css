@@ -1,8 +1,10 @@
 .form--wrapper {
   justify-content: center;
-  @mixin layout-flex-column;
+  display: flex;
+  flex-direction: column;
   & .form {
-    @mixin layout-flex-column;
+    display: flex;
+    flex-direction: column;
     padding: var(--padding);
     border-radius: var(--border-radius);
     background-color: var(--color-brand-2);
