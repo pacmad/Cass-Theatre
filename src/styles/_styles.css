@@ -1,8 +1,8 @@
-/* Mixins */
-@import 'abstracts/_mixins.css';
-
 /* Variables */
 @import 'abstracts/_variables.css';
+
+/* Mixins */
+@import 'abstracts/_mixins.css';
 
 /* Reset */
 @import '_reset.css';

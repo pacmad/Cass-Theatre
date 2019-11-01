@@ -1,7 +1,8 @@
 .global__header {
   background-color: var(--color-brand);
   box-shadow: 1px 1px 5px #0000009c;
-  @mixin layout-flex-row;
+  display: flex;
+  flex-direction: row;
   justify-content: center;
   position: fixed;
   z-index: 1000;
@@ -18,7 +19,8 @@
       font-size: 2.65em;
     }
     & a {
-      @mixin element-a;
+      text-decoration: none;
+      color: inherit;
     }
   }
 }

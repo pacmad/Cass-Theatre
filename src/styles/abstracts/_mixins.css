@@ -1,16 +1,6 @@
 /* Mixins */
 /* Flex Row */
-@define-mixin layout-flex-row {
+.flex-row {
   display: flex;
   flex-direction: row;
-}
-/* Flex Column */
-@define-mixin layout-flex-column {
-  display: flex;
-  flex-direction: column;
-}
-/* Link */
-@define-mixin element-a {
-  text-decoration: none;
-  color: inherit;
 }

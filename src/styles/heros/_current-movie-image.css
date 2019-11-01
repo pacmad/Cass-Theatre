@@ -1,5 +1,6 @@
 .hero__current_movie_image {
-  @mixin layout-flex-column;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 80vh;

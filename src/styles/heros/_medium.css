@@ -1,5 +1,6 @@
 .hero__medium {
-  @mixin layout-flex-column;
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   background-color: var(--color-brand-2);
@@ -8,7 +9,8 @@
     padding: var(--padding);
     border-radius: var(--border-radius);
     margin: 10px 20px;
-    @mixin layout-flex-column;
+    display: flex;
+    flex-direction: column;
     @media (--viewport-mobile) {
       width: 100%;
     }

@@ -1,7 +1,8 @@
 .global__footer {
   background-color: var(--color-brand);
   box-shadow: 1px 1px 5px #0000009c;
-  @mixin layout-flex-column;
+  display: flex;
+  flex-direction: column;
   align-items: center;
   z-index: 1000;
   width: 100%;
@@ -15,7 +16,8 @@
       font-size: 2.65em;
     }
     & a {
-      @mixin element-a;
+      text-decoration: none;
+      color: inherit;
     }
   }
   & .global__footer__copyright {
