@@ -1,23 +1,23 @@
 /* Variables */
 :root {
   /* Font Stacks */
-  --font-system-ui: system-ui;
+  --ff-system-ui: system-ui;
 
   /* Colors */
   /* Brand Colors */
-  --color-brand: lab(0 0 0);
-  --color-brand-2: lab(17.91 -2.61 -0.89);
-  --color-brand-3: lab(3.2 -0.55 -0.2);
-  --color-brand-4: gray(80);
+  --c-brand: lab(0 0 0);
+  --c-brand-2: lab(17.91 -2.61 -0.89);
+  --c-brand-3: lab(3.2 -0.55 -0.2);
+  --c-brand-4: gray(80);
   /* Text Colors */
-  --color-text-light: gray(90);
+  --c-text-light: gray(90);
 
   /* Border Radii */
-  --border-radius: 5px;
+  --br-default: 5px;
 
   /* Paddings */
-  --padding: 10px 20px;
+  --p-default: 10px 20px;
 
   /* Font Weights */
-  --font-weight: 400;
+  --fw-default: 400;
 }
