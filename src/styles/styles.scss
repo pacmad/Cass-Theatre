@@ -1,0 +1,10 @@
+/* Abstracts */
+@import 'abstracts/mixins'; // Mixins
+@import 'abstracts/variables'; // Variables
+
+/* Misc */
+@import 'misc/resets'; // Resets
+
+/* Components */
+@import '../components/GlobalHeader/GlobalHeader'; // GlobalHeader
+@import '../components/heros/CurrentMovie/CurrentMovie'; // CurrentMovie

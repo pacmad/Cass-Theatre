@@ -1,0 +1,18 @@
+/* Variables */
+:root {
+  /* Font Sizes */
+  --fs-lg: 2.75em;
+  --fs-xl: 3.15em;
+  /* Font Weights */
+  --fw-sm: 300;
+  --fw-default: 400;
+  /* Paddings */
+  --p-default: 10px 20px;
+  /* Colors */
+  --c-brand: #dadada;
+  /* Box Shadows */
+  --bs-default: 5px 5px 5px hsla(0, 0%, 0%, 0.35);
+}
+/* Viewports */
+$viewport-mobile: 849px; // Mobile Viewport
+$viewport-desktop: 850px; // Desktop Viewport

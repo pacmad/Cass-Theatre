@@ -1,0 +1,20 @@
+.global-header {
+  --bs: 1px 1px 5px hsla(0, 0%, 0%, 0.35);
+  @include flex-row;
+  justify-content: center;
+  padding: var(--p-default);
+  background-color: var(--c-brand);
+  box-shadow: var(--bs);
+  &__title {
+    font-weight: var(--fw-sm);
+    @media (max-width: $viewport-mobile) {
+      font-size: var(--fs-lg);
+    }
+    @media (min-width: $viewport-desktop) {
+      font-size: var(--fs-xl);
+    }
+    &--link {
+      @include element-link;
+    }
+  }
+}

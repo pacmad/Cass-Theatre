@@ -1,0 +1,17 @@
+/* Flex Row */
+@mixin flex-row {
+  display: flex;
+  flex-direction: row;
+}
+
+/* Flex Column */
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Element Link */
+@mixin element-link {
+  text-decoration: none;
+  color: inherit;
+}
