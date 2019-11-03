@@ -5,12 +5,14 @@
   padding: var(--p-default);
   background-color: var(--c-brand);
   box-shadow: var(--bs);
+  position: fixed;
+  width: 100%;
   &__title {
     font-weight: var(--fw-sm);
-    @media (max-width: $viewport-mobile) {
+    @media (--viewport-mobile) {
       font-size: var(--fs-lg);
     }
-    @media (min-width: $viewport-desktop) {
+    @media (--viewport-desktop) {
       font-size: var(--fs-xl);
     }
     &--link {

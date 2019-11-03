@@ -3,32 +3,36 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "hookrouter": "^1.2.3",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "react-scripts": "3.2.0"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
   },
+  "cracoConfig": "craco.config.js",
   "browserslist": {
     "production": [
-      "defaults",
-      "not dead",
-      "not op_mini all"
+      "> 0%"
     ],
     "development": [
-      "last 5 chrome version",
-      "last 5 firefox version",
-      "last 5 safari version"
+      "> 0%"
     ]
   },
   "devDependencies": {
-    "node-sass": "^4.13.0"
+    "@craco/craco": "^5.6.1",
+    "autoprefixer": "^9.7.1",
+    "cssnano": "^4.1.10",
+    "node-sass": "^4.13.0",
+    "postcss": "^7.0.21",
+    "postcss-clip-path-polyfill": "^1.0.4",
+    "postcss-preset-env": "^6.7.0"
   }
 }
