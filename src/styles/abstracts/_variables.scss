@@ -2,6 +2,7 @@
 :root {
   /* Font Families */
   --ff-system-ui: system-ui;
+  --ff-stock: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   /* Font Sizes */
   --fs-xs: 0.985em;
   --fs-sm: 1.05em;
@@ -17,12 +18,14 @@
   /* Paddings */
   --p-default: 10px 20px;
   /* Colors */
-  --c-brand: hsl(0, 0%, 85.5%);
+  --c-brand: hsl(0, 0%, 100%);
   --c-brand-2: hsl(0, 0%, 90%);
   /* Box Shadows */
   --bs-default: 5px 5px 5px hsla(0, 0%, 0%, 0.35);
   /* Line Heights */
   --lh-default: 170%;
+  /* Border Radii */
+  --br-default: 5px;
 }
 /* Viewports */
 @custom-media --viewport-mobile (width <= 849px);

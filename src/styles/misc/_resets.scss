@@ -4,7 +4,10 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: var(--ff-system-ui);
+  font-family: var(--ff-stock);
+  @supports (font-family: system-ui) {
+    font-family: var(--ff-system-ui);
+  }
   @media (prefers-reduced-motion: reduce) {
     animation: none;
     transition: none;
@@ -13,4 +16,5 @@
 
 html {
   overflow: hidden auto;
+  -webkit-overflow-scrolling: touch;
 }

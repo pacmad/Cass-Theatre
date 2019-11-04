@@ -2,7 +2,12 @@ module.exports = {
   style: {
     postcss: {
       plugins: [
-        require('postcss-clip-path-polyfill'),
+        require('postcss-pxtorem') ({
+          unitPrecision: 10,
+          propList: ['*'],
+          mediaQuery: true
+        }),
+        require('css-mqpacker'),
         require('cssnano')
       ],
       env: {
