@@ -1,5 +1,5 @@
 import React from 'react'
-import { PagePublicHome } from './pages/public/PagePublicHome'
+import { PagePublicHome } from './pages/public/Home'
 
 const routes = {
   '/': () => <PagePublicHome />

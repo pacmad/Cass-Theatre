@@ -20,10 +20,10 @@
   "cracoConfig": "craco.config.js",
   "browserslist": {
     "production": [
-      "> 0%"
+      "defaults"
     ],
     "development": [
-      "> 0%"
+      "defaults"
     ]
   },
   "devDependencies": {
