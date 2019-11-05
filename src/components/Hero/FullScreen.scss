@@ -1,91 +1,100 @@
-.hero-full-screen--high-priority {
-  z-index: 10000000;
-  top: 0;
-  border-top: none;
-  .hero-full-screen__text-section {
-    z-index: 10000000;
-  }
-  .hero-full-screen__image-section {
-    z-index: 10000000;
-  }
-}
-
 .hero-full-screen {
   background-color: var(--c-brand-2);
   width: 100%;
   @media (--viewport-mobile) {
-    display: flex;
-    flex-direction: column-reverse;
+    margin: 30px 0px;
+    &:first-child {
+      .hero-full-screen__content {
+        margin-top: 78px;
+      }
+    }
   }
   @media (--viewport-desktop) {
-    --height: 100vh;
-    min-height: var(--height);
-    height: var(--height);
-    max-height: var(--height);
     &:nth-child(odd) {
-      @include flex-row;
-      .hero-full-screen__image-section {
-        &--image {
-          clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+      .hero-full-screen__content {
+        @include flex-row;
+        &--image-section {
+          &__image {
+            clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+          }
         }
       }
     }
     &:nth-child(even) {
-      display: flex;
-      flex-direction: row-reverse;
-      .hero-full-screen__image-section {
-        &--image {
-          clip-path: polygon(0% 0%, 70% 0%, 100% 100%, 0% 100%);
+      .hero-full-screen__content {
+        display: flex;
+        flex-direction: row-reverse;
+        &--image-section {
+          &__image {
+            clip-path: polygon(0% 0%, 70% 0%, 100% 100%, 0% 100%);
+          }
         }
       }
     }
   }
-  &__text-section {
-    background-color: var(--c-brand-2);
-    @include flex-column;
+  &__content {
     @media (--viewport-mobile) {
-      align-items: center;
-      padding: var(--p-default);
-      text-align: center;
-    }
-    @media (--viewport-desktop) {
-      flex: 1;
-      justify-content: center;
-      width: 50%;
-    }
-    &--title {
-      font-weight: var(--fw-default);
-      line-height: var(--lh-default);
-      @media (--viewport-mobile) {
-        font-size: var(--fs-lg);
-      }
-      @media (--viewport-desktop) {
-        font-size: var(--fs-xxxl);
-        margin: 0px 20px;
-      }
-    }
-    &--description {
-      line-height: var(--lh-default);
-      font-weight: var(--fw-default);
-      margin: 0px 20px;
-      @media (--viewport-mobile) {
-        font-size: var(--fs-big);
-      }
-      @media (--viewport-desktop) {
-        font-size: var(--fs-xl);
-      }
-    }
-  }
-  &__image-section {
-    background-color: var(--c-brand-2);
-    @media (--viewport-desktop) {
-      width: 50%;
-    }
-    &--image {
-      --wh: 100%;
-      width: var(--wh);
-      height: var(--wh);
+      display: flex;
+      flex-direction: column-reverse;
+      padding: 10px 20px;
+      box-shadow: var(--bs-default);
+      width: 95%;
+      margin: 0px auto;
       border-radius: var(--br-default);
+    }
+    @media (--viewport-desktop) {
+      --height: 100vh;
+      min-height: var(--height);
+      height: var(--height);
+      max-height: var(--height);
+    }
+    &--text-section {
+      background-color: var(--c-brand-2);
+      @include flex-column;
+      @media (--viewport-mobile) {
+        align-items: center;
+        padding: var(--p-default);
+        text-align: center;
+      }
+      @media (--viewport-desktop) {
+        flex: 1;
+        justify-content: center;
+        width: 50%;
+      }
+      &__title {
+        font-weight: var(--fw-default);
+        line-height: var(--lh-default);
+        @media (--viewport-mobile) {
+          font-size: var(--fs-lg);
+        }
+        @media (--viewport-desktop) {
+          font-size: var(--fs-xxxl);
+          margin: 0px 20px;
+        }
+      }
+      &__description {
+        line-height: var(--lh-default);
+        font-weight: var(--fw-default);
+        margin: 0px 20px;
+        @media (--viewport-mobile) {
+          font-size: var(--fs-big);
+        }
+        @media (--viewport-desktop) {
+          font-size: var(--fs-xl);
+        }
+      }
+    }
+    &--image-section {
+      background-color: var(--c-brand-2);
+      @media (--viewport-desktop) {
+        width: 50%;
+      }
+      &__image {
+        --wh: 100%;
+        width: var(--wh);
+        height: var(--wh);
+        border-radius: var(--br-default);
+      }
     }
   }
 }

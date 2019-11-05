@@ -6,7 +6,7 @@
   /* Font Sizes */
   --fs-xs: 0.985em;
   --fs-sm: 1.05em;
-  --fs-med: 1.2em;
+  --fs-md: 1.2em;
   --fs-big: 1.5em;
   --fs-lg: 2.05em;
   --fs-xl: 2.5em;
@@ -20,12 +20,16 @@
   /* Colors */
   --c-brand: hsl(0, 0%, 100%);
   --c-brand-2: hsl(0, 0%, 90%);
+  --c-brand-3: hsl(0, 0%, 87.5%);
   /* Box Shadows */
-  --bs-default: 5px 5px 5px hsla(0, 0%, 0%, 0.35);
+  --bs-default: 0px 0px 20px 0px rgba(0, 0, 0, 0.35);
   /* Line Heights */
   --lh-default: 170%;
   /* Border Radii */
   --br-default: 5px;
+  /* Breakpoints */
+  --bp-mobile: 849px;
+  --bp-desktop: 850px;
 }
 /* Viewports */
 @custom-media --viewport-mobile (width <= 849px);

@@ -1,37 +1,31 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 
 export const Hero = props => {
-  let [heroPriority, setHeroPriority] = useState(0)
-
-  function setHeroHighPriority() {
-    if (props.heroPriority === 'high') {
-      setHeroPriority((heroPriority = 'hero-full-screen--high-priority'))
-    } else {
-      return setHeroPriority(heroPriority = '')
-    }
-  }
-
-  useEffect(() => {
-    setHeroHighPriority()
-  })
-
   const IfHeroIs = () => {
     if (props.heroType === 'full-screen') {
       return (
-        <h2 className={`hero-${props.heroType}__text-section--description`}>
+        <h2
+          className={`hero-${props.heroType}__content--text-section__description`}
+        >
           {props.heroDescription}
         </h2>
       )
     } else if (props.heroType === 'details') {
       return (
         <>
-          <h2 className={`hero-${props.heroType}__text-section--detail`}>
+          <h2
+            className={`hero-${props.heroType}__content--text-section__detail`}
+          >
             {props.heroDetail1}
           </h2>
-          <h2 className={`hero-${props.heroType}__text-section--detail`}>
+          <h2
+            className={`hero-${props.heroType}__content--text-section__detail`}
+          >
             {props.heroDetail2}
           </h2>
-          <h2 className={`hero-${props.heroType}__text-section--detail`}>
+          <h2
+            className={`hero-${props.heroType}__content--text-section__detail`}
+          >
             {props.heroDetail3}
           </h2>
         </>
@@ -41,20 +35,28 @@ export const Hero = props => {
     }
   }
   return (
-    <div className={`hero-${props.heroType} ${heroPriority}`}>
-      <section className={`hero-${props.heroType}__text-section`}>
-        <h1 className={`hero-${props.heroType}__text-section--title`}>
-          {props.heroTitle}
-        </h1>
-        <IfHeroIs />
-      </section>
-      <section className={`hero-${props.heroType}__image-section`}>
-        <img
-          src={props.heroImage}
-          className={`hero-${props.heroType}__image-section--image`}
-          alt="img"
-        />
-      </section>
+    <div className={`hero hero-${props.heroType}`}>
+      <div className={`hero__content hero-${props.heroType}__content`}>
+        <section
+          className={`hero__content--text-section hero-${props.heroType}__content--text-section`}
+        >
+          <h1
+            className={`hero__content--text-section__title hero-${props.heroType}__content--text-section__title`}
+          >
+            {props.heroTitle}
+          </h1>
+          <IfHeroIs />
+        </section>
+        <section
+          className={`hero__content--image-section hero-${props.heroType}__content--image-section`}
+        >
+          <img
+            src={props.heroImage}
+            className={`hero__content--image-section__image hero-${props.heroType}__content--image-section__image`}
+            alt="img"
+          />
+        </section>
+      </div>
     </div>
   )
 }
