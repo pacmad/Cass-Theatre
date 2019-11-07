@@ -1,6 +1,7 @@
 .hero-full-screen {
+  --w: 100%;
   background-color: var(--c-brand-2);
-  width: 100%;
+  @include width-height--min-max(width, var(--w));
   @media (--viewport-mobile) {
     margin: 30px 0px;
     &:first-child {
@@ -15,18 +16,25 @@
         @include flex-row;
         &--image-section {
           &__image {
-            clip-path: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+            --p: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+            @supports (
+              clip-path: var(--p)
+            ) {
+              clip-path: var(--p);
+            }
           }
         }
       }
     }
     &:nth-child(even) {
       .hero-full-screen__content {
-        display: flex;
-        flex-direction: row-reverse;
+        @include flex-row-reverse;
         &--image-section {
           &__image {
-            clip-path: polygon(0% 0%, 70% 0%, 100% 100%, 0% 100%);
+            --p: polygon(0% 0%, 70% 0%, 100% 100%, 0% 100%);
+            @supports (clip-path: var(--p)) {
+              clip-path: var(--p);
+            }
           }
         }
       }
@@ -34,19 +42,17 @@
   }
   &__content {
     @media (--viewport-mobile) {
-      display: flex;
-      flex-direction: column-reverse;
-      padding: 10px 20px;
+      --w: 95%;
+      @include flex-column-reverse;
+      padding: var(--p-default);
       box-shadow: var(--bs-default);
-      width: 95%;
+      @include width-height--min-max(width, var(--w));
       margin: 0px auto;
       border-radius: var(--br-default);
     }
     @media (--viewport-desktop) {
-      --height: 100vh;
-      min-height: var(--height);
-      height: var(--height);
-      max-height: var(--height);
+      --h: 100vh;
+      @include width-height--min-max(height, var(--h));
     }
     &--text-section {
       background-color: var(--c-brand-2);
@@ -57,9 +63,10 @@
         text-align: center;
       }
       @media (--viewport-desktop) {
+        --w: 50%;
         flex: 1;
         justify-content: center;
-        width: 50%;
+        @include width-height--min-max(width, var(--w));
       }
       &__title {
         font-weight: var(--fw-default);
@@ -87,12 +94,13 @@
     &--image-section {
       background-color: var(--c-brand-2);
       @media (--viewport-desktop) {
-        width: 50%;
+        --w: 50%;
+        @include width-height--min-max(width, var(--w));
       }
       &__image {
         --wh: 100%;
-        width: var(--wh);
-        height: var(--wh);
+        @include width-height--min-max(width, var(--wh));
+        @include width-height--min-max(height, var(--wh));
         border-radius: var(--br-default);
       }
     }

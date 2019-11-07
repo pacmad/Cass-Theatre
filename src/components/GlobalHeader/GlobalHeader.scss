@@ -1,12 +1,13 @@
 .global-header {
   --bs: 1px 1px 5px hsla(0, 0%, 0%, 0.35);
+  --w: 100%;
   @include flex-row;
   justify-content: center;
   padding: var(--p-default);
   background-color: var(--c-brand);
   box-shadow: var(--bs);
   position: fixed;
-  width: 100%;
+  @include width-height--min-max(width, var(--w));
   z-index: 1000000;
   top: 0;
   &__title {

@@ -1,35 +1,38 @@
 /* Variables */
 :root {
-  /* Font Families */
-  --ff-system-ui: system-ui;
-  --ff-stock: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-  /* Font Sizes */
-  --fs-xs: 0.985em;
-  --fs-sm: 1.05em;
-  --fs-md: 1.2em;
-  --fs-big: 1.5em;
-  --fs-lg: 2.05em;
-  --fs-xl: 2.5em;
-  --fs-xxl: 3.15em;
-  --fs-xxxl: 4em;
-  /* Font Weights */
-  --fw-sm: 300;
-  --fw-default: 400;
-  /* Paddings */
-  --p-default: 10px 20px;
-  /* Colors */
-  --c-brand: hsl(0, 0%, 100%);
-  --c-brand-2: hsl(0, 0%, 90%);
-  --c-brand-3: hsl(0, 0%, 87.5%);
-  /* Box Shadows */
-  --bs-default: 0px 0px 20px 0px rgba(0, 0, 0, 0.35);
-  /* Line Heights */
-  --lh-default: 170%;
-  /* Border Radii */
-  --br-default: 5px;
-  /* Breakpoints */
-  --bp-mobile: 849px;
-  --bp-desktop: 850px;
+  @supports (--custom-property: value) {
+    /* Font Families */
+    --ff-system-ui: system-ui;
+    --ff-stock: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* Font Sizes */
+    --fs-xs: 0.985em;
+    --fs-sm: 1.05em;
+    --fs-md: 1.2em;
+    --fs-big: 1.5em;
+    --fs-lg: 2.05em;
+    --fs-xl: 2.5em;
+    --fs-xxl: 3.15em;
+    --fs-xxxl: 4em;
+    /* Font Weights */
+    --fw-sm: 300;
+    --fw-default: 400;
+    /* Paddings */
+    --p-default: 10px 20px;
+    /* Colors */
+    --c-brand: hsl(0, 0%, 100%);
+    --c-brand-2: hsl(0, 0%, 90%);
+    --c-brand-3: hsl(0, 0%, 87.5%);
+    /* Box Shadows */
+    --bs-default: 0px 0px 20px 0px rgba(0, 0, 0, 0.35);
+    /* Line Heights */
+    --lh-default: 170%;
+    /* Border Radii */
+    --br-default: 5px;
+    /* Breakpoints */
+    --bp-mobile: 849px;
+    --bp-desktop: 850px;
+  }
 }
 /* Viewports */
 @custom-media --viewport-mobile (width <= 849px);
