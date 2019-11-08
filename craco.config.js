@@ -8,6 +8,8 @@ module.exports = {
           mediaQuery: true
         }),
         require('css-mqpacker'),
+        require('postcss-combine-duplicated-selectors'),
+        require('postcss-round-subpixels'),
         require('cssnano')
       ],
       env: {
