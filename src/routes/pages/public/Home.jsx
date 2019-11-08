@@ -6,7 +6,6 @@ export const PagePublicHome = () => {
     <div className="page-public-home">
       <Hero
         heroType="full-screen"
-        heroPriority="high"
         heroTitle="The Addams Family"
         heroDescription="Now playing"
         heroImage="http://www.gstatic.com/tv/thumb/v22vodart/16762657/p16762657_v_v8_aa.jpg"
@@ -22,6 +21,14 @@ export const PagePublicHome = () => {
         heroTitle="Midway"
         heroDescription="Coming soon"
         heroImage="https://cdn.traileraddict.com/vidquad/lionsgate/midway-2019-poster/1.jpg"
+        />
+        <Hero
+          heroType="details"
+          heroTitle="Times"
+          heroDetail1="1"
+          heroDetail2="2"
+          heroDetail3="3"
+          heroImage=""
         />
     </div>
   )

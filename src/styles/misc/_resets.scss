@@ -16,7 +16,9 @@
 
 html {
   overflow: hidden auto;
-  -webkit-overflow-scrolling: touch;
+  @supports (-webkit-overflow-scrolling: touch) {
+    -webkit-overflow-scrolling: touch;
+  }
 }
 
 body {

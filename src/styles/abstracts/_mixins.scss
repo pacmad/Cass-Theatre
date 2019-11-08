@@ -1,36 +1,49 @@
 /* Flex Row */
-@mixin flex-row {
+@mixin flex--row {
   display: flex;
   flex-direction: row;
 }
 
 /* Flex Row Reverse */
-@mixin flex-row-reverse {
+@mixin flex--row-reverse {
   display: flex;
   flex-direction: row-reverse;
 }
 
 /* Flex Column */
-@mixin flex-column {
+@mixin flex--column {
   display: flex;
   flex-direction: column;
 }
 
 /* Flex Column Reverse */
-@mixin flex-column-reverse {
+@mixin flex--column-reverse {
   display: flex;
   flex-direction: column-reverse;
 }
 
 /* Element Link */
-@mixin element-link {
+@mixin element--link {
   text-decoration: none;
   color: inherit;
 }
 
 /* Width and Height Min-Max */
+/* (height/width, value) */
 @mixin width-height--min-max($property, $value) {
   min-#{$property}: $value;
   #{$property}: $value;
   max-#{$property}: $value;
+}
+
+/* Heading */
+/* (font-weight, mobile font-size, desktop font-size) */
+@mixin heading($weight, $size-mobile, $size-desktop) {
+  font-weight: $weight;
+  @media (--viewport-mobile) {
+    font-size: $size-mobile;
+  }
+  @media (--viewport-desktop) {
+    font-size: $size-desktop;
+  }
 }

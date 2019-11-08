@@ -1,7 +1,7 @@
 .global-header {
   --bs: 1px 1px 5px hsla(0, 0%, 0%, 0.35);
   --w: 100%;
-  @include flex-row;
+  @include flex--row;
   justify-content: center;
   padding: var(--p-default);
   background-color: var(--c-brand);
@@ -11,15 +11,9 @@
   z-index: 1000000;
   top: 0;
   &__title {
-    font-weight: var(--fw-sm);
-    @media (--viewport-mobile) {
-      font-size: var(--fs-lg);
-    }
-    @media (--viewport-desktop) {
-      font-size: var(--fs-xl);
-    }
+    @include heading(var(--fw-sm), var(--fs-lg), var(--fs-xl));
     &--link {
-      @include element-link;
+      @include element--link;
     }
   }
 }

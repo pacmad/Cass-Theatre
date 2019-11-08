@@ -47,15 +47,17 @@ export const Hero = props => {
           </h1>
           <IfHeroIs />
         </section>
-        <section
-          className={`hero__content--image-section hero-${props.heroType}__content--image-section`}
-        >
-          <img
-            src={props.heroImage}
-            className={`hero__content--image-section__image hero-${props.heroType}__content--image-section__image`}
-            alt="img"
-          />
-        </section>
+        {props.heroImage && (
+          <section
+            className={`hero__content--image-section hero-${props.heroType}__content--image-section`}
+          >
+            <img
+              src={props.heroImage}
+              className={`hero__content--image-section__image hero-${props.heroType}__content--image-section__image`}
+              alt="img"
+            />
+          </section>
+        )}
       </div>
     </div>
   )

@@ -7,19 +7,20 @@
     &:first-child {
       .hero-full-screen__content {
         margin-top: 78px;
+        &--image-section {
+          display: none;
+        }
       }
     }
   }
   @media (--viewport-desktop) {
     &:nth-child(odd) {
       .hero-full-screen__content {
-        @include flex-row;
+        @include flex--row;
         &--image-section {
           &__image {
             --p: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
-            @supports (
-              clip-path: var(--p)
-            ) {
+            @supports (clip-path: var(--p)) {
               clip-path: var(--p);
             }
           }
@@ -28,7 +29,7 @@
     }
     &:nth-child(even) {
       .hero-full-screen__content {
-        @include flex-row-reverse;
+        @include flex--row-reverse;
         &--image-section {
           &__image {
             --p: polygon(0% 0%, 70% 0%, 100% 100%, 0% 100%);
@@ -43,7 +44,7 @@
   &__content {
     @media (--viewport-mobile) {
       --w: 95%;
-      @include flex-column-reverse;
+      @include flex--column-reverse;
       padding: var(--p-default);
       box-shadow: var(--bs-default);
       @include width-height--min-max(width, var(--w));
@@ -56,7 +57,7 @@
     }
     &--text-section {
       background-color: var(--c-brand-2);
-      @include flex-column;
+      @include flex--column;
       @media (--viewport-mobile) {
         align-items: center;
         padding: var(--p-default);
@@ -69,26 +70,14 @@
         @include width-height--min-max(width, var(--w));
       }
       &__title {
-        font-weight: var(--fw-default);
-        line-height: var(--lh-default);
-        @media (--viewport-mobile) {
-          font-size: var(--fs-lg);
-        }
+        @include heading(var(--fw-default), var(--fs-lg), var(--fs-xxxl));
         @media (--viewport-desktop) {
-          font-size: var(--fs-xxxl);
           margin: 0px 20px;
         }
       }
       &__description {
-        line-height: var(--lh-default);
-        font-weight: var(--fw-default);
+        @include heading(var(--fw-default), var(--fs-big), var(--fs-xl));
         margin: 0px 20px;
-        @media (--viewport-mobile) {
-          font-size: var(--fs-big);
-        }
-        @media (--viewport-desktop) {
-          font-size: var(--fs-xl);
-        }
       }
     }
     &--image-section {
