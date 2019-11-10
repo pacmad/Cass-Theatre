@@ -1,15 +1,14 @@
 import React from 'react'
 import { useRoutes } from 'hookrouter'
-import { GlobalHeader } from './components/GlobalHeader/GlobalHeader'
 import Routes from './routes/routes'
-import { GlobalFooter } from './components/GlobalFooter/GlobalFooter'
+import { GlobalHeaderFooter } from './components/GlobalHeaderFooter/GlobalHeaderFooter'
 
 const App = () => {
   return (
     <div className='app'>
-      <GlobalHeader />
+      <GlobalHeaderFooter type={'header'} />
         {useRoutes(Routes)}
-      <GlobalFooter />
+      <GlobalHeaderFooter type={'footer'} />
     </div>
   )
 }

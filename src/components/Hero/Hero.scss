@@ -66,7 +66,6 @@
     }
   }
   &__content {
-    display: grid;
     @media (--viewport-mobile) {
       --w: 95%;
       padding: var(--p-sm);
@@ -79,6 +78,7 @@
       --cw: 50%;
       grid-template-columns: var(--cw) var(--cw);
       align-items: center;
+      display: grid;
     }
     &--text-section {
       background-color: var(--c-brand-2);
@@ -110,11 +110,11 @@
     }
     &--image-section {
       background-color: var(--c-brand-2);
-      display: grid;
       @media (--viewport-desktop) {
         --wh: 100%;
         @include width-height--min-max(width, var(--wh));
         @include width-height--min-max(height, var(--wh));
+        display: grid;
       }
       &__image {
         --wh: 100%;
