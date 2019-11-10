@@ -4,11 +4,14 @@
   align-items: center;
   border-top: 1px solid #00000046;
   margin-top: 0.25px;
+  justify-content: center;
+  display: grid;
+  grid-area: f;
   @media (--viewport-mobile) {
-    @include flex--column;
+    justify-items: center;
   }
   @media (--viewport-desktop) {
-    @include flex--row;
+    grid-template-columns: 50% 50%;
   }
   &__title {
     @include heading(var(--fw-sm), var(--fs-lg), var(--fs-lg));
@@ -28,6 +31,7 @@
     @media (--viewport-desktop) {
       font-size: var(--fs-sm);
       padding: 0px 10px;
+      text-align: right;
     }
   }
 }

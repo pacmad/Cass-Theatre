@@ -5,7 +5,7 @@ export const Hero = props => {
     if (props.heroType === 'full-screen') {
       return (
         <h2
-          className={`hero-${props.heroType}__content--text-section__description`}
+          className={`hero__content--text-section__description hero-${props.heroType}__content--text-section__description`}
         >
           {props.heroDescription}
         </h2>
@@ -14,17 +14,17 @@ export const Hero = props => {
       return (
         <>
           <h2
-            className={`hero-${props.heroType}__content--text-section__detail`}
+            className={`hero__content--text-section__description hero-${props.heroType}__content--text-section__description`}
           >
             {props.heroDetail1}
           </h2>
           <h2
-            className={`hero-${props.heroType}__content--text-section__detail`}
+            className={`hero__content--text-section__description hero-${props.heroType}__content--text-section__description`}
           >
             {props.heroDetail2}
           </h2>
           <h2
-            className={`hero-${props.heroType}__content--text-section__detail`}
+            className={`hero__content--text-section__description hero-${props.heroType}__content--text-section__description`}
           >
             {props.heroDetail3}
           </h2>

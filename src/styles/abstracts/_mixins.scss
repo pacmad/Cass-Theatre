@@ -1,27 +1,3 @@
-/* Flex Row */
-@mixin flex--row {
-  display: flex;
-  flex-direction: row;
-}
-
-/* Flex Row Reverse */
-@mixin flex--row-reverse {
-  display: flex;
-  flex-direction: row-reverse;
-}
-
-/* Flex Column */
-@mixin flex--column {
-  display: flex;
-  flex-direction: column;
-}
-
-/* Flex Column Reverse */
-@mixin flex--column-reverse {
-  display: flex;
-  flex-direction: column-reverse;
-}
-
 /* Element Link */
 @mixin element--link {
   text-decoration: none;

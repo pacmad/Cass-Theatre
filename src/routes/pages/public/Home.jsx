@@ -3,7 +3,7 @@ import { Hero } from '../../../components/Hero/Hero'
 
 export const PagePublicHome = () => {
   return (
-    <div className="page-public-home">
+    <div className="content">
       <Hero
         heroType="full-screen"
         heroTitle="The Addams Family"
@@ -25,10 +25,26 @@ export const PagePublicHome = () => {
         <Hero
           heroType="details"
           heroTitle="Times"
-          heroDetail1="1"
-          heroDetail2="2"
-          heroDetail3="3"
-          heroImage=""
+          heroDetail1="Theatre opens: 7:00 PM"
+          heroDetail2="Showtime: 7:30 PM"
+          heroDetail3="Open: Wed-Sun"
+          heroImage="/img/hero/times.svg"
+        />
+        <Hero
+          heroType="details"
+          heroTitle="Payment"
+          heroDetail1="Children: $4.00"
+          heroDetail2="Teens & Adults: $6.00"
+          heroDetail3="No credit cards accepted"
+          heroImage="/img/hero/payment.svg"
+        />
+        <Hero
+          heroType="details"
+          heroTitle="Address"
+          heroDetail1="Cass City"
+          heroDetail2="6464 Main Street (M-81)"
+          heroDetail3="(989) 872-2252"
+          heroImage="/img/hero/address.svg"
         />
     </div>
   )

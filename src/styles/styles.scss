@@ -5,7 +5,20 @@
 /* Misc */
 @import 'misc/resets'; // Resets
 
+/* App */
+.app {
+  display: grid;
+  grid-template-areas:
+    'h'
+    'c'
+    'f';
+  .content {
+    display: grid;
+    grid-area: c;
+  }
+}
+
 /* Components */
 @import '../components/GlobalHeader/GlobalHeader'; // GlobalHeader
-@import '../components/Hero/FullScreen'; // FullScreen
+@import '../components/Hero/Hero'; // FullScreen
 @import '../components/GlobalFooter/GlobalFooter'; // GlobalFooter
