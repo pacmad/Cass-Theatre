@@ -1,11 +1,14 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { A } from 'hookrouter'
+import { IconGear } from '../Icons/Gear'
 
 export const GlobalHeaderFooter = props => {
+  let [isLoggedIn, toggleIsLoggedIn] = useState(false)
+
   const IsType = () => {
     if (props.type === 'header') {
       return (
-        <header className="global-header-footer global-header">
+        <header className={`global-header-footer global-header ${isLoggedIn && ('global-header-admin')}`}>
           <h1
             className={`global-header-footer__title global-${props.type}__title`}
           >
@@ -16,12 +19,17 @@ export const GlobalHeaderFooter = props => {
               Cass Theatre
             </A>
           </h1>
+          {isLoggedIn && (
+            <A href="/dashboard" className="global-header-admin__icon-gear--link">
+            <IconGear />
+            </A>
+          )}
         </header>
       )
     } else if (props.type === 'footer') {
       return (
         <footer className="global-header-footer global-footer">
-          <h1
+          <p
             className={`global-header-footer__title global-${props.type}__title`}
           >
             <A
@@ -30,7 +38,7 @@ export const GlobalHeaderFooter = props => {
             >
               Cass Theatre
             </A>
-          </h1>
+          </p>
           <small className="global-footer__copyright">
             &copy; Cass Theatre {new Date().getFullYear()}
           </small>

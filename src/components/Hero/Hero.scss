@@ -10,21 +10,20 @@
       }
     }
   }
-  @media (--viewport-desktop) {
-    &__content {
-      --h: 100vh;
-      @include width-height--min-max(height, var(--h));
-    }
-  }
 }
 
 /* Details Hero */
 .hero-details {
-  margin: 25px auto;
-  @media (--viewport-desktop) {
+  @media (--viewport-mobile) {
+    margin: 25px auto;
     &__content {
-      --h: 50vh;
-      @include width-height--min-max(height, var(--h));
+      &--image-section {
+        --w: 50%;
+        --h: 100%;
+        @include width-height--min-max(width, var(--w));
+        @include width-height--min-max(height, var(--h));
+        margin: 0 auto;
+      }
     }
   }
 }
@@ -32,9 +31,13 @@
 /* Hero */
 .hero {
   --w: 100%;
-  background-color: var(--c-brand-2);
+  background-color: var(--c-brand);
   @include width-height--min-max(width, var(--w));
   @media (--viewport-desktop) {
+    &__content {
+      --h: 100vh;
+      @include width-height--min-max(height, var(--h));
+    }
     &:nth-child(odd) {
       .hero__content {
         &--image-section {
@@ -66,6 +69,7 @@
     }
   }
   &__content {
+    background-color: var(--c-brand);
     @media (--viewport-mobile) {
       --w: 95%;
       padding: var(--p-sm);
@@ -73,6 +77,7 @@
       @include width-height--min-max(width, var(--w));
       margin: 0px auto;
       border-radius: var(--br-default);
+      border: 0.5px solid hsla(0, 0%, 70%, 0.5);
     }
     @media (--viewport-desktop) {
       --cw: 50%;
@@ -81,13 +86,14 @@
       display: grid;
     }
     &--text-section {
-      background-color: var(--c-brand-2);
+      --h: 100%;
+      background-color: var(--c-brand);
       display: grid;
-      height: 100%;
+      @include width-height--min-max(height, var(--h));
       align-content: center;
       @media (--viewport-mobile) {
         align-items: center;
-        padding: var(--p-default);
+        padding: var(--p-sm);
         text-align: center;
       }
       @media (--viewport-desktop) {
@@ -109,7 +115,7 @@
       }
     }
     &--image-section {
-      background-color: var(--c-brand-2);
+      background-color: var(--c-brand);
       @media (--viewport-desktop) {
         --wh: 100%;
         @include width-height--min-max(width, var(--wh));
