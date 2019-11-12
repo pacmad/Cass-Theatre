@@ -77,7 +77,6 @@
       @include width-height--min-max(width, var(--w));
       margin: 0px auto;
       border-radius: var(--br-default);
-      border: 0.5px solid hsla(0, 0%, 70%, 0.5);
     }
     @media (--viewport-desktop) {
       --cw: 50%;

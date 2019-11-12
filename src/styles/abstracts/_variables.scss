@@ -23,8 +23,9 @@
     --c-brand: hsl(0, 0%, 100%);
     --c-brand-2: hsl(0, 0%, 90%);
     --c-brand-3: hsl(0, 0%, 87.5%);
+    --c-bs-light: hsla(0, 0%, 0%, 0.15);
     /* Box Shadows */
-    --bs-default: 0px 0px 7px 3px rgba(0, 0, 0, 0.15);
+    --bs-default: 0px 0px 7px 0px var(--c-bs-light);
     /* Line Heights */
     --lh-default: 170%;
     /* Border Radii */

@@ -58,6 +58,13 @@ export const Hero = props => {
             />
           </section>
         )}
+        {props.heroImageSvg && (
+              <section
+                className={`hero__content--image-section hero-${props.heroType}__content--image-section`}
+              >
+                {props.children}
+              </section>
+            )}
       </div>
     </div>
   )

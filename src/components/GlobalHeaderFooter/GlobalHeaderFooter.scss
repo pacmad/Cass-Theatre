@@ -1,6 +1,6 @@
 /* Header */
 .global-header {
-  --bs: 1px 1px 5px hsla(0, 0%, 0%, 0.35);
+  --bs: 1px 1px 3px var(--c-bs-light);
   grid-area: h;
   justify-items: center;
   box-shadow: var(--bs);
