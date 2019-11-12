@@ -1,0 +1,23 @@
+.global-site-message {
+  --Width: 100%;
+  --BoxShadow: 1px 1px 15px var(--Color--BoxShadow--light);
+  padding: var(--Padding--default);
+  background-color: var(--Color--primary);
+  position: fixed;
+  bottom: 0;
+  @include width-height--min-max(width, var(--Width));
+  display: grid;
+  justify-content: center;
+  box-shadow: var(--BoxShadow);
+  &__text {
+    line-height: var(--LineHeight--default);
+    color: black;
+    text-align: center;
+    @media ($breakpoint-mobile) {
+      font-size: var(--FontSize--md);
+    }
+    @media ($breakpoint-desktop) {
+      font-size: var(--FontSize--big);
+    }
+  }
+}

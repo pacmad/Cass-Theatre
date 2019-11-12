@@ -1,24 +1,23 @@
 /* Header */
 .global-header {
-  --bs: 1px 1px 3px var(--c-bs-light);
+  --BoxShadow: 1px 1px 3px var(--Color--BoxShadow--light);
   grid-area: h;
   justify-items: center;
-  box-shadow: var(--bs);
+  box-shadow: var(--BoxShadow);
   position: sticky;
-  z-index: 1000000;
   top: 0;
   &__title {
-    @include heading(var(--fw-sm), var(--fs-lg), var(--fs-xl));
+    @include heading(var(--FontWeight--sm), var(--FontSize--lg), var(--FontSize--xl));
   }
 }
 
 /* Admin Header */
 .global-header-admin {
   grid-template-columns: 60% 40%;
-  @media (--viewport-mobile) {
+  @media ($breakpoint-mobile) {
     align-items: end;
   }
-  @media (--viewport-desktop) {
+  @media ($breakpoint-desktop) {
     align-items: center;
   }
   .global-header__title {
@@ -27,9 +26,9 @@
   &__icon-gear--link {
     justify-self: right;
     .icon-gear {
-      --wh: 36.63px;
-      @include width-height--min-max(width, var(--wh));
-      @include width-height--min-max(height, var(--wh));
+      --Width--Height: 36.63px;
+      @include width-height--min-max(width, var(--Width--Height));
+      @include width-height--min-max(height, var(--Width--Height));
       g {
         path {
           transition: 0.25s all;
@@ -48,34 +47,34 @@
 
 /* Footer */
 .global-footer {
-  --p: 0px 10px;
+  --Padding: 0px 10px;
   align-items: center;
   border-top: 1px solid #00000046;
   margin-top: 0.25px;
   justify-content: center;
   grid-area: f;
   margin-top: 50px;
-  @media (--viewport-mobile) {
+  @media ($breakpoint-mobile) {
     justify-items: center;
   }
-  @media (--viewport-desktop) {
-    --cw: 50%;
-    grid-template-columns: var(--cw) var(--cw);
+  @media ($breakpoint-desktop) {
+    --Column--Width: 50%;
+    grid-template-columns: var(--Column--Width) var(--Column--Width);
   }
   &__title {
-    @include heading(var(--fw-sm), var(--fs-lg), var(--fs-lg));
-    @media (--viewport-desktop) {
-      padding: var(--p);
+    @include heading(var(--FontWeight--sm), var(--FontSize--lg), var(--FontSize--lg));
+    @media ($breakpoint-desktop) {
+      padding: var(--Padding);
     }
   }
   &__copyright {
-    @media (--viewport-mobile) {
-      font-size: var(--fs-xs);
-      padding: var(--p-default);
+    @media ($breakpoint-mobile) {
+      font-size: var(--FontSize--xs);
+      padding: var(--Padding--default);
     }
-    @media (--viewport-desktop) {
-      font-size: var(--fs-sm);
-      padding: var(--p);
+    @media ($breakpoint-desktop) {
+      font-size: var(--FontSize--sm);
+      padding: var(--Padding);
       text-align: right;
     }
   }
@@ -83,11 +82,12 @@
 
 /* Both */
 .global-header-footer {
-  --w: 100%;
-  background-color: var(--c-brand);
-  padding: var(--p-default);
+  --Width: 100%;
+  background-color: var(--Color--primary);
+  padding: var(--Padding--default);
   display: grid;
-  @include width-height--min-max(width, var(--w));
+  z-index: 1000000;
+  @include width-height--min-max(width, var(--Width));
   &__title {
     &--link {
       @include element--link;

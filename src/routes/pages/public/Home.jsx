@@ -5,13 +5,23 @@ import { IconWalletMen } from '../../../components/Icons/WalletMen'
 import { IconMap } from '../../../components/Icons/Map'
 
 export const PagePublicHome = () => {
+  const ShouldDisplayImageSection = () => {
+    if (window.innerWidth >= 850) {
+      return 'http://www.gstatic.com/tv/thumb/v22vodart/16762657/p16762657_v_v8_aa.jpg'
+    } else if (window.innerWidth <= 849) {
+      return null
+    } else {
+      return null
+    }
+  }
+
   return (
     <div className="content">
       <Hero
         heroType="full-screen"
         heroTitle="The Addams Family"
         heroDescription="Now playing"
-        heroImage="http://www.gstatic.com/tv/thumb/v22vodart/16762657/p16762657_v_v8_aa.jpg"
+        heroImage={ShouldDisplayImageSection()}
       />
       <Hero
         heroType="full-screen"

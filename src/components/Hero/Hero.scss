@@ -1,6 +1,6 @@
 /* Full Screen Hero */
 .hero-full-screen {
-  @media (--viewport-mobile) {
+  @media ($breakpoint-mobile) {
     margin: 30px 0px;
     &:first-child {
       .hero-full-screen__content {
@@ -14,14 +14,14 @@
 
 /* Details Hero */
 .hero-details {
-  @media (--viewport-mobile) {
+  @media ($breakpoint-mobile) {
     margin: 25px auto;
     &__content {
       &--image-section {
-        --w: 50%;
-        --h: 100%;
-        @include width-height--min-max(width, var(--w));
-        @include width-height--min-max(height, var(--h));
+        --Width: 50%;
+        --Height: 100%;
+        @include width-height--min-max(width, var(--Width));
+        @include width-height--min-max(height, var(--Height));
         margin: 0 auto;
       }
     }
@@ -30,21 +30,21 @@
 
 /* Hero */
 .hero {
-  --w: 100%;
-  background-color: var(--c-brand);
-  @include width-height--min-max(width, var(--w));
-  @media (--viewport-desktop) {
+  --Width: 100%;
+  background-color: var(--Color--primary);
+  @include width-height--min-max(width, var(--Width));
+  @media ($breakpoint-desktop) {
     &__content {
-      --h: 100vh;
-      @include width-height--min-max(height, var(--h));
+      --Height: 100vh;
+      @include width-height--min-max(height, var(--Height));
     }
     &:nth-child(odd) {
       .hero__content {
         &--image-section {
           &__image {
-            --p: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
-            @supports (clip-path: var(--p)) {
-              clip-path: var(--p);
+            --Polygon: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+            @supports (clip-path: var(--Polygon)) {
+              clip-path: var(--Polygon);
             }
           }
         }
@@ -59,9 +59,9 @@
           grid-column: 1;
           grid-row: 1;
           &__image {
-            --p: polygon(0% 0%, 70% 0%, 100% 100%, 0% 100%);
-            @supports (clip-path: var(--p)) {
-              clip-path: var(--p);
+            --Polygon: polygon(0% 0%, 70% 0%, 100% 100%, 0% 100%);
+            @supports (clip-path: var(--Polygon)) {
+              clip-path: var(--Polygon);
             }
           }
         }
@@ -69,63 +69,63 @@
     }
   }
   &__content {
-    background-color: var(--c-brand);
-    @media (--viewport-mobile) {
-      --w: 95%;
-      padding: var(--p-sm);
-      box-shadow: var(--bs-default);
-      @include width-height--min-max(width, var(--w));
+    background-color: var(--Color--primary);
+    @media ($breakpoint-mobile) {
+      --Width: 95%;
+      padding: var(--Padding--sm);
+      box-shadow: var(--BoxShadow--default);
+      @include width-height--min-max(width, var(--Width));
       margin: 0px auto;
-      border-radius: var(--br-default);
+      border-radius: var(--BorderRadius--default);
     }
-    @media (--viewport-desktop) {
-      --cw: 50%;
-      grid-template-columns: var(--cw) var(--cw);
+    @media ($breakpoint-desktop) {
+      --Column--Width: 50%;
+      grid-template-columns: var(--Column--Width) var(--Column--Width);
       align-items: center;
       display: grid;
     }
     &--text-section {
-      --h: 100%;
-      background-color: var(--c-brand);
+      --Height: 100%;
+      background-color: var(--Color--primary);
       display: grid;
-      @include width-height--min-max(height, var(--h));
+      @include width-height--min-max(height, var(--Height));
       align-content: center;
-      @media (--viewport-mobile) {
+      @media ($breakpoint-mobile) {
         align-items: center;
-        padding: var(--p-sm);
+        padding: var(--Padding--sm);
         text-align: center;
       }
-      @media (--viewport-desktop) {
-        --w: 100%;
+      @media ($breakpoint-desktop) {
+        --Width: 100%;
         justify-content: center;
-        @include width-height--min-max(width, var(--w));
+        @include width-height--min-max(width, var(--Width));
       }
       &__title {
-        line-height: var(--lh-default);
-        @include heading(var(--fw-default), var(--fs-lg), var(--fs-xxxl));
-        @media (--viewport-desktop) {
+        line-height: var(--LineHeight--default);
+        @include heading(var(--FontWeight--default), var(--FontSize--lg), var(--FontSize--xxxl));
+        @media ($breakpoint-desktop) {
           margin: 0px 20px;
         }
       }
       &__description {
-        line-height: var(--lh-default);
-        @include heading(var(--fw-default), var(--fs-big), var(--fs-xl));
+        line-height: var(--LineHeight--default);
+        @include heading(var(--FontWeight--default), var(--FontSize--big), var(--FontSize--xl));
         margin: 0px 20px;
       }
     }
     &--image-section {
-      background-color: var(--c-brand);
-      @media (--viewport-desktop) {
-        --wh: 100%;
-        @include width-height--min-max(width, var(--wh));
-        @include width-height--min-max(height, var(--wh));
+      background-color: var(--Color--primary);
+      @media ($breakpoint-desktop) {
+        --Width--Height: 100%;
+        @include width-height--min-max(width, var(--Width--Height));
+        @include width-height--min-max(height, var(--Width--Height));
         display: grid;
       }
       &__image {
-        --wh: 100%;
-        @include width-height--min-max(width, var(--wh));
-        @include width-height--min-max(height, var(--wh));
-        border-radius: var(--br-default);
+        --Width--Height: 100%;
+        @include width-height--min-max(width, var(--Width--Height));
+        @include width-height--min-max(height, var(--Width--Height));
+        border-radius: var(--BorderRadius--default);
       }
     }
   }

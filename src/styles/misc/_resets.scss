@@ -4,9 +4,9 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: var(--ff-stock);
+  font-family: var(--FontFamily--stock);
   @supports (font-family: system-ui) {
-    font-family: var(--ff-system-ui);
+    font-family: var(--FontFamily--system-ui);
   }
   @media (prefers-reduced-motion: reduce) {
     animation: none;
@@ -15,12 +15,12 @@
 }
 
 html {
-  overflow: hidden auto;
+  overflow-x: hidden;
   @supports (-webkit-overflow-scrolling: touch) {
     -webkit-overflow-scrolling: touch;
   }
 }
 
 body {
-  background-color: var(--c-brand);
+  background-color: var(--Color--primary);
 }

@@ -1,36 +1,36 @@
 /* Variables */
 :root {
     /* Font Families */
-    --ff-system-ui: system-ui;
-    --ff-stock: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    --FontFamily--system-ui: system-ui;
+    --FontFamily--stock: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
       Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     /* Font Sizes */
-    --fs-xs: 0.985em;
-    --fs-sm: 1.05em;
-    --fs-md: 1.2em;
-    --fs-big: 1.5em;
-    --fs-lg: 2.05em;
-    --fs-xl: 2.5em;
-    --fs-xxl: 3.15em;
-    --fs-xxxl: 4em;
+    --FontSize--xs: 0.985em;
+    --FontSize--sm: 1.05em;
+    --FontSize--md: 1.2em;
+    --FontSize--big: 1.5em;
+    --FontSize--lg: 2.05em;
+    --FontSize--xl: 2.5em;
+    --FontSize--xxl: 3.15em;
+    --FontSize--xxxl: 4em;
     /* Font Weights */
-    --fw-sm: 300;
-    --fw-default: 400;
+    --FontWeight--sm: 300;
+    --FontWeight--default: 400;
     /* Paddings */
-    --p-sm: 5px 10px;
-    --p-default: 10px 20px;
+    --Padding--sm: 5px 10px;
+    --Padding--default: 10px 20px;
     /* Colors */
-    --c-brand: hsl(0, 0%, 100%);
-    --c-brand-2: hsl(0, 0%, 90%);
-    --c-brand-3: hsl(0, 0%, 87.5%);
-    --c-bs-light: hsla(0, 0%, 0%, 0.15);
+    --Color--primary: hsl(0, 0%, 100%);
+    --Color--primary-2: hsl(0, 0%, 90%);
+    --Color--primary-3: hsl(0, 0%, 87.5%);
+    --Color--BoxShadow--light: hsla(0, 0%, 0%, 0.15);
     /* Box Shadows */
-    --bs-default: 0px 0px 7px 0px var(--c-bs-light);
+    --BoxShadow--default: 0px 0px 7px 0px var(--Color--BoxShadow--light);
     /* Line Heights */
-    --lh-default: 170%;
+    --LineHeight--default: 170%;
     /* Border Radii */
-    --br-default: 5px;
+    --BorderRadius--default: 5px;
 }
-/* Viewports */
-@custom-media --viewport-mobile (width <= 849px);
-@custom-media --viewport-desktop (width >= 850px);
+/* Breakpoints */
+$breakpoint-mobile: 'max-width: 849px';
+$breakpoint-desktop: 'min-width: 850px';
