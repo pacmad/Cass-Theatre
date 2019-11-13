@@ -10,7 +10,6 @@ module.exports = {
         require('css-mqpacker'),
         require('postcss-combine-duplicated-selectors'),
         require('postcss-round-subpixels'),
-        require('postcss-extract-value'),
         require('cssnano')
       ],
       env: {
