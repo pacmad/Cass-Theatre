@@ -7836,7 +7836,7 @@ postcss-env-function@^2.0.2:
     postcss "^7.0.2"
     postcss-values-parser "^2.0.0"
 
-postcss-extract-value@^0.5.1:
+postcss-extract-value@0.5.1:
   version "0.5.1"
   resolved "https://registry.yarnpkg.com/postcss-extract-value/-/postcss-extract-value-0.5.1.tgz#7aa652375f917787f525cc52be3787964a7220bf"
   integrity sha1-eqZSN1+Rd4f1JcxSvjeHlkpyIL8=
