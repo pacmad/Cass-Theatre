@@ -1,37 +1,28 @@
 /* Header */
 .global-header {
-  grid-area: h;
-  justify-items: center;
-  box-shadow: map-get($boxShadow, "sm");
+  @include boxShadow(sm);
   position: sticky;
   top: 0;
+  @include flex(row);
+  justify-content: center;
   &__title {
     @include heading(
       map-get($fontWeight, "sm"),
-      map-get($fontSize, "xl"),
-      map-get($fontSize, "xxl")
+      map-get($fontSize, "lg"),
+      map-get($fontSize, "lg")
     );
   }
 }
 
 /* Admin Header */
 .global-header-admin {
-  grid-template-columns: 60% 40%;
-  @media (map-get($breakpoint, "mobile")) {
-    align-items: end;
-  }
-  @media (map-get($breakpoint, "desktop")) {
-    align-items: center;
-  }
   .global-header__title {
-    justify-self: left;
+    flex: 1;
   }
   &__icon-gear--link {
-    justify-self: right;
     .icon-gear {
-      $Width--Height: 36.63px;
-      @include width-height--min-max(width, $Width--Height);
-      @include width-height--min-max(height, $Width--Height);
+      width: 36.63px;
+      height: 36.63px;
       g {
         path {
           transition: 0.25s all;
@@ -50,19 +41,14 @@
 
 /* Footer */
 .global-footer {
-  $GlobalFooter--Padding: 0px 10px;
   align-items: center;
   border-top: 1px solid #00000046;
-  margin-top: 0.25px;
-  justify-content: center;
-  grid-area: f;
-  margin-top: 50px;
-  @media (map-get($breakpoint, "mobile")) {
-    justify-items: center;
+  @media (max-width: $mobile) {
+    justify-content: center;
+    @include flex(column);
   }
-  @media (map-get($breakpoint, "desktop")) {
-    $GlobalFooter--Column--Width: 50%;
-    grid-template-columns: $GlobalFooter--Column--Width $GlobalFooter--Column--Width;
+  @media (min-width: $desktop) {
+    @include flex(row);
   }
   &__title {
     @include heading(
@@ -70,18 +56,19 @@
       map-get($fontSize, "lg"),
       map-get($fontSize, "lg")
     );
-    @media (map-get($breakpoint, "desktop")) {
-      padding: $GlobalFooter--Padding;
+    @media (min-width: $desktop) {
+      padding: 0px 10px;
+      flex: 1;
     }
   }
   &__copyright {
-    @media (map-get($breakpoint, "mobile")) {
-      font-size: map-get($fontSize, "xs");
-      padding: map-get($padding, "md");
+    @media (max-width: $mobile) {
+      @include fontSize(xs);
+      @include padding(md);
     }
-    @media (map-get($breakpoint, "desktop")) {
-      font-size: map-get($fontSize, "sm");
-      padding: $GlobalFooter--Padding;
+    @media (min-width: $desktop) {
+      @include fontSize(sm);
+      padding: 0px 10px;
       text-align: right;
     }
   }
@@ -89,12 +76,10 @@
 
 /* Both */
 .global-header-footer {
-  $GlobalHeaderFooter--Width: 100%;
   background-color: map-get($color, "primary");
-  padding: map-get($padding, "md");
-  display: grid;
-  z-index: 1000000;
-  @include width-height--min-max(width, $GlobalHeaderFooter--Width);
+  @include padding(md);
+  z-index: 100000000;
+  width: 100%;
   &__title {
     &--link {
       @include element--link;

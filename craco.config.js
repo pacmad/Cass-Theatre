@@ -3,7 +3,7 @@ module.exports = {
     postcss: {
       plugins: [
         require('postcss-pxtorem') ({
-          unitPrecision: 10,
+          unitPrecision: 15,
           propList: ['*'],
           mediaQuery: true
         }),

@@ -3,7 +3,7 @@ import { A } from 'hookrouter'
 import { IconGear } from '../Icons/Gear'
 
 export const GlobalHeaderFooter = props => {
-  let [isLoggedIn, toggleIsLoggedIn] = useState(true)
+  let [isLoggedIn, toggleIsLoggedIn] = useState(false)
 
   const IsType = () => {
     if (props.type === 'header') {

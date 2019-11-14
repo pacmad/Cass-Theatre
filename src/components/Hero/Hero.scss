@@ -1,6 +1,6 @@
 /* Full Screen Hero */
 .hero-full-screen {
-  @media (map-get($breakpoint, "mobile")) {
+  @media (max-width: $mobile) {
     margin: 30px 0px;
     &:first-child {
       .hero-full-screen__content {
@@ -14,20 +14,12 @@
 
 /* Details Hero */
 .hero-details {
-  @media (map-get($breakpoint, "mobile")) {
+  @media (max-width: $mobile) {
     margin: 25px auto;
     &__content {
       &--image-section {
-        $HeroDetailsContentImageSection--Width: 50%;
-        $HeroDetailsContentImageSection--Height: 100%;
-        @include width-height--min-max(
-          width,
-          $HeroDetailsContentImageSection--Width
-        );
-        @include width-height--min-max(
-          height,
-          $HeroDetailsContentImageSection--Height
-        );
+        width: 50%;
+        height: 100%;
         margin: 0 auto;
       }
     }
@@ -36,26 +28,20 @@
 
 /* Hero */
 .hero {
-  $Hero--Width: 100%;
-  background-color: map-get($color, "primary");
-  @include width-height--min-max(width, $Hero--Width);
-  @media (map-get($breakpoint, "desktop")) {
+  background-color: map-get($color, 'primary');
+  width: 100%;
+  @media (min-width: $desktop) {
     &__content {
-      $HeroContent--Height: 100vh;
-      @include width-height--min-max(height, $HeroContent--Height);
+      height: 100vh;
     }
     &:nth-child(odd) {
       .hero__content {
+        @include flex(row);
         &--image-section {
           &__image {
-            $OddHeroContentImageSectionImage--Polygon: polygon(
-              30% 0%,
-              100% 0%,
-              100% 100%,
-              0% 100%
-            );
-            @supports (clip-path: $OddHeroContentImageSectionImage--Polygon) {
-              clip-path: $OddHeroContentImageSectionImage--Polygon;
+            $Polygon: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
+            @supports (clip-path: $Polygon) {
+              clip-path: $Polygon;
             }
           }
         }
@@ -63,21 +49,12 @@
     }
     &:nth-child(even) {
       .hero__content {
-        &--text-section {
-          grid-column: 2;
-        }
+        @include flex(row-reverse);
         &--image-section {
-          grid-column: 1;
-          grid-row: 1;
           &__image {
-            $EvenHeroContentImageSectionImage--Polygon: polygon(
-              0% 0%,
-              70% 0%,
-              100% 100%,
-              0% 100%
-            );
-            @supports (clip-path: $EvenHeroContentImageSectionImage--Polygon) {
-              clip-path: $EvenHeroContentImageSectionImage--Polygon;
+            $Polygon: polygon(0% 0%, 70% 0%, 100% 100%, 0% 100%);
+            @supports (clip-path: $Polygon) {
+              clip-path: $Polygon;
             }
           }
         }
@@ -85,86 +62,64 @@
     }
   }
   &__content {
-    background-color: map-get($color, "primary");
-    @media (map-get($breakpoint, "mobile")) {
-      $HeroContent--Width: 95%;
-      padding: map-get($padding, "sm");
-      box-shadow: map-get($boxShadow, "sm");
-      @include width-height--min-max(width, $HeroContent--Width);
+    background-color: map-get($color, 'primary');
+    @media (max-width: $mobile) {
+      @include padding(sm);
+      @include boxShadow(sm);
+      width: 95%;
       margin: 0px auto;
-      border-radius: map-get($borderRadius, "md");
+      @include borderRadius(md);
     }
-    @media (map-get($breakpoint, "desktop")) {
-      $HeroContent--Column--Width--Desktop: 50%;
-      grid-template-columns: $HeroContent--Column--Width--Desktop $HeroContent--Column--Width--Desktop;
-      align-items: center;
-      display: grid;
+    @media (min-width: $desktop) {
+      @include flex(row);
     }
     &--text-section {
-      $HeroContentTextSection--Height: 100%;
-      background-color: map-get($color, "primary");
-      display: grid;
-      @include width-height--min-max(height, $HeroContentTextSection--Height);
+      background-color: map-get($color, 'primary');
+      @include flex(column);
+      height: 100%;
       align-content: center;
-      @media (map-get($breakpoint, "mobile")) {
+      text-align: center;
+      @media (max-width: $mobile) {
         align-items: center;
-        padding: map-get($padding, "sm");
-        text-align: center;
+        @include padding(sm);
       }
-      @media (map-get($breakpoint, "desktop")) {
-        $HeroContentTextSection--Width--Desktop: 100%;
+      @media (min-width: $desktop) {
         justify-content: center;
-        @include width-height--min-max(
-          width,
-          $HeroContentTextSection--Width--Desktop
-        );
+        align-items: center;
+        width: 50%;
       }
       &__title {
-        line-height: map-get($lineHeight, "md");
+        @include lineHeight(md);
         @include heading(
-          map-get($fontWeight, "md"),
-          map-get($fontSize, "xl"),
-          map-get($fontSize, "xxxxl")
+          map-get($fontWeight, 'lg'),
+          map-get($fontSize, 'lg'),
+          map-get($fontSize, 'xl')
         );
-        @media (map-get($breakpoint, "desktop")) {
+        @media (min-width: $desktop) {
           margin: 0px 20px;
         }
       }
       &__description {
-        line-height: map-get($lineHeight, "md");
+        @include lineHeight(md);
         @include heading(
-          map-get($fontWeight, "md"),
-          map-get($fontSize, "lg"),
-          map-get($fontSize, "xl")
+          map-get($fontWeight, 'md'),
+          map-get($fontSize, 'md'),
+          map-get($fontSize, 'lg')
         );
         margin: 0px 20px;
       }
     }
     &--image-section {
-      background-color: map-get($color, "primary");
-      @media (map-get($breakpoint, "desktop")) {
-        $HeroContentImageSection--WidthHeight--Desktop: 100%;
-        @include width-height--min-max(
-          width,
-          $HeroContentImageSection--WidthHeight--Desktop
-        );
-        @include width-height--min-max(
-          height,
-          $HeroContentImageSection--WidthHeight--Desktop
-        );
-        display: grid;
+      background-color: map-get($color, 'primary');
+      @media (min-width: $desktop) {
+        width: 50%;
+        height: 100%;
+        @include flex(column);
       }
       &__image {
-        $HeroContentImageSectionImage--WidthHeight: 100%;
-        @include width-height--min-max(
-          width,
-          $HeroContentImageSectionImage--WidthHeight
-        );
-        @include width-height--min-max(
-          height,
-          $HeroContentImageSectionImage--WidthHeight
-        );
-        border-radius: map-get($borderRadius, "md");
+        width: 100%;
+        height: 100%;
+        @include borderRadius(md);
       }
     }
   }

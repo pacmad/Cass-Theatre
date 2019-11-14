@@ -1,22 +1,21 @@
 .global-site-message {
-  $GloalSiteMessage--Width: 100%;
-  padding: map-get($padding, "md");
+  @include padding(md);
   background-color: map-get($color, "primary");
-  position: fixed;
+  position: sticky;
   bottom: 0;
-  @include width-height--min-max(width, $GloalSiteMessage--Width);
-  display: grid;
+  width: 100%;
+  @include flex(row);
   justify-content: center;
-  box-shadow: map-get($boxShadow, "sm");
+  @include boxShadow(sm);
   &__text {
-    line-height: map-get($lineHeight, "md");
+    @include lineHeight(md);
     color: black;
     text-align: center;
-    @media (map-get($breakpoint, "mobile")) {
-      font-size: map-get($fontSize, "lg");
+    @media (max-width: $mobile) {
+      @include fontSize(sm);
     }
-    @media (map-get($breakpoint, "desktop")) {
-      font-size: map-get($fontSize, "xl");
+    @media (min-width: $desktop) {
+      @include fontSize(md);
     }
   }
 }
