@@ -7819,19 +7819,6 @@ postcss-env-function@^2.0.2:
     postcss "^7.0.2"
     postcss-values-parser "^2.0.0"
 
-<<<<<<< HEAD
-=======
-postcss-extract-value@0.5.1:
-  version "0.5.1"
-  resolved "https://registry.yarnpkg.com/postcss-extract-value/-/postcss-extract-value-0.5.1.tgz#7aa652375f917787f525cc52be3787964a7220bf"
-  integrity sha1-eqZSN1+Rd4f1JcxSvjeHlkpyIL8=
-  dependencies:
-    color-name "^1.1.1"
-    nearest-color "^0.4.0"
-    parse-color "^1.0.0"
-    postcss "^6.0.1"
-
->>>>>>> 77c84d670a6c3af83db36a1503c6d9a114dad235
 postcss-flexbugs-fixes@4.1.0:
   version "4.1.0"
   resolved "https://registry.yarnpkg.com/postcss-flexbugs-fixes/-/postcss-flexbugs-fixes-4.1.0.tgz#e094a9df1783e2200b7b19f875dcad3b3aff8b20"

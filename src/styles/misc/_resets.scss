@@ -4,9 +4,9 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: var(--FontFamily--stock);
-  @supports (font-family: system-ui) {
-    font-family: var(--FontFamily--system-ui);
+  font-family: map-get($fontFamily, "stock");
+  @supports (font-family: map-get($fontFamily, "system-ui")) {
+    font-family: map-get($fontFamily, "system-ui");
   }
   @media (prefers-reduced-motion: reduce) {
     animation: none;
@@ -22,5 +22,5 @@ html {
 }
 
 body {
-  background-color: var(--Color--primary);
+  background-color: map-get($color, "primary");
 }

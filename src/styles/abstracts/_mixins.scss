@@ -16,10 +16,10 @@
 /* (font-weight, mobile font-size, desktop font-size) */
 @mixin heading($weight, $size-mobile, $size-desktop) {
   font-weight: $weight;
-  @media ($breakpoint-mobile) {
+  @media (map-get($breakpoint, "mobile")) {
     font-size: $size-mobile;
   }
-  @media ($breakpoint-desktop) {
+  @media (map-get($breakpoint, "desktop")) {
     font-size: $size-desktop;
   }
 }

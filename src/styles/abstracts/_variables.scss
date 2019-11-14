@@ -1,36 +1,58 @@
 /* Variables */
-:root {
-    /* Font Families */
-    --FontFamily--system-ui: system-ui;
-    --FontFamily--stock: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-      Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    /* Font Sizes */
-    --FontSize--xs: 0.985em;
-    --FontSize--sm: 1.05em;
-    --FontSize--md: 1.2em;
-    --FontSize--big: 1.5em;
-    --FontSize--lg: 2.05em;
-    --FontSize--xl: 2.5em;
-    --FontSize--xxl: 3.15em;
-    --FontSize--xxxl: 4em;
-    /* Font Weights */
-    --FontWeight--sm: 300;
-    --FontWeight--default: 400;
-    /* Paddings */
-    --Padding--sm: 5px 10px;
-    --Padding--default: 10px 20px;
-    /* Colors */
-    --Color--primary: hsl(0, 0%, 100%);
-    --Color--primary-2: hsl(0, 0%, 90%);
-    --Color--primary-3: hsl(0, 0%, 87.5%);
-    --Color--BoxShadow--light: hsla(0, 0%, 0%, 0.15);
-    /* Box Shadows */
-    --BoxShadow--default: 0px 0px 7px 0px var(--Color--BoxShadow--light);
-    /* Line Heights */
-    --LineHeight--default: 170%;
-    /* Border Radii */
-    --BorderRadius--default: 5px;
-}
+/* Font Families */
+$fontFamily: (
+  system-ui: system-ui,
+  stock:
+    '-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif'
+);
+/* Font Sizes */
+$fontSize: (
+  xs: 0.985em,
+  sm: 1.05em,
+  md: 1.2em,
+  lg: 1.5em,
+  xl: 2.05em,
+  xxl: 2.5em,
+  xxxl: 3.15em,
+  xxxxl: 4em
+);
+/* Colors */
+$color: (
+  primary: hsl(0, 0%, 100%),
+  primary-2: hsl(0, 0%, 90%),
+  primary-3: hsl(0, 0%, 87.5%)
+);
+/* Paddings */
+$padding: (
+  sm: 5px 10px,
+  md: 10px 20px,
+  lg: 20px 40px
+);
+/* Box Shadows */
+$boxShadow: (
+  sm: 0px 0px 7px 0px hsla(0, 0%, 0%, 0.15)
+);
+/* Border Radii */
+$borderRadius: (
+  sm: 2.5px,
+  md: 5px,
+  lg: 11pc
+);
+/* Font Weights */
+$fontWeight: (
+  sm: 300,
+  md: 400,
+  lg: 500
+);
+/* Line Heights */
+$lineHeight: (
+  sm: 100%,
+  md: 170%,
+  lg: 240%
+);
 /* Breakpoints */
-$breakpoint-mobile: 'max-width: 849px';
-$breakpoint-desktop: 'min-width: 850px';
+$breakpoint: (
+  mobile: 'max-width: 849px',
+  desktop: 'min-width: 850px'
+);

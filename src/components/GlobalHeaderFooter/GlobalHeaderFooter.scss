@@ -1,23 +1,26 @@
 /* Header */
 .global-header {
-  --BoxShadow: 1px 1px 3px var(--Color--BoxShadow--light);
   grid-area: h;
   justify-items: center;
-  box-shadow: var(--BoxShadow);
+  box-shadow: map-get($boxShadow, "sm");
   position: sticky;
   top: 0;
   &__title {
-    @include heading(var(--FontWeight--sm), var(--FontSize--lg), var(--FontSize--xl));
+    @include heading(
+      map-get($fontWeight, "sm"),
+      map-get($fontSize, "xl"),
+      map-get($fontSize, "xxl")
+    );
   }
 }
 
 /* Admin Header */
 .global-header-admin {
   grid-template-columns: 60% 40%;
-  @media ($breakpoint-mobile) {
+  @media (map-get($breakpoint, "mobile")) {
     align-items: end;
   }
-  @media ($breakpoint-desktop) {
+  @media (map-get($breakpoint, "desktop")) {
     align-items: center;
   }
   .global-header__title {
@@ -26,9 +29,9 @@
   &__icon-gear--link {
     justify-self: right;
     .icon-gear {
-      --Width--Height: 36.63px;
-      @include width-height--min-max(width, var(--Width--Height));
-      @include width-height--min-max(height, var(--Width--Height));
+      $Width--Height: 36.63px;
+      @include width-height--min-max(width, $Width--Height);
+      @include width-height--min-max(height, $Width--Height);
       g {
         path {
           transition: 0.25s all;
@@ -47,34 +50,38 @@
 
 /* Footer */
 .global-footer {
-  --Padding: 0px 10px;
+  $GlobalFooter--Padding: 0px 10px;
   align-items: center;
   border-top: 1px solid #00000046;
   margin-top: 0.25px;
   justify-content: center;
   grid-area: f;
   margin-top: 50px;
-  @media ($breakpoint-mobile) {
+  @media (map-get($breakpoint, "mobile")) {
     justify-items: center;
   }
-  @media ($breakpoint-desktop) {
-    --Column--Width: 50%;
-    grid-template-columns: var(--Column--Width) var(--Column--Width);
+  @media (map-get($breakpoint, "desktop")) {
+    $GlobalFooter--Column--Width: 50%;
+    grid-template-columns: $GlobalFooter--Column--Width $GlobalFooter--Column--Width;
   }
   &__title {
-    @include heading(var(--FontWeight--sm), var(--FontSize--lg), var(--FontSize--lg));
-    @media ($breakpoint-desktop) {
-      padding: var(--Padding);
+    @include heading(
+      map-get($fontWeight, "sm"),
+      map-get($fontSize, "lg"),
+      map-get($fontSize, "lg")
+    );
+    @media (map-get($breakpoint, "desktop")) {
+      padding: $GlobalFooter--Padding;
     }
   }
   &__copyright {
-    @media ($breakpoint-mobile) {
-      font-size: var(--FontSize--xs);
-      padding: var(--Padding--default);
+    @media (map-get($breakpoint, "mobile")) {
+      font-size: map-get($fontSize, "xs");
+      padding: map-get($padding, "md");
     }
-    @media ($breakpoint-desktop) {
-      font-size: var(--FontSize--sm);
-      padding: var(--Padding);
+    @media (map-get($breakpoint, "desktop")) {
+      font-size: map-get($fontSize, "sm");
+      padding: $GlobalFooter--Padding;
       text-align: right;
     }
   }
@@ -82,12 +89,12 @@
 
 /* Both */
 .global-header-footer {
-  --Width: 100%;
-  background-color: var(--Color--primary);
-  padding: var(--Padding--default);
+  $GlobalHeaderFooter--Width: 100%;
+  background-color: map-get($color, "primary");
+  padding: map-get($padding, "md");
   display: grid;
   z-index: 1000000;
-  @include width-height--min-max(width, var(--Width));
+  @include width-height--min-max(width, $GlobalHeaderFooter--Width);
   &__title {
     &--link {
       @include element--link;

@@ -1,6 +1,6 @@
 /* Full Screen Hero */
 .hero-full-screen {
-  @media ($breakpoint-mobile) {
+  @media (map-get($breakpoint, "mobile")) {
     margin: 30px 0px;
     &:first-child {
       .hero-full-screen__content {
@@ -14,14 +14,20 @@
 
 /* Details Hero */
 .hero-details {
-  @media ($breakpoint-mobile) {
+  @media (map-get($breakpoint, "mobile")) {
     margin: 25px auto;
     &__content {
       &--image-section {
-        --Width: 50%;
-        --Height: 100%;
-        @include width-height--min-max(width, var(--Width));
-        @include width-height--min-max(height, var(--Height));
+        $HeroDetailsContentImageSection--Width: 50%;
+        $HeroDetailsContentImageSection--Height: 100%;
+        @include width-height--min-max(
+          width,
+          $HeroDetailsContentImageSection--Width
+        );
+        @include width-height--min-max(
+          height,
+          $HeroDetailsContentImageSection--Height
+        );
         margin: 0 auto;
       }
     }
@@ -30,21 +36,26 @@
 
 /* Hero */
 .hero {
-  --Width: 100%;
-  background-color: var(--Color--primary);
-  @include width-height--min-max(width, var(--Width));
-  @media ($breakpoint-desktop) {
+  $Hero--Width: 100%;
+  background-color: map-get($color, "primary");
+  @include width-height--min-max(width, $Hero--Width);
+  @media (map-get($breakpoint, "desktop")) {
     &__content {
-      --Height: 100vh;
-      @include width-height--min-max(height, var(--Height));
+      $HeroContent--Height: 100vh;
+      @include width-height--min-max(height, $HeroContent--Height);
     }
     &:nth-child(odd) {
       .hero__content {
         &--image-section {
           &__image {
-            --Polygon: polygon(30% 0%, 100% 0%, 100% 100%, 0% 100%);
-            @supports (clip-path: var(--Polygon)) {
-              clip-path: var(--Polygon);
+            $OddHeroContentImageSectionImage--Polygon: polygon(
+              30% 0%,
+              100% 0%,
+              100% 100%,
+              0% 100%
+            );
+            @supports (clip-path: $OddHeroContentImageSectionImage--Polygon) {
+              clip-path: $OddHeroContentImageSectionImage--Polygon;
             }
           }
         }
@@ -59,9 +70,14 @@
           grid-column: 1;
           grid-row: 1;
           &__image {
-            --Polygon: polygon(0% 0%, 70% 0%, 100% 100%, 0% 100%);
-            @supports (clip-path: var(--Polygon)) {
-              clip-path: var(--Polygon);
+            $EvenHeroContentImageSectionImage--Polygon: polygon(
+              0% 0%,
+              70% 0%,
+              100% 100%,
+              0% 100%
+            );
+            @supports (clip-path: $EvenHeroContentImageSectionImage--Polygon) {
+              clip-path: $EvenHeroContentImageSectionImage--Polygon;
             }
           }
         }
@@ -69,63 +85,86 @@
     }
   }
   &__content {
-    background-color: var(--Color--primary);
-    @media ($breakpoint-mobile) {
-      --Width: 95%;
-      padding: var(--Padding--sm);
-      box-shadow: var(--BoxShadow--default);
-      @include width-height--min-max(width, var(--Width));
+    background-color: map-get($color, "primary");
+    @media (map-get($breakpoint, "mobile")) {
+      $HeroContent--Width: 95%;
+      padding: map-get($padding, "sm");
+      box-shadow: map-get($boxShadow, "sm");
+      @include width-height--min-max(width, $HeroContent--Width);
       margin: 0px auto;
-      border-radius: var(--BorderRadius--default);
+      border-radius: map-get($borderRadius, "md");
     }
-    @media ($breakpoint-desktop) {
-      --Column--Width: 50%;
-      grid-template-columns: var(--Column--Width) var(--Column--Width);
+    @media (map-get($breakpoint, "desktop")) {
+      $HeroContent--Column--Width--Desktop: 50%;
+      grid-template-columns: $HeroContent--Column--Width--Desktop $HeroContent--Column--Width--Desktop;
       align-items: center;
       display: grid;
     }
     &--text-section {
-      --Height: 100%;
-      background-color: var(--Color--primary);
+      $HeroContentTextSection--Height: 100%;
+      background-color: map-get($color, "primary");
       display: grid;
-      @include width-height--min-max(height, var(--Height));
+      @include width-height--min-max(height, $HeroContentTextSection--Height);
       align-content: center;
-      @media ($breakpoint-mobile) {
+      @media (map-get($breakpoint, "mobile")) {
         align-items: center;
-        padding: var(--Padding--sm);
+        padding: map-get($padding, "sm");
         text-align: center;
       }
-      @media ($breakpoint-desktop) {
-        --Width: 100%;
+      @media (map-get($breakpoint, "desktop")) {
+        $HeroContentTextSection--Width--Desktop: 100%;
         justify-content: center;
-        @include width-height--min-max(width, var(--Width));
+        @include width-height--min-max(
+          width,
+          $HeroContentTextSection--Width--Desktop
+        );
       }
       &__title {
-        line-height: var(--LineHeight--default);
-        @include heading(var(--FontWeight--default), var(--FontSize--lg), var(--FontSize--xxxl));
-        @media ($breakpoint-desktop) {
+        line-height: map-get($lineHeight, "md");
+        @include heading(
+          map-get($fontWeight, "md"),
+          map-get($fontSize, "xl"),
+          map-get($fontSize, "xxxxl")
+        );
+        @media (map-get($breakpoint, "desktop")) {
           margin: 0px 20px;
         }
       }
       &__description {
-        line-height: var(--LineHeight--default);
-        @include heading(var(--FontWeight--default), var(--FontSize--big), var(--FontSize--xl));
+        line-height: map-get($lineHeight, "md");
+        @include heading(
+          map-get($fontWeight, "md"),
+          map-get($fontSize, "lg"),
+          map-get($fontSize, "xl")
+        );
         margin: 0px 20px;
       }
     }
     &--image-section {
-      background-color: var(--Color--primary);
-      @media ($breakpoint-desktop) {
-        --Width--Height: 100%;
-        @include width-height--min-max(width, var(--Width--Height));
-        @include width-height--min-max(height, var(--Width--Height));
+      background-color: map-get($color, "primary");
+      @media (map-get($breakpoint, "desktop")) {
+        $HeroContentImageSection--WidthHeight--Desktop: 100%;
+        @include width-height--min-max(
+          width,
+          $HeroContentImageSection--WidthHeight--Desktop
+        );
+        @include width-height--min-max(
+          height,
+          $HeroContentImageSection--WidthHeight--Desktop
+        );
         display: grid;
       }
       &__image {
-        --Width--Height: 100%;
-        @include width-height--min-max(width, var(--Width--Height));
-        @include width-height--min-max(height, var(--Width--Height));
-        border-radius: var(--BorderRadius--default);
+        $HeroContentImageSectionImage--WidthHeight: 100%;
+        @include width-height--min-max(
+          width,
+          $HeroContentImageSectionImage--WidthHeight
+        );
+        @include width-height--min-max(
+          height,
+          $HeroContentImageSectionImage--WidthHeight
+        );
+        border-radius: map-get($borderRadius, "md");
       }
     }
   }
