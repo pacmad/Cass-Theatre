@@ -1,8 +1,8 @@
 import React from 'react'
-import { Hero } from '../../../components/Hero/Hero'
-import { IconCalendar } from '../../../components/Icons/Calendar'
-import { IconWalletMen } from '../../../components/Icons/WalletMen'
-import { IconMap } from '../../../components/Icons/Map'
+import { Hero } from '../../../components/Hero'
+import { IconCalendar } from '../../../components/icons/Calendar'
+import { IconWalletMen } from '../../../components/icons/WalletMen'
+import { IconMap } from '../../../components/icons/Map'
 
 export const PagePublicHome = () => {
   const ShouldDisplayImageSection = () => {

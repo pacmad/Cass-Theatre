@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { A } from 'hookrouter'
-import { IconGear } from '../Icons/Gear'
+import { IconGear } from '../icons/Gear'
 
 export const GlobalHeaderFooter = props => {
   let [isLoggedIn, toggleIsLoggedIn] = useState(false)

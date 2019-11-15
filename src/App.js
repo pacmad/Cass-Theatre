@@ -1,8 +1,8 @@
 import React from 'react'
 import { useRoutes } from 'hookrouter'
 import Routes from './routes/routes'
-import { GlobalHeaderFooter } from './components/GlobalHeaderFooter/GlobalHeaderFooter'
-import { GlobalSiteMessage } from './components/GlobalSiteMessage/GlobalSiteMessage'
+import { GlobalHeaderFooter } from './components/global/HeaderFooter'
+import { GlobalSiteMessage } from './components/global/SiteMessage'
 
 const App = () => {
   return (

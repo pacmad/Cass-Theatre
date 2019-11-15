@@ -6,6 +6,6 @@
 @import 'misc/resets'; // Resets
 
 /* Components */
-@import '../components/Hero/Hero'; // Hero
-@import '../components/GlobalSiteMessage/GlobalSiteMessage'; // GlobalSiteMessage
-@import '../components/GlobalHeaderFooter/GlobalHeaderFooter'; // GlobalHeaderFooter
+@import 'components/Hero'; // Hero
+@import 'components/global/SiteMessage'; // GlobalSiteMessage
+@import 'components/global/HeaderFooter'; // GlobalHeaderFooter
