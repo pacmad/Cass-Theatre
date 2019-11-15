@@ -4,9 +4,9 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  font-family: map-get($fontFamily, "stock");
+  @include fontFamily(stock);
   @supports (font-family: map-get($fontFamily, "system-ui")) {
-    font-family: map-get($fontFamily, "system-ui");
+    @include fontFamily(system-ui);
   }
   @media (prefers-reduced-motion: reduce) {
     animation: none;
@@ -22,5 +22,5 @@ html {
 }
 
 body {
-  background-color: map-get($color, "primary");
+  background-color: $color-primary;
 }

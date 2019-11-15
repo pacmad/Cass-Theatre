@@ -1,98 +1,80 @@
-/* Element Link */
-@mixin element--link {
-  text-decoration: none;
-  color: inherit;
-}
-
 /* Flex */
 @mixin flex($direction) {
   display: flex;
   flex-direction: $direction;
 }
 
-/* Heading */
-/* (font-weight, mobile font-size, desktop font-size) */
-@mixin heading($weight, $size-mobile, $size-desktop) {
-  font-weight: $weight;
-  @media (max-width: $mobile) {
-    font-size: $size-mobile;
-  }
-  @media (min-width: $desktop) {
-    font-size: $size-desktop;
-  }
-}
-
 /* Font Families */
 @mixin fontFamily($family) {
-  @if $family == 'system-ui' {
-    font-family: map-get($fontFamily, 'system-ui');
-  } @else if $family == 'stock' {
-    font-family: map-get($fontFamily, 'stock');
+  @each $familyName in 'system-ui' 'stock' {
+    @if $family == $familyName {
+      font-family: map-get($fontFamily, $familyName);
+    }
   }
 }
 
 /* Font Sizes */
 @mixin fontSize($size) {
-  @if $size == 'xs' {
-    font-size: map-get($fontSize, 'xs');
-  } @else if $size == 'sm' {
-    font-size: map-get($fontSize, 'sm');
-  } @else if $size == 'md' {
-    font-size: map-get($fontSize, 'md');
-  } @else if $size == 'lg' {
-    font-size: map-get($fontSize, 'lg');
-  } @else if $size == 'xl' {
-    font-size: map-get($fontSize, 'xl');
+  @each $sizeName in 'xs' 'sm' 'md' 'lg' 'xl' {
+    @if $size == $sizeName {
+      font-size: map-get($fontSize, $sizeName);
+    }
   }
 }
 
 /* Paddings */
 @mixin padding($size) {
-  @if $size == 'sm' {
-    padding: map-get($padding, 'sm');
-  } @else if $size == 'md' {
-    padding: map-get($padding, 'md');
-  } @else if $size == 'lg' {
-    padding: map-get($padding, 'lg');
+  @each $sizeName in 'xs' 'sm' 'md' 'lg' 'xl' {
+    @if $size == $sizeName {
+      padding: map-get($padding, $sizeName);
+    }
   }
 }
 
 /* Box Shadows */
 @mixin boxShadow($size) {
-  @if ($size = 'sm') {
-    box-shadow: map-get($boxShadow, 'sm');
+  @each $sizeName in 'xs' 'sm' 'md' 'lg' 'xl' {
+    @if $size == $sizeName {
+      box-shadow: map-get($boxShadow, $sizeName);
+    }
   }
 }
 
 /* Border Radii */
 @mixin borderRadius($size) {
-  @if $size == 'sm' {
-    border-radius: map-get($borderRadius, 'sm');
-  } @else if $size == 'md' {
-    border-radius: map-get($borderRadius, 'md');
-  } @else if $size == 'lg' {
-    border-radius: map-get($borderRadius, 'lg');
+  @each $sizeName in 'xs' 'sm' 'md' 'lg' 'xl' {
+    @if $size == $sizeName {
+      border-radius: map-get($borderRadius, $sizeName);
+    }
   }
 }
 
 /* Font Weights */
 @mixin fontWeight($size) {
-  @if $size == 'sm' {
-    font-weight: map-get($fontWeight, 'sm');
-  } @else if $size == 'md' {
-    font-weight: map-get($fontWeight, 'md');
-  } @else if $size == 'lg' {
-    font-weight: map-get($fontWeight, 'lg');
+  @each $sizeName in 'xs' 'sm' 'md' 'lg' 'xl' {
+    @if $size == $sizeName {
+      font-weight: map-get($fontWeight, $sizeName);
+    }
   }
 }
 
 /* Line Heights */
 @mixin lineHeight($size) {
-  @if $size == 'sm' {
-    line-height: map-get($lineHeight, 'sm');
-  } @else if $size == 'md' {
-    line-height: map-get($lineHeight, 'md');
-  } @else if $size == 'lg' {
-    line-height: map-get($lineHeight, 'lg');
+  @each $sizeName in 'xs' 'sm' 'md' 'lg' 'xl' {
+    @if $size == $sizeName {
+      line-height: map-get($lineHeight, $sizeName);
+    }
+  }
+}
+
+/* Media Queries */
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+@mixin desktop {
+  @media (min-width: $desktop) {
+    @content;
   }
 }

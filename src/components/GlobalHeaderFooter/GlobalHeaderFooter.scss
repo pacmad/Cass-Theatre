@@ -6,11 +6,8 @@
   @include flex(row);
   justify-content: center;
   &__title {
-    @include heading(
-      map-get($fontWeight, "sm"),
-      map-get($fontSize, "lg"),
-      map-get($fontSize, "lg")
-    );
+    @include fontWeight(sm);
+    @include fontSize(lg);
   }
 }
 
@@ -43,32 +40,29 @@
 .global-footer {
   align-items: center;
   border-top: 1px solid #00000046;
-  @media (max-width: $mobile) {
+  @include mobile {
     justify-content: center;
     @include flex(column);
   }
-  @media (min-width: $desktop) {
+  @include desktop {
     @include flex(row);
   }
   &__title {
-    @include heading(
-      map-get($fontWeight, "sm"),
-      map-get($fontSize, "lg"),
-      map-get($fontSize, "lg")
-    );
-    @media (min-width: $desktop) {
-      padding: 0px 10px;
+    @include fontWeight(sm);
+    @include fontSize(lg);
+    @include desktop{
+      @include padding(xs);
       flex: 1;
     }
   }
   &__copyright {
-    @media (max-width: $mobile) {
+    @include mobile {
       @include fontSize(xs);
       @include padding(md);
     }
-    @media (min-width: $desktop) {
+    @include desktop {
       @include fontSize(sm);
-      padding: 0px 10px;
+      @include padding(xs);
       text-align: right;
     }
   }
@@ -76,13 +70,14 @@
 
 /* Both */
 .global-header-footer {
-  background-color: map-get($color, "primary");
+  background-color: $color-primary;
   @include padding(md);
   z-index: 100000000;
   width: 100%;
   &__title {
     &--link {
-      @include element--link;
+      text-decoration: none;
+      color: inherit;
     }
   }
 }

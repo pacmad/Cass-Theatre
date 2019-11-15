@@ -1,20 +1,21 @@
 .global-site-message {
   @include padding(md);
-  background-color: map-get($color, "primary");
+  @include borderRadius(sm);
+  @include boxShadow(sm);
+  @include flex(row);
+  background-color: $color-primary;
   position: sticky;
   bottom: 0;
   width: 100%;
-  @include flex(row);
   justify-content: center;
-  @include boxShadow(sm);
   &__text {
     @include lineHeight(md);
     color: black;
     text-align: center;
-    @media (max-width: $mobile) {
+    @include mobile {
       @include fontSize(sm);
     }
-    @media (min-width: $desktop) {
+    @include desktop {
       @include fontSize(md);
     }
   }
