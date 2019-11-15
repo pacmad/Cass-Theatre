@@ -10,7 +10,10 @@ module.exports = {
         require('css-mqpacker'),
         require('postcss-combine-duplicated-selectors'),
         require('postcss-round-subpixels'),
-        require('cssnano')
+        require('css-declaration-sorter'),
+        require('cssnano') ({
+          preset: 'advanced'
+        })
       ],
       env: {
         autoprefixer: {},
