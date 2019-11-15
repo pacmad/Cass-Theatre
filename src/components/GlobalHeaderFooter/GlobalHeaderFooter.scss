@@ -8,6 +8,10 @@
   &__title {
     @include fontWeight(sm);
     @include fontSize(lg);
+    transition: 0.35s all;
+    &:hover {
+      letter-spacing: 0.15em;
+    }
   }
 }
 
