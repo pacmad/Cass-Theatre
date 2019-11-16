@@ -1,0 +1,23 @@
+.global-header-admin {
+  .global-header__title {
+    flex: 1;
+  }
+  &__icon-gear--link {
+    .icon-gear {
+      width: 36.63px;
+      height: 36.63px;
+      g {
+        path {
+          transition: 0.25s all;
+        }
+      }
+      &:hover {
+        g {
+          path {
+            fill: #000;
+          }
+        }
+      }
+    }
+  }
+}

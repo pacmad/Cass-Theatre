@@ -1,0 +1,30 @@
+.global-footer {
+  align-items: center;
+  border-top: 1px solid #00000046;
+  @include mobile {
+    justify-content: center;
+    @include flex(column);
+  }
+  @include desktop {
+    @include flex(row);
+  }
+  &__title {
+    @include fontWeight(sm);
+    @include fontSize(lg);
+    @include desktop{
+      @include padding(xs);
+      flex: 1;
+    }
+  }
+  &__copyright {
+    @include mobile {
+      @include fontSize(xs);
+      @include padding(md);
+    }
+    @include desktop {
+      @include fontSize(sm);
+      @include padding(xs);
+      text-align: right;
+    }
+  }
+}
