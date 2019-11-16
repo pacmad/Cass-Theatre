@@ -6,14 +6,21 @@
 @import 'misc/resets'; // Resets
 
 /* Components */
-@import 'components/Hero'; // Hero
+
+/* Hero */
+@import 'components/hero/Hero'; // Hero
+@import 'components/hero/FullScreen'; // HeroFullScreen
+@import 'components/hero/Details'; // HeroDetails
+/* GlobalSiteMessage */
 @import 'components/global/SiteMessage/SiteMessage'; // GlobalSiteMessage
 @import 'components/global/SiteMessage/Bottom'; // GlobalSiteMessageBottom
 @import 'components/global/SiteMessage/Top'; // GlobalSiteMessageTop
+/* GlobalHeaderFooter */
 @import 'components/global/HeaderFooter'; // GlobalHeaderFooter
 @import 'components/global/Header/Header'; // GlobalHeader
 @import 'components/global/Footer/Footer'; // GlobalFooter
 @import 'components/global/Header/Admin'; // GlobalAdminHeader
+/* Form */
 @import 'components/form/Form'; // Form
 @import 'components/form/Button'; // FormButton
 @import 'components/form/Fieldset'; // FormFieldset
