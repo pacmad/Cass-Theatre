@@ -1,14 +1,25 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { A } from 'hookrouter'
 import { IconGear } from '../icons/Gear'
 
 export const GlobalHeaderFooter = props => {
   let [isLoggedIn, toggleIsLoggedIn] = useState(false)
+  let [headerScrollClass, setHeaderScrollClass] = useState('global-header-not-scrolling')
+
+  useEffect(() => {
+    window.addEventListener('scroll', () => {
+      if (window.scrollY !== 0) {
+        setHeaderScrollClass(headerScrollClass = 'global-header-scrolling')
+      } else {
+        setHeaderScrollClass(headerScrollClass = 'global-header-not-scrolling')
+      }
+    })
+  }, [])
 
   const IsType = () => {
     if (props.type === 'header') {
       return (
-        <header className={`global-header-footer global-header ${isLoggedIn && ('global-header-admin')}`}>
+        <header className={`global-header-footer global-header ${headerScrollClass} ${isLoggedIn && ('global-header-admin')}`}>
           <h1
             className={`global-header-footer__title global-${props.type}__title`}
           >

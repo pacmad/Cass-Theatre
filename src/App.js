@@ -7,7 +7,7 @@ import { GlobalSiteMessage } from './components/global/SiteMessage'
 const App = () => {
   return (
     <div className='app'>
-      <GlobalSiteMessage message="Site is going down for maintenance on 11/17" top={true} />
+      <GlobalSiteMessage message="" top={true} />
       <GlobalHeaderFooter type={'header'} />
         {useRoutes(Routes)}
         <GlobalSiteMessage message="Terminator is free next week!" top={false} />

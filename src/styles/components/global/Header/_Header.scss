@@ -1,9 +1,9 @@
 .global-header {
-  @include boxShadow(sm);
   position: sticky;
   top: 0;
   @include flex(row);
   justify-content: center;
+  transition: 0.35s all;
   &__title {
     @include fontWeight(sm);
     @include fontSize(lg);
@@ -12,4 +12,14 @@
       letter-spacing: 0.15em;
     }
   }
+}
+
+/* Not scrolling */
+.global-header-not-scrolling {
+  border-bottom: 1.5px solid rgba(128, 128, 128, 0.253);
+}
+
+/* Scrolling */
+.global-header-scrolling {
+  @include boxShadow(sm);
 }
