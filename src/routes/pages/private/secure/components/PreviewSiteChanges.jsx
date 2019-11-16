@@ -38,8 +38,8 @@ export const PagePrivateSecureComponentPreviewSiteChanges = props => {
       <Hero
         heroType="details"
         heroTitle="Payment"
-        heroDetail1={`Children: ${props.paymentChildrenCost}`}
-        heroDetail2={`Teens & Adults: ${props.paymentTeensAdultsCost}`}
+        heroDetail1={`Children: $${props.paymentChildrenCost}`}
+        heroDetail2={`Teens & Adults: $${props.paymentTeensAdultsCost}`}
         heroDetail3={`${props.paymentExtraMessage}`}
         heroImageSvg="true"
       >
