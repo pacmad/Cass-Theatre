@@ -9,28 +9,28 @@ export const PagePrivateSecureComponentPreviewSiteChanges = props => {
       <div className="preview-site-changes__wrapper">
       <Hero
         heroType="full-screen"
-        heroTitle="The Addams Family"
-        heroDescription="Now playing"
-        heroImage={null}
+        heroTitle={props.playingTitle}
+        heroDescription={props.playingDescription}
+        heroImage={props.playingImage}
       />
       <Hero
         heroType="full-screen"
-        heroTitle="Maleficent 2: Mistress of Evil"
-        heroDescription="Starting: Friday Nov. 8"
-        heroImage="https://specials-images.forbesimg.com/imageserve/5d68088b68cb0a0008c0cc44/960x0.jpg?fit=scale"
+        heroTitle={props.startingTitle}
+        heroDescription={props.startingDescription}
+        heroImage={props.startingImage}
       />
       <Hero
         heroType="full-screen"
-        heroTitle="Midway"
-        heroDescription="Coming soon"
-        heroImage="https://cdn.traileraddict.com/vidquad/lionsgate/midway-2019-poster/1.jpg"
+        heroTitle={props.comingTitle}
+        heroDescription={props.comingDescription}
+        heroImage={props.comingImage}
       />
       <Hero
         heroType="details"
         heroTitle="Times"
-        heroDetail1="Theatre opens: 7:00 PM"
-        heroDetail2="Showtime: 7:30 PM"
-        heroDetail3="Open: Wed-Sun"
+        heroDetail1={`Theatre opens: ${props.timeOpenTime}`}
+        heroDetail2={`Showtime: ${props.timeShowtime}`}
+        heroDetail3={`Open: ${props.timeDaysOpen}`}
         heroImageSvg="true"
       >
         <IconCalendar class="hero__content--image-section__image hero-details__content--image-section__image" />
@@ -38,9 +38,9 @@ export const PagePrivateSecureComponentPreviewSiteChanges = props => {
       <Hero
         heroType="details"
         heroTitle="Payment"
-        heroDetail1="Children: $4.00"
-        heroDetail2="Teens & Adults: $6.00"
-        heroDetail3="No credit cards accepted"
+        heroDetail1={`Children: ${props.paymentChildrenCost}`}
+        heroDetail2={`Teens & Adults: ${props.paymentTeensAdultsCost}`}
+        heroDetail3={`${props.paymentExtraMessage}`}
         heroImageSvg="true"
       >
         <IconWalletMen class="hero__content--image-section__image hero-details__content--image-section__image" />

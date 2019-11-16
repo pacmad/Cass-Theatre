@@ -161,6 +161,21 @@ export const PagePrivateSecureDashboard = () => {
       </Form>
       <PagePrivateSecureComponentPreviewSiteChanges
         isOpen={previewSiteChangesVisibility}
+        playingTitle={''}
+        playingDescription={''}
+        playingImage={''}
+        startingTitle={''}
+        startingDescription={''}
+        startingImage={''}
+        comingTitle={''}
+        comingDescription={''}
+        comingImage={''}
+        timeOpenTime={''}
+        timeShowtime={''}
+        timeDaysOpen={''}
+        paymentChildrenCost={''}
+        paymentTeensAdultsCost={''}
+        paymentExtraMessage={''}
       />
     </div>
   )
