@@ -1,6 +1,9 @@
 .global-header-admin {
   .global-header__title {
     flex: 1;
+    &:hover {
+      letter-spacing: initial;
+    }
   }
   &__icon-gear--link {
     .icon-gear {
