@@ -11,6 +11,30 @@ export const PagePrivateSecureDashboard = () => {
       <Form>
         <h1 className='form__title'>Edit</h1>
         <FormFieldset>
+          <h2 className="form__fieldset--title">
+            Global Top Message
+          </h2>
+          <FormLabel forName={'global-top-message'} text={'Message'} />
+          <FormInput 
+            typeName={'text'} 
+            valueName={null} 
+            placeholderName={'e.g. Site will be going down on 11/17 for maintenance'} 
+            idName={'global-top-message'} 
+          />
+        </FormFieldset>
+        <FormFieldset>
+          <h2 className="form__fieldset--title">
+            Global Bottom Message
+          </h2>
+          <FormLabel forName={'global-bottom-message'} text={'Message'} />
+          <FormInput 
+            typeName={'text'} 
+            valueName={null} 
+            placeholderName={'e.g. Movie is free next week!'} 
+            idName={'global-bottom-message'} 
+          />
+        </FormFieldset>
+        <FormFieldset>
           <h2 className='form__fieldset--title'>Now Playing</h2>
           <FormLabel forName={'currently-playing-name'} text={'Movie'} />
           <FormInput
@@ -83,6 +107,30 @@ export const PagePrivateSecureDashboard = () => {
             valueName={null}
             placeholderName={'e.g. Wed-Sun'}
             idName={'time-theatre-open-days'}
+            />
+        </FormFieldset>
+        <FormFieldset>
+          <h2 className="form__fieldset--title">Payment</h2>
+          <FormLabel forName="payment-children" text={'Children cost'} />
+          <FormInput
+            typeName={'text'}
+            valueName={null}
+            placeholderName={'e.g. 4.00'}
+            idName={'payment-children'}
+            />
+            <FormLabel forName="payment-teens-adults" text={'Teens & Adults cost'} />
+          <FormInput
+            typeName={'text'}
+            valueName={null}
+            placeholderName={'e.g. 6.00'}
+            idName={'payment-teens-adults'}
+            />
+            <FormLabel forName="payment-extra" text={'Extra message'} />
+          <FormInput
+            typeName={'text'}
+            valueName={null}
+            placeholderName={'e.g. No credit cards accepted'}
+            idName={'payment-extra'}
             />
         </FormFieldset>
         <FormFieldset>
