@@ -3,14 +3,10 @@
   @include borderRadius(sm);
   @include boxShadow(sm);
   @include flex(row);
-  background-color: $color-primary;
-  position: sticky;
-  bottom: 0;
   width: 100%;
   justify-content: center;
   &__text {
     @include lineHeight(md);
-    color: black;
     text-align: center;
     @include mobile {
       @include fontSize(sm);

@@ -7,7 +7,9 @@
 
 /* Components */
 @import 'components/Hero'; // Hero
-@import 'components/global/SiteMessage'; // GlobalSiteMessage
+@import 'components/global/SiteMessage/SiteMessage'; // GlobalSiteMessage
+@import 'components/global/SiteMessage/Bottom'; // GlobalSiteMessageBottom
+@import 'components/global/SiteMessage/Top'; // GlobalSiteMessageTop
 @import 'components/global/HeaderFooter'; // GlobalHeaderFooter
 @import 'components/global/Header/Header'; // GlobalHeader
 @import 'components/global/Footer/Footer'; // GlobalFooter

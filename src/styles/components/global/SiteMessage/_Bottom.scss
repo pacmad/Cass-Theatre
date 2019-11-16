@@ -1,0 +1,8 @@
+.global-site-message-bottom {
+  background-color: $color-primary;
+  position: sticky;
+  bottom: 0;
+  .global-site-message__text {
+    color: black;
+  }
+}
