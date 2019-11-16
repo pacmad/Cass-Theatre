@@ -1,0 +1,17 @@
+.form__button {
+  @include padding(md);
+  @include fontSize(sm);
+  @include borderRadius(md);
+  background-color: $color-primary;
+  border: 0;
+  margin: 20px 0;
+  width: 100%;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.35s all;
+  border: 1.5px solid black;
+  &:hover {
+    @include boxShadow(md);
+    border-color: transparent;
+  }
+}

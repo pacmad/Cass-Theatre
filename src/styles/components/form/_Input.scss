@@ -5,4 +5,10 @@
   border: 1.5px solid black;
   margin: 5px 0px;
   width: 100%;
+  transition: 0.35s all;
+  &:hover {
+    @include boxShadow(md);
+    @include fontSize(lg);
+    border-color: transparent;
+  }
 }
