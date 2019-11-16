@@ -1,0 +1,14 @@
+.form__message {
+  @include padding(md);
+  @include fontSize(sm);
+  @include borderRadius(lg);
+  @include boxShadow(md);
+  margin: 25px auto;
+  text-align: center;
+  @include mobile {
+    width: 95%;
+  }
+  @include desktop {
+    width: 75%;
+  }
+}

@@ -5,6 +5,7 @@ export const FormInput = props => {
     <input
       type={props.typeName}
       value={props.valueName}
+      onChange={props.onChangeName}
       placeholder={props.placeholderName}
       className='form__input'
       id={props.idName}

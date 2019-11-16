@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react'
+import { isLoggedIn } from '../../App'
 import { A } from 'hookrouter'
 import { IconGear } from '../icons/Gear'
 
 export const GlobalHeaderFooter = props => {
-  let [isLoggedIn, toggleIsLoggedIn] = useState(false)
   let [headerScrollClass, setHeaderScrollClass] = useState('global-header-not-scrolling')
 
   useEffect(() => {

@@ -1,11 +1,10 @@
-import React, { useState } from 'react'
+import React from 'react'
+import { isLoggedIn } from '../App'
 import { PagePublicHome } from './pages/public/Home'
 import { PagePrivateLogin } from './pages/private/Login'
 import { PagePrivateSecureDashboard } from './pages/private/secure/Dashboard'
 
 const ShouldRenderPagePrivateSecureDashboard = () => {
-  let [isLoggedIn, toggleIsLoggedIn] = useState(true)
-
   if (isLoggedIn === true) {
     return <PagePrivateSecureDashboard />
   } else {
@@ -13,19 +12,9 @@ const ShouldRenderPagePrivateSecureDashboard = () => {
   }
 }
 
-const ShouldRenderPagePrivateLogin = () => {
-  let [isLoggedIn, toggleIsLoggedIn] = useState(false)
-
-  if (isLoggedIn === true) {
-    window.location.href = '/dashboard'
-  } else {
-    return <PagePrivateLogin />
-  }
-}
-
 const routes = {
   '/': () => <PagePublicHome />,
-  '/login': () => <ShouldRenderPagePrivateLogin />,
+  '/login': () => <PagePrivateLogin />,
   '/dashboard': () => <ShouldRenderPagePrivateSecureDashboard />
 }
 

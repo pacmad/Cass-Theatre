@@ -1,16 +1,53 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import firebase from '@firebase/app'
+import '@firebase/firestore'
+import '@firebase/auth'
 import { useRoutes } from 'hookrouter'
 import Routes from './routes/routes'
 import { GlobalHeaderFooter } from './components/global/HeaderFooter'
 import { GlobalSiteMessage } from './components/global/SiteMessage'
 
+const firebaseConfig = {
+  apiKey: "AIzaSyDop4rOOaZgR5G-Okyn5c4UBC5crNEMX-Y",
+  authDomain: "cass-theatre.firebaseapp.com",
+  databaseURL: "https://cass-theatre.firebaseio.com",
+  projectId: "cass-theatre",
+  storageBucket: "cass-theatre.appspot.com",
+  messagingSenderId: "782184753036",
+  appId: "1:782184753036:web:a9819cf344ea84bf0bd8a9",
+  measurementId: "G-CKSSHZLJJL"
+};
+
+firebase.initializeApp(firebaseConfig)
+
+export const db = firebase.firestore()
+export const auth = firebase.auth()
+
+export let isLoggedIn = false
+  auth.onAuthStateChanged(user => {
+    if (user) {
+      isLoggedIn = true
+    } else {
+      isLoggedIn = false
+    }
+  })
+
 const App = () => {
+  let [items, getItems] = useState([])
+
+  useEffect(() => {
+    db.collection('data').doc('data').get().then(doc => {
+      const data = doc.data()
+      getItems(items = data)
+    })
+  }, [])
+
   return (
     <div className='app'>
-      <GlobalSiteMessage message="" top={true} />
+      <GlobalSiteMessage message={items.globalTopMessage} top={true} />
       <GlobalHeaderFooter type={'header'} />
         {useRoutes(Routes)}
-        <GlobalSiteMessage message="Terminator is free next week!" top={false} />
+        <GlobalSiteMessage message={items.globalBottomMessage} top={false} />
       <GlobalHeaderFooter type={'footer'} />
     </div>
   )

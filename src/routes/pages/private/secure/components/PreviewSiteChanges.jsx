@@ -28,9 +28,9 @@ export const PagePrivateSecureComponentPreviewSiteChanges = props => {
       <Hero
         heroType="details"
         heroTitle="Times"
-        heroDetail1={`Theatre opens: ${props.timeOpenTime}`}
-        heroDetail2={`Showtime: ${props.timeShowtime}`}
-        heroDetail3={`Open: ${props.timeDaysOpen}`}
+        heroDetail1={props.timeOpenTime}
+        heroDetail2={props.timeShowtime}
+        heroDetail3={props.timeDaysOpen}
         heroImageSvg="true"
       >
         <IconCalendar class="hero__content--image-section__image hero-details__content--image-section__image" />
@@ -38,9 +38,9 @@ export const PagePrivateSecureComponentPreviewSiteChanges = props => {
       <Hero
         heroType="details"
         heroTitle="Payment"
-        heroDetail1={`Children: $${props.paymentChildrenCost}`}
-        heroDetail2={`Teens & Adults: $${props.paymentTeensAdultsCost}`}
-        heroDetail3={`${props.paymentExtraMessage}`}
+        heroDetail1={props.paymentChildrenCost}
+        heroDetail2={props.paymentTeensAdultsCost}
+        heroDetail3={props.paymentExtraMessage}
         heroImageSvg="true"
       >
         <IconWalletMen class="hero__content--image-section__image hero-details__content--image-section__image" />
