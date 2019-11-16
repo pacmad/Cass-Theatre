@@ -1,0 +1,8 @@
+.form__input {
+  @include padding(sm);
+  @include borderRadius(md);
+  @include fontSize(sm);
+  border: 1.5px solid black;
+  margin: 5px 0px;
+  width: 100%;
+}

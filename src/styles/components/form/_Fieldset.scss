@@ -1,0 +1,20 @@
+.form__fieldset {
+  @include flex(column);
+  @include boxShadow(sm);
+  @include borderRadius(md);
+  border: 0;
+  margin: 20px auto;
+  @include mobile {
+    @include padding(sm);
+    width: 95%;
+  }
+  @include desktop {
+    @include padding(md);
+    width: 35%;
+    align-items: center;
+  }
+  &--title {
+    @include fontWeight(md);
+    @include fontSize(lg);
+  }
+}
