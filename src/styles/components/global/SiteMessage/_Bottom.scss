@@ -1,8 +1,17 @@
 .global-site-message-bottom {
+  @include padding(md);
+  @include borderRadius(sm);
+  @include boxShadow(sm);
   background-color: $color-primary;
   position: sticky;
   bottom: 0;
   .global-site-message__text {
     color: black;
+    @include mobile {
+      @include fontSize(sm);
+    }
+    @include desktop {
+      @include fontSize(md);
+    }
   }
 }

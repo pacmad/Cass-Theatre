@@ -1,18 +1,9 @@
 .global-site-message {
-  @include padding(md);
-  @include borderRadius(sm);
-  @include boxShadow(sm);
   @include flex(row);
   width: 100%;
   justify-content: center;
   &__text {
     @include lineHeight(md);
     text-align: center;
-    @include mobile {
-      @include fontSize(sm);
-    }
-    @include desktop {
-      @include fontSize(md);
-    }
   }
 }
