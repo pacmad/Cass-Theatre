@@ -61,6 +61,34 @@ export const PagePrivateSecureDashboard = () => {
             idName={'coming-soon-picture'}
           />
         </FormFieldset>
+        <FormFieldset>
+          <h2 className="form__fieldset--title">Times</h2>
+          <FormLabel forName="time-theatre-open" text={'Theatre opening time'} />
+          <FormInput
+            typeName={'text'}
+            valueName={null}
+            placeholderName={'e.g. 7:00 PM'}
+            idName={'time-theatre-open'}
+            />
+            <FormLabel forName="time-showtime" text={'Showtime'} />
+          <FormInput
+            typeName={'text'}
+            valueName={null}
+            placeholderName={'e.g. 7:30 PM'}
+            idName={'time-showtime'}
+            />
+            <FormLabel forName="time-theatre-open-days" text={'Days theatre is open'} />
+          <FormInput
+            typeName={'text'}
+            valueName={null}
+            placeholderName={'e.g. Wed-Sun'}
+            idName={'time-theatre-open-days'}
+            />
+        </FormFieldset>
+        <FormFieldset>
+          <FormButton typeName={'button'} text={'Preview site changes'} />
+          <FormButton typeName={'submit'} text={'Submit'} />
+        </FormFieldset>
       </Form>
     </div>
   )
