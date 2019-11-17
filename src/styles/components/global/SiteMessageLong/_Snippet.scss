@@ -1,0 +1,17 @@
+.global-site-message-long-snippet {
+  @include padding(md);
+  @include flex(row);
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1.5px solid lightgrey;
+  &__text {
+    @include fontSize(sm);
+  }
+  .icon-expand,
+  .icon-retract {
+    cursor: pointer;
+    width: 26.63px;
+    height: 26.63px;
+    margin: 0px 20px;
+  }
+}

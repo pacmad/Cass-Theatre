@@ -20,6 +20,24 @@ export const PagePrivateSecureDashboard = () => {
     togglePreviewSiteChangesVisibility((previewSiteChangesVisibility = !previewSiteChangesVisibility))
   }
 
+  /* Global Long Message */
+  let [globalLongMessageParagraphOne, setGlobalLongMessageParagraphOne] = useState('')
+  function modifyGlobalLongMessageParagraphOne(e) {
+    setGlobalLongMessageParagraphOne(globalLongMessageParagraphOne = e.target.value)
+  }
+  let [globalLongMessageParagraphTwo, setGlobalLongMessageParagraphTwo] = useState('')
+  function modifyGlobalLongMessageParagraphTwo(e) {
+    setGlobalLongMessageParagraphTwo(globalLongMessageParagraphTwo = e.target.value)
+  }
+  let [globalLongMessageParagraphThree, setGlobalLongMessageParagraphThree] = useState('')
+  function modifyGlobalLongMessageParagraphThree(e) {
+    setGlobalLongMessageParagraphThree(globalLongMessageParagraphThree = e.target.value)
+  }
+  let [globalLongMessageSnippet, setGlobalLongMessageSnippet] = useState('')
+  function modifyGlobalLongMessageSnippet(e) {
+    setGlobalLongMessageSnippet(globalLongMessageSnippet = e.target.value)
+  }
+
   /* Global Top Message */
   let [globalTopMessage, setGlobalTopMessage] = useState('')
   function modifyGlobalTopMessage(e) {
@@ -109,6 +127,11 @@ export const PagePrivateSecureDashboard = () => {
     db.collection('data').doc('data').get().then(doc => {
       const data = doc.data()
       getItems(items = data)
+      /* Global Long Message */
+      setGlobalLongMessageParagraphOne(globalLongMessageParagraphOne = items.globalLongMessageParagraphOne)
+      setGlobalLongMessageParagraphTwo(globalLongMessageParagraphTwo = items.globalLongMessageParagraphTwo)
+      setGlobalLongMessageParagraphThree(globalLongMessageParagraphThree = items.globalLongMessageParagraphThree)
+      setGlobalLongMessageSnippet(globalLongMessageSnippet = items.globalLongMessageSnippet)
       /* Global Top Message */
       setGlobalTopMessage(globalTopMessage = items.globalTopMessage)
       /* Global Bottom Message */
@@ -140,6 +163,11 @@ export const PagePrivateSecureDashboard = () => {
   function updateSite(e) {
     e.preventDefault()
     db.collection('data').doc('data').set({
+      /* Global Long Message */
+      globalLongMessageParagraphOne: globalLongMessageParagraphOne,
+      globalLongMessageParagraphTwo: globalLongMessageParagraphTwo,
+      globalLongMessageParagraphThree: globalLongMessageParagraphThree,
+      globalLongMessageSnippet: globalLongMessageSnippet,
       /* Global Top Message */
       globalTopMessage: globalTopMessage,
       /* Global Bottom Message */
@@ -186,6 +214,41 @@ export const PagePrivateSecureDashboard = () => {
     <div className='content'>
       <Form>
         <h1 className='form__title'>Edit</h1>
+        <FormFieldset>
+          <h2 className="form__fieldset--title">Global Long Message</h2>
+          <FormLabel forName={'global-long-message-paragraph-one'} text={'First paragraph'} />
+          <FormInput
+            typeName={'text'}
+            valueName={globalLongMessageParagraphOne}
+            onChangeName={modifyGlobalLongMessageParagraphOne}
+            placeholderName={'e.g. Thumb Bank & Trust is sponsoring Cass Theatre on December 7, 14, and the 21.'}
+            idName={'global-long-message-paragraph-one'}
+            />
+            <FormLabel forName={'global-long-message-paragraph-two'} text={'Second paragraph'} />
+          <FormInput
+            typeName={'text'}
+            valueName={globalLongMessageParagraphTwo}
+            onChangeName={modifyGlobalLongMessageParagraphTwo}
+            placeholderName={'e.g. Bring the whole family!'}
+            idName={'global-long-message-paragraph-two'}
+            />
+            <FormLabel forName={'global-long-message-paragraph-three'} text={'Third paragraph'} />
+          <FormInput
+            typeName={'text'}
+            valueName={globalLongMessageParagraphThree}
+            onChangeName={modifyGlobalLongMessageParagraphThree}
+            placeholderName={'e.g. Open: 1:30 - Showtime: 2:00.'}
+            idName={'global-long-message-paragraph-three'}
+            />
+            <FormLabel forName={'global-long-message-snippet'} text={'Snippet'} />
+          <FormInput
+            typeName={'text'}
+            valueName={globalLongMessageSnippet}
+            onChangeName={modifyGlobalLongMessageSnippet}
+            placeholderName={'e.g. Free Saturday Matinees.'}
+            idName={'global-long-message-snippet'}
+            />
+        </FormFieldset>
         <FormFieldset>
           <h2 className='form__fieldset--title'>Global Top Message</h2>
           <FormLabel forName={'global-top-message'} text={'Message'} />
