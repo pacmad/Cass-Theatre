@@ -30,11 +30,11 @@ const FormMessage = lazy(() =>
     default: module.FormMessage
   }))
 )
-const PagePrivateSecureComponentPreviewSiteChanges = lazy(() =>
+/*const PagePrivateSecureComponentPreviewSiteChanges = lazy(() =>
   import('./components/PreviewSiteChanges').then(module => ({
     default: module.PagePrivateSecureComponentPreviewSiteChanges
   }))
-)
+)*/
 
 export const PagePrivateSecureDashboard = () => {
   let [items, getItems] = useState([])
@@ -620,13 +620,14 @@ export const PagePrivateSecureDashboard = () => {
           </Suspense>
           <Suspense fallback>
             <FormFieldset>
+              {/*
               <Suspense fallback>
                 <FormButton
                   typeName={'button'}
                   text={'Preview site changes'}
                   onClickName={handlePreviewSiteChangesButtonClick}
                 />
-              </Suspense>
+              </Suspense>*/}
               <Suspense fallback>
                 <FormButton
                   typeName={'submit'}
@@ -648,6 +649,7 @@ export const PagePrivateSecureDashboard = () => {
           </Suspense>
         </Form>
       </Suspense>
+      {/*
       <Suspense fallback>
         <PagePrivateSecureComponentPreviewSiteChanges
           isOpen={previewSiteChangesVisibility}
@@ -668,6 +670,7 @@ export const PagePrivateSecureDashboard = () => {
           paymentExtraMessage={paymentExtraMessage}
         />
       </Suspense>
+      */}
     </div>
   )
 }
