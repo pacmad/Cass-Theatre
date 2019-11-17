@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import firebase from '@firebase/app'
 import '@firebase/firestore'
 import '@firebase/auth'
+import ReactGA from 'react-ga'
 import { useRoutes } from 'hookrouter'
 import Routes from './routes/routes'
 import { GlobalHeaderFooter } from './components/global/HeaderFooter'
@@ -32,6 +33,11 @@ auth.onAuthStateChanged(user => {
     isLoggedIn = false
   }
 })
+
+ReactGA.initialize('UA-150436937-1')
+ReactGA.pageview('/')
+ReactGA.pageview('/login')
+ReactGA.pageview('/dashboard')
 
 const App = () => {
   let [items, getItems] = useState([])

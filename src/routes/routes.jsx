@@ -1,4 +1,5 @@
 import React from 'react'
+import Loadable from 'react-loadable'
 import { isLoggedIn } from '../App'
 import { PagePublicHome } from './pages/public/Home'
 import { PagePrivateLogin } from './pages/private/Login'
