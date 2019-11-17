@@ -16,7 +16,6 @@ export const GlobalHeaderFooter = props => {
     })
   }, [])
 
-  const IsType = () => {
     if (props.type === 'header') {
       return (
         <header className={`global-header-footer global-header ${headerScrollClass} ${isLoggedIn && ('global-header-admin')}`}>
@@ -59,6 +58,3 @@ export const GlobalHeaderFooter = props => {
       return null
     }
   }
-
-  return <IsType />
-}
