@@ -3,7 +3,7 @@ import firebase from '@firebase/app'
 import '@firebase/firestore'
 import '@firebase/auth'
 import ReactGA from 'react-ga'
-import { useRoutes } from 'hookrouter'
+import { useRoutes, navigate } from 'hookrouter'
 import Routes from './routes/routes'
 import { GlobalHeaderFooter } from './components/global/HeaderFooter'
 import { GlobalSiteMessageLong } from './components/global/SiteMessageLong'
@@ -64,7 +64,7 @@ const App = () => {
         paragraphThree={items.globalLongMessageParagraphThree}
       />
       <GlobalHeaderFooter type={'header'} />
-      {useRoutes(Routes)}
+      {useRoutes(Routes) || navigate('/')}
       <GlobalSiteMessage message={items.globalBottomMessage} top={false} />
       <GlobalHeaderFooter type={'footer'} />
     </div>
