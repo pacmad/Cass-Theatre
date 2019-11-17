@@ -20,10 +20,7 @@ $debug: false;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  @include fontFamily(stock);
-  @supports (font-family: map-get($fontFamily, "system-ui")) {
-    @include fontFamily(system-ui);
-  }
+  @include fontFamily(roboto);
   @media (prefers-reduced-motion: reduce) {
     animation: none;
     transition: none;

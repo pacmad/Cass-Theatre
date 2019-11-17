@@ -6,7 +6,7 @@
 
 /* Font Families */
 @mixin fontFamily($family) {
-  @each $familyName in 'system-ui' 'stock' {
+  @each $familyName in 'system-ui' 'stock' 'roboto' {
     @if $family == $familyName {
       font-family: map-get($fontFamily, $familyName);
     }
