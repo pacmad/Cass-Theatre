@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { lazy, Suspense} from 'react'
 import { isLoggedIn } from '../App'
 import { PagePublicHome } from './pages/public/Home'
-import { PagePrivateLogin } from './pages/private/Login'
-import { PagePrivateSecureDashboard } from './pages/private/secure/Dashboard'
+const PagePrivateLogin = lazy(
+  () => import('./pages/private/Login').then(module => ({ default: module.PagePrivateLogin }))
+);
+const PagePrivateSecureDashboard = lazy(
+  () => import('./pages/private/secure/Dashboard').then(module => ({ default: module.PagePrivateSecureDashboard }))
+);
 
 const ShouldRenderPagePrivateSecureDashboard = () => {
   if (isLoggedIn === true) {
-    return <PagePrivateSecureDashboard />
+    return <Suspense fallback><PagePrivateSecureDashboard /></Suspense>
   } else {
     window.location.href = '/'
   }
@@ -14,7 +18,7 @@ const ShouldRenderPagePrivateSecureDashboard = () => {
 
 const routes = {
   '/': () => <PagePublicHome />,
-  '/login': () => <PagePrivateLogin />,
+  '/login': () => <Suspense fallback><PagePrivateLogin /></Suspense>,
   '/dashboard': () => <ShouldRenderPagePrivateSecureDashboard />
 }
 

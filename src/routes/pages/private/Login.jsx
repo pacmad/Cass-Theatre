@@ -1,10 +1,13 @@
-import React, { useState } from 'react'
+import React, { useState, lazy, Suspense } from 'react'
 import { auth } from '../../../App'
 import { Form } from '../../../components/form/Form'
 import { FormFieldset } from '../../../components/form/Fieldset'
 import { FormLabel } from '../../../components/form/Label'
 import { FormInput } from '../../../components/form/Input'
-import { FormButton } from '../../../components/form/Button'
+// import { FormButton } from '../../../components/form/Button'
+const FormButton = lazy(
+  () => import('../../../components/form/Button').then(module => ({ default: module.FormButton }))
+);
 
 export const PagePrivateLogin = () => {
   auth.onAuthStateChanged(user => {
@@ -44,7 +47,8 @@ export const PagePrivateLogin = () => {
           />
         </FormFieldset>
         <FormFieldset>
-          <FormButton typeName={'submit'} text={'Login'} onClickName={signIn} />
+          <Suspense fallback>
+          <FormButton typeName={'submit'} text={'Login'} onClickName={signIn} /></Suspense>
         </FormFieldset>
       </Form>
     </div>
