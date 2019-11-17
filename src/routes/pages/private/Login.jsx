@@ -1,13 +1,28 @@
 import React, { useState, lazy, Suspense } from 'react'
 import { auth } from '../../../App'
-import { Form } from '../../../components/form/Form'
-import { FormFieldset } from '../../../components/form/Fieldset'
-import { FormLabel } from '../../../components/form/Label'
-import { FormInput } from '../../../components/form/Input'
-// import { FormButton } from '../../../components/form/Button'
-const FormButton = lazy(
-  () => import('../../../components/form/Button').then(module => ({ default: module.FormButton }))
-);
+const Form = lazy(() =>
+  import('../../../components/form/Form').then(module => ({ default: module.Form }))
+)
+const FormFieldset = lazy(() =>
+  import('../../../components/form/Fieldset').then(module => ({
+    default: module.FormFieldset
+  }))
+)
+const FormLabel = lazy(() =>
+  import('../../../components/form/Label').then(module => ({
+    default: module.FormLabel
+  }))
+)
+const FormInput = lazy(() =>
+  import('../../../components/form/Input').then(module => ({
+    default: module.FormInput
+  }))
+)
+const FormButton = lazy(() =>
+  import('../../../components/form/Button').then(module => ({
+    default: module.FormButton
+  }))
+)
 
 export const PagePrivateLogin = () => {
   auth.onAuthStateChanged(user => {
@@ -21,11 +36,14 @@ export const PagePrivateLogin = () => {
 
   function signIn(e) {
     e.preventDefault()
-    auth.signInWithEmailAndPassword(signInDataEmail, signInDataPassword).then(() => {
-      window.location.href = '/'
-    }).catch(err => {
-      window.location.href = '/'
-    })
+    auth
+      .signInWithEmailAndPassword(signInDataEmail, signInDataPassword)
+      .then(() => {
+        window.location.href = '/'
+      })
+      .catch(err => {
+        window.location.href = '/'
+      })
   }
 
   function setSignInDataPassword(e) {
@@ -34,23 +52,38 @@ export const PagePrivateLogin = () => {
 
   return (
     <div className="content">
-      <Form>
-        <h1 className="form__title">Login</h1>
-        <FormFieldset>
-          <FormLabel forName={'login-password'} text={'Password'} />
-          <FormInput
-            typeName={'password'}
-            valueName={signInDataPassword}
-            onChangeName={setSignInDataPassword}
-            idName={'login-password'}
-            placeholderName={'Password'}
-          />
-        </FormFieldset>
-        <FormFieldset>
+      <Suspense fallback>
+        <Form>
+          <h1 className="form__title">Login</h1>
           <Suspense fallback>
-          <FormButton typeName={'submit'} text={'Login'} onClickName={signIn} /></Suspense>
-        </FormFieldset>
-      </Form>
+            <FormFieldset>
+              <Suspense fallback>
+                <FormLabel forName={'login-password'} text={'Password'} />
+              </Suspense>
+              <Suspense fallback>
+                <FormInput
+                  typeName={'password'}
+                  valueName={signInDataPassword}
+                  onChangeName={setSignInDataPassword}
+                  idName={'login-password'}
+                  placeholderName={'Password'}
+                />
+              </Suspense>
+            </FormFieldset>
+          </Suspense>
+          <Suspense fallback>
+            <FormFieldset>
+              <Suspense fallback>
+                <FormButton
+                  typeName={'submit'}
+                  text={'Login'}
+                  onClickName={signIn}
+                />
+              </Suspense>
+            </FormFieldset>
+          </Suspense>
+        </Form>
+      </Suspense>
     </div>
   )
 }
