@@ -1,6 +1,7 @@
 language: node_js
 node_js:
   - "stable"
+process.env.CI: false
 warnings_are_errors: false
 cache:
   directories:
