@@ -1,12 +1,5 @@
 .hero-full-screen {
   @include mobile {
     margin: 30px 0px;
-    &:first-child {
-      .hero-full-screen__content {
-        &--image-section {
-          display: none;
-        }
-      }
-    }
   }
 }

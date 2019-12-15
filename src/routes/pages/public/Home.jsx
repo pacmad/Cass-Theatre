@@ -14,24 +14,14 @@ export const PagePublicHome = () => {
       getItems(items = data)
     })
   }, [])
-
-  const ShouldDisplayImageSection = () => {
-    if (window.innerWidth >= 850) {
-      return items.playingImage
-    } else if (window.innerWidth <= 849) {
-      return null
-    } else {
-      return null
-    }
-  }
-
+  
   return (
     <div className="content">
       <Hero
         heroType="full-screen"
         heroTitle={items.playingTitle}
         heroDescription={items.playingDescription}
-        heroImage={ShouldDisplayImageSection()}
+        heroImage={items.playingImage}
       />
       <Hero
         heroType="full-screen"
