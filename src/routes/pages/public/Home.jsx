@@ -9,12 +9,15 @@ export const PagePublicHome = () => {
   let [items, getItems] = useState([])
 
   useEffect(() => {
-    db.collection('data').doc('data').get().then(doc => {
-      const data = doc.data()
-      getItems(items = data)
-    })
+    db.collection('data')
+      .doc('data')
+      .get()
+      .then(doc => {
+        const data = doc.data()
+        getItems((items = data))
+      })
   }, [])
-  
+
   return (
     <div className="content">
       <Hero
@@ -29,12 +32,14 @@ export const PagePublicHome = () => {
         heroDescription={items.startingDescription}
         heroImage={items.startingImage}
       />
-      <Hero
-        heroType="full-screen"
-        heroTitle={items.comingTitle}
-        heroDescription={items.comingDescription}
-        heroImage={items.comingImage}
-      />
+      {items.comingTitle && (
+        <Hero
+          heroType="full-screen"
+          heroTitle={items.comingTitle}
+          heroDescription={items.comingDescription}
+          heroImage={items.comingImage}
+        />
+      )}
       <Hero
         heroType="details"
         heroTitle="Times"
