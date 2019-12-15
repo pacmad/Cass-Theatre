@@ -18,26 +18,28 @@ export const GlobalSiteMessageLong = props => {
             <IconExpand onClickName={() => toggleIsOpen(true)} />
           )}
         </span>
-        <dialog className="global-site-message-long" open={isOpen}>
-          <p className="global-site-message-long__paragraph">
-            {props.paragraphOne}
-          </p>
-          <p className="global-site-message-long__paragraph">
-            {props.paragraphTwo}
-          </p>
-          <p className="global-site-message-long__paragraph">
-            {props.paragraphThree}
-          </p>
-          <section className="global-site-message-long__section">
-            <button
-              type="button"
-              onClick={() => toggleIsOpen(false)}
-              className="global-site-message-long__section--button"
-            >
-              Close
-            </button>
-          </section>
-        </dialog>
+        <div className="global-site-message-long__wrapper" open={isOpen}>
+          <dialog className="global-site-message-long" open={isOpen}>
+            <p className="global-site-message-long__paragraph">
+              {props.paragraphOne}
+            </p>
+            <p className="global-site-message-long__paragraph">
+              {props.paragraphTwo}
+            </p>
+            <p className="global-site-message-long__paragraph">
+              {props.paragraphThree}
+            </p>
+            <section className="global-site-message-long__section">
+              <button
+                type="button"
+                onClick={() => toggleIsOpen(false)}
+                className="global-site-message-long__section--button"
+              >
+                Close
+              </button>
+            </section>
+          </dialog>
+        </div>
       </>
     )
   } else {

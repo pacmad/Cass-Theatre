@@ -9,7 +9,8 @@
 @keyframes showGlobalSiteMessageLong {
   from {
     transform: translateY(-200%);
-  } to {
+  }
+  to {
     transform: translateY(0%);
   }
 }
@@ -20,47 +21,57 @@
   }
 }
 
-.global-site-message-long {
-  @include padding(md);
-  @include borderRadius(md);
-  @include flex(column);
-  @include boxShadow(xl);
+.global-site-message-long__wrapper {
   position: fixed;
-  transition: 0.35s all;
-  z-index: 200000000;
-  background-color: $color-primary;
+  z-index: 20000000000;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
   &:not([open]) {
     display: none;
   }
-  @include mobile {
-    margin: 10vh auto;
-    width: 90%;
-    border: 1.5px solid black;
-  }
-  @include desktop {
-    margin: 40vh auto;
-    border: 0;
-  }
-  &__paragraph {
-    @include fontSize(sm);
-    @include lineHeight(md);
-    margin: 8.5px 0px;
-    text-align: center;
-  }
-  &__section {
-    &--button {
-      @include padding(sm);
-      @include borderRadius(sm);
-      margin: 10px 0px;
-      cursor: pointer;
+  .global-site-message-long {
+    @include padding(md);
+    @include borderRadius(md);
+    @include flex(column);
+    @include boxShadow(xl);
+    position: fixed;
+    transition: 0.35s all;
+    z-index: 200000000;
+    background-color: $color-primary;
+    &:not([open]) {
+      display: none;
+    }
+    @include mobile {
+      margin: 10vh auto;
+      width: 90%;
       border: 1.5px solid black;
-      background-color: $color-primary;
-      width: 100%;
-      @include mobile {
-        @include fontSize(sm);
-      }
-      @include desktop {
-        @include fontSize(xs);
+    }
+    @include desktop {
+      margin: 40vh auto;
+      border: 0;
+    }
+    &__paragraph {
+      @include fontSize(sm);
+      @include lineHeight(md);
+      margin: 8.5px 0px;
+      text-align: center;
+    }
+    &__section {
+      &--button {
+        @include padding(sm);
+        @include borderRadius(sm);
+        margin: 10px 0px;
+        cursor: pointer;
+        border: 1.5px solid black;
+        background-color: $color-primary;
+        width: 100%;
+        @include mobile {
+          @include fontSize(sm);
+        }
+        @include desktop {
+          @include fontSize(xs);
+        }
       }
     }
   }
