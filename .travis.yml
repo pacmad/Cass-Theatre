@@ -6,6 +6,7 @@ cache:
     - node_modules
 script:
   - CI=false yarn build
+  - cd Cass-Theatre
 deploy:
   provider: firebase
   token:
