@@ -1,28 +1,10 @@
 import React, { useState, lazy, Suspense } from 'react'
 import { auth } from '../../../App'
-const Form = lazy(() =>
-  import('../../../components/form/Form').then(module => ({ default: module.Form }))
-)
-const FormFieldset = lazy(() =>
-  import('../../../components/form/Fieldset').then(module => ({
-    default: module.FormFieldset
-  }))
-)
-const FormLabel = lazy(() =>
-  import('../../../components/form/Label').then(module => ({
-    default: module.FormLabel
-  }))
-)
-const FormInput = lazy(() =>
-  import('../../../components/form/Input').then(module => ({
-    default: module.FormInput
-  }))
-)
-const FormButton = lazy(() =>
-  import('../../../components/form/Button').then(module => ({
-    default: module.FormButton
-  }))
-)
+import { Form } from '../../../components/form/Form'
+import { FormFieldset } from '../../../components/form/Fieldset'
+import { FormLabel } from '../../../components/form/Label'
+import { FormInput } from '../../../components/form/Input'
+import { FormButton } from '../../../components/form/Button'
 
 export const PagePrivateLogin = () => {
   auth.onAuthStateChanged(user => {
