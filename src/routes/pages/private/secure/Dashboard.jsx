@@ -1,40 +1,11 @@
-import React, { useState, useEffect, lazy, Suspense } from 'react'
+import React, { useState, useEffect } from 'react'
 import { db, auth } from '../../../../App'
-const Form = lazy(() =>
-  import('../../../../components/form/Form').then(module => ({
-    default: module.Form
-  }))
-)
-const FormButton = lazy(() =>
-  import('../../../../components/form/Button').then(module => ({
-    default: module.FormButton
-  }))
-)
-const FormInput = lazy(() =>
-  import('../../../../components/form/Input').then(module => ({
-    default: module.FormInput
-  }))
-)
-const FormFieldset = lazy(() =>
-  import('../../../../components/form/Fieldset').then(module => ({
-    default: module.FormFieldset
-  }))
-)
-const FormLabel = lazy(() =>
-  import('../../../../components/form/Label').then(module => ({
-    default: module.FormLabel
-  }))
-)
-const FormMessage = lazy(() =>
-  import('../../../../components/form/Message').then(module => ({
-    default: module.FormMessage
-  }))
-)
-/*const PagePrivateSecureComponentPreviewSiteChanges = lazy(() =>
-  import('./components/PreviewSiteChanges').then(module => ({
-    default: module.PagePrivateSecureComponentPreviewSiteChanges
-  }))
-)*/
+import { Form } from '../../../../components/form/Form'
+import { FormButton } from '../../../../components/form/Button'
+import { FormInput } from '../../../../components/form/Input'
+import { FormFieldset } from '../../../../components/form/Fieldset'
+import { FormLabel } from '../../../../components/form/Label'
+import { FormMessage } from '../../../../components/form/Message'
 
 export const PagePrivateSecureDashboard = () => {
   let [items, getItems] = useState([])
@@ -286,371 +257,304 @@ export const PagePrivateSecureDashboard = () => {
 
   return (
     <div className="content">
-      <Suspense fallback>
-        <Form>
-          <h1 className="form__title">Edit</h1>
-          <Suspense fallback>
-            <FormFieldset>
-              <h2 className="form__fieldset--title">Global Long Message</h2>
-              <Suspense fallback>
-                <FormLabel
-                  forName={'global-long-message-paragraph-one'}
-                  text={'First paragraph'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'text'}
-                  valueName={globalLongMessageParagraphOne}
-                  onChangeName={modifyGlobalLongMessageParagraphOne}
-                  placeholderName={
-                    'e.g. Thumb Bank & Trust is sponsoring Cass Theatre on December 7, 14, and the 21.'
-                  }
-                  idName={'global-long-message-paragraph-one'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormLabel
-                  forName={'global-long-message-paragraph-two'}
-                  text={'Second paragraph'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'text'}
-                  valueName={globalLongMessageParagraphTwo}
-                  onChangeName={modifyGlobalLongMessageParagraphTwo}
-                  placeholderName={'e.g. Bring the whole family!'}
-                  idName={'global-long-message-paragraph-two'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormLabel
-                  forName={'global-long-message-paragraph-three'}
-                  text={'Third paragraph'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'text'}
-                  valueName={globalLongMessageParagraphThree}
-                  onChangeName={modifyGlobalLongMessageParagraphThree}
-                  placeholderName={'e.g. Open: 1:30 - Showtime: 2:00.'}
-                  idName={'global-long-message-paragraph-three'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormLabel
-                  forName={'global-long-message-snippet'}
-                  text={'Snippet'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'text'}
-                  valueName={globalLongMessageSnippet}
-                  onChangeName={modifyGlobalLongMessageSnippet}
-                  placeholderName={'e.g. Free Saturday Matinees.'}
-                  idName={'global-long-message-snippet'}
-                />
-              </Suspense>
-            </FormFieldset>
-          </Suspense>
-          <Suspense fallback>
-            <FormFieldset>
-              <h2 className="form__fieldset--title">Global Top Message</h2>
-              <Suspense fallback>
-                <FormLabel forName={'global-top-message'} text={'Message'} />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'text'}
-                  valueName={globalTopMessage}
-                  onChangeName={modifyGlobalTopMessage}
-                  placeholderName={
-                    'e.g. Site will be going down on 11/17 for maintenance'
-                  }
-                  idName={'global-top-message'}
-                />
-              </Suspense>
-            </FormFieldset>
-          </Suspense>
-          <Suspense fallback>
-            <FormFieldset>
-              <h2 className="form__fieldset--title">Global Bottom Message</h2>
-              <Suspense fallback>
-                <FormLabel forName={'global-bottom-message'} text={'Message'} />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'text'}
-                  valueName={globalBottomMessage}
-                  placeholderName={'e.g. Movie is free next week!'}
-                  onChangeName={modifyGlobalBottomMessage}
-                  idName={'global-bottom-message'}
-                />
-              </Suspense>
-            </FormFieldset>
-          </Suspense>
-          <Suspense fallback>
-            <FormFieldset>
-              <h2 className="form__fieldset--title">Now Playing</h2>
-              <Suspense fallback>
-                <FormLabel forName={'currently-playing-name'} text={'Movie'} />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'text'}
-                  valueName={playingTitle}
-                  placeholderName={'Name of movie'}
-                  onChangeName={modifyPlayingTitle}
-                  idName={'currently-playing-name'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormLabel
-                  forName={'currently-playing-description'}
-                  text={'Description'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'text'}
-                  valueName={playingDescription}
-                  placeholderName={'e.g. Now Playing!'}
-                  onChangeName={modifyPlayingDescription}
-                  idName={'currently-playing-description'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormLabel
-                  forName={'currently-playing-picture'}
-                  text={'Picture'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'url'}
-                  valueName={playingImage}
-                  placeholderName={'Picture of movie'}
-                  onChangeName={modifyPlayingImage}
-                  idName={'currently-playing-picture'}
-                />
-              </Suspense>
-            </FormFieldset>
-          </Suspense>
-          <Suspense fallback>
-            <FormFieldset>
-              <h2 className="form__fieldset--title">Starting</h2>
-              <Suspense fallback>
-                <FormLabel forName={'starting-name'} text={'Movie'} />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'text'}
-                  valueName={startingTitle}
-                  placeholderName={'Name of movie'}
-                  onChangeName={modifyStartingTitle}
-                  idName={'starting-name'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormLabel
-                  forName={'starting-description'}
-                  text={'Description'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'text'}
-                  valueName={startingDescription}
-                  placeholderName={'e.g. Starting: Friday'}
-                  onChangeName={modifyStartingDescription}
-                  idName={'starting-description'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormLabel forName={'starting-picture'} text={'Picture'} />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'url'}
-                  valueName={startingImage}
-                  placeholderName={'Picture of movie'}
-                  onChangeName={modifyStartingImage}
-                  idName={'starting-picture'}
-                />
-              </Suspense>
-            </FormFieldset>
-          </Suspense>
-          <Suspense fallback>
-            <FormFieldset>
-              <h2 className="form__fieldset--title">Coming soon</h2>
-              <Suspense fallback>
-                <FormLabel forName={'coming-soon-name'} text={'Movie'} />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'text'}
-                  valueName={comingTitle}
-                  placeholderName={'Name of movie'}
-                  onChangeName={modifyComingTitle}
-                  idName={'coming-soon-name'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormLabel
-                  forName={'coming-soon-description'}
-                  text={'Description'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'text'}
-                  valueName={comingDescription}
-                  placeholderName={'e.g. Coming soon'}
-                  onChangeName={modifyComingDescription}
-                  idName={'coming-soon-description'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormLabel forName={'coming-soon-picture'} text={'Picture'} />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'url'}
-                  valueName={comingImage}
-                  placeholderName={'Picture of movie'}
-                  onChangeName={modifyComingImage}
-                  idName={'coming-soon-picture'}
-                />
-              </Suspense>
-            </FormFieldset>
-          </Suspense>
-          <Suspense fallback>
-            <FormFieldset>
-              <h2 className="form__fieldset--title">Times</h2>
-              <Suspense fallback>
-                <FormLabel
-                  forName="time-theatre-open"
-                  text={'Theatre opening time'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'text'}
-                  valueName={timeOpenTime}
-                  placeholderName={'e.g. 7:00 PM'}
-                  onChangeName={modifyTimeOpenTime}
-                  idName={'time-theatre-open'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormLabel forName="time-showtime" text={'Showtime'} />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'text'}
-                  valueName={timeShowtime}
-                  placeholderName={'e.g. 7:30 PM'}
-                  onChangeName={modifyTimeShowtime}
-                  idName={'time-showtime'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormLabel
-                  forName="time-theatre-open-days"
-                  text={'Days theatre is open'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'text'}
-                  valueName={timeDaysOpen}
-                  placeholderName={'e.g. Wed-Sun'}
-                  onChangeName={modifyTimeDaysOpen}
-                  idName={'time-theatre-open-days'}
-                />
-              </Suspense>
-            </FormFieldset>
-          </Suspense>
-          <Suspense fallback>
-            <FormFieldset>
-              <h2 className="form__fieldset--title">Payment</h2>
-              <Suspense fallback>
-                <FormLabel forName="payment-children" text={'Children cost'} />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'text'}
-                  valueName={paymentChildrenCost}
-                  placeholderName={'e.g. 4.00'}
-                  onChangeName={modifyPaymentChildrenCost}
-                  idName={'payment-children'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormLabel
-                  forName="payment-teens-adults"
-                  text={'Teens & Adults cost'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'text'}
-                  valueName={paymentTeensAdultsCost}
-                  placeholderName={'e.g. 6.00'}
-                  onChangeName={modifyPaymentTeensAdultsCost}
-                  idName={'payment-teens-adults'}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormLabel forName="payment-extra" text={'Extra message'} />
-              </Suspense>
-              <Suspense fallback>
-                <FormInput
-                  typeName={'text'}
-                  valueName={paymentExtraMessage}
-                  placeholderName={'e.g. No credit cards accepted'}
-                  onChangeName={modifyPaymentExtraMessage}
-                  idName={'payment-extra'}
-                />
-              </Suspense>
-            </FormFieldset>
-          </Suspense>
-          <Suspense fallback>
-            <FormFieldset>
-              {/*
-              <Suspense fallback>
+      <Form>
+        <h1 className="form__title">Edit</h1>
+
+        <FormFieldset>
+          <h2 className="form__fieldset--title">Global Long Message</h2>
+
+          <FormLabel
+            forName={'global-long-message-paragraph-one'}
+            text={'First paragraph'}
+          />
+
+          <FormInput
+            typeName={'text'}
+            valueName={globalLongMessageParagraphOne}
+            onChangeName={modifyGlobalLongMessageParagraphOne}
+            placeholderName={
+              'e.g. Thumb Bank & Trust is sponsoring Cass Theatre on December 7, 14, and the 21.'
+            }
+            idName={'global-long-message-paragraph-one'}
+          />
+
+          <FormLabel
+            forName={'global-long-message-paragraph-two'}
+            text={'Second paragraph'}
+          />
+
+          <FormInput
+            typeName={'text'}
+            valueName={globalLongMessageParagraphTwo}
+            onChangeName={modifyGlobalLongMessageParagraphTwo}
+            placeholderName={'e.g. Bring the whole family!'}
+            idName={'global-long-message-paragraph-two'}
+          />
+
+          <FormLabel
+            forName={'global-long-message-paragraph-three'}
+            text={'Third paragraph'}
+          />
+
+          <FormInput
+            typeName={'text'}
+            valueName={globalLongMessageParagraphThree}
+            onChangeName={modifyGlobalLongMessageParagraphThree}
+            placeholderName={'e.g. Open: 1:30 - Showtime: 2:00.'}
+            idName={'global-long-message-paragraph-three'}
+          />
+
+          <FormLabel forName={'global-long-message-snippet'} text={'Snippet'} />
+
+          <FormInput
+            typeName={'text'}
+            valueName={globalLongMessageSnippet}
+            onChangeName={modifyGlobalLongMessageSnippet}
+            placeholderName={'e.g. Free Saturday Matinees.'}
+            idName={'global-long-message-snippet'}
+          />
+        </FormFieldset>
+
+        <FormFieldset>
+          <h2 className="form__fieldset--title">Global Top Message</h2>
+
+          <FormLabel forName={'global-top-message'} text={'Message'} />
+
+          <FormInput
+            typeName={'text'}
+            valueName={globalTopMessage}
+            onChangeName={modifyGlobalTopMessage}
+            placeholderName={
+              'e.g. Site will be going down on 11/17 for maintenance'
+            }
+            idName={'global-top-message'}
+          />
+        </FormFieldset>
+
+        <FormFieldset>
+          <h2 className="form__fieldset--title">Global Bottom Message</h2>
+
+          <FormLabel forName={'global-bottom-message'} text={'Message'} />
+
+          <FormInput
+            typeName={'text'}
+            valueName={globalBottomMessage}
+            placeholderName={'e.g. Movie is free next week!'}
+            onChangeName={modifyGlobalBottomMessage}
+            idName={'global-bottom-message'}
+          />
+        </FormFieldset>
+
+        <FormFieldset>
+          <h2 className="form__fieldset--title">Now Playing</h2>
+
+          <FormLabel forName={'currently-playing-name'} text={'Movie'} />
+
+          <FormInput
+            typeName={'text'}
+            valueName={playingTitle}
+            placeholderName={'Name of movie'}
+            onChangeName={modifyPlayingTitle}
+            idName={'currently-playing-name'}
+          />
+
+          <FormLabel
+            forName={'currently-playing-description'}
+            text={'Description'}
+          />
+
+          <FormInput
+            typeName={'text'}
+            valueName={playingDescription}
+            placeholderName={'e.g. Now Playing!'}
+            onChangeName={modifyPlayingDescription}
+            idName={'currently-playing-description'}
+          />
+
+          <FormLabel forName={'currently-playing-picture'} text={'Picture'} />
+
+          <FormInput
+            typeName={'url'}
+            valueName={playingImage}
+            placeholderName={'Picture of movie'}
+            onChangeName={modifyPlayingImage}
+            idName={'currently-playing-picture'}
+          />
+        </FormFieldset>
+
+        <FormFieldset>
+          <h2 className="form__fieldset--title">Starting</h2>
+
+          <FormLabel forName={'starting-name'} text={'Movie'} />
+
+          <FormInput
+            typeName={'text'}
+            valueName={startingTitle}
+            placeholderName={'Name of movie'}
+            onChangeName={modifyStartingTitle}
+            idName={'starting-name'}
+          />
+
+          <FormLabel forName={'starting-description'} text={'Description'} />
+
+          <FormInput
+            typeName={'text'}
+            valueName={startingDescription}
+            placeholderName={'e.g. Starting: Friday'}
+            onChangeName={modifyStartingDescription}
+            idName={'starting-description'}
+          />
+
+          <FormLabel forName={'starting-picture'} text={'Picture'} />
+
+          <FormInput
+            typeName={'url'}
+            valueName={startingImage}
+            placeholderName={'Picture of movie'}
+            onChangeName={modifyStartingImage}
+            idName={'starting-picture'}
+          />
+        </FormFieldset>
+
+        <FormFieldset>
+          <h2 className="form__fieldset--title">Coming soon</h2>
+
+          <FormLabel forName={'coming-soon-name'} text={'Movie'} />
+
+          <FormInput
+            typeName={'text'}
+            valueName={comingTitle}
+            placeholderName={'Name of movie'}
+            onChangeName={modifyComingTitle}
+            idName={'coming-soon-name'}
+          />
+
+          <FormLabel forName={'coming-soon-description'} text={'Description'} />
+
+          <FormInput
+            typeName={'text'}
+            valueName={comingDescription}
+            placeholderName={'e.g. Coming soon'}
+            onChangeName={modifyComingDescription}
+            idName={'coming-soon-description'}
+          />
+
+          <FormLabel forName={'coming-soon-picture'} text={'Picture'} />
+
+          <FormInput
+            typeName={'url'}
+            valueName={comingImage}
+            placeholderName={'Picture of movie'}
+            onChangeName={modifyComingImage}
+            idName={'coming-soon-picture'}
+          />
+        </FormFieldset>
+
+        <FormFieldset>
+          <h2 className="form__fieldset--title">Times</h2>
+
+          <FormLabel
+            forName="time-theatre-open"
+            text={'Theatre opening time'}
+          />
+
+          <FormInput
+            typeName={'text'}
+            valueName={timeOpenTime}
+            placeholderName={'e.g. 7:00 PM'}
+            onChangeName={modifyTimeOpenTime}
+            idName={'time-theatre-open'}
+          />
+
+          <FormLabel forName="time-showtime" text={'Showtime'} />
+
+          <FormInput
+            typeName={'text'}
+            valueName={timeShowtime}
+            placeholderName={'e.g. 7:30 PM'}
+            onChangeName={modifyTimeShowtime}
+            idName={'time-showtime'}
+          />
+
+          <FormLabel
+            forName="time-theatre-open-days"
+            text={'Days theatre is open'}
+          />
+
+          <FormInput
+            typeName={'text'}
+            valueName={timeDaysOpen}
+            placeholderName={'e.g. Wed-Sun'}
+            onChangeName={modifyTimeDaysOpen}
+            idName={'time-theatre-open-days'}
+          />
+        </FormFieldset>
+
+        <FormFieldset>
+          <h2 className="form__fieldset--title">Payment</h2>
+
+          <FormLabel forName="payment-children" text={'Children cost'} />
+
+          <FormInput
+            typeName={'text'}
+            valueName={paymentChildrenCost}
+            placeholderName={'e.g. 4.00'}
+            onChangeName={modifyPaymentChildrenCost}
+            idName={'payment-children'}
+          />
+
+          <FormLabel
+            forName="payment-teens-adults"
+            text={'Teens & Adults cost'}
+          />
+
+          <FormInput
+            typeName={'text'}
+            valueName={paymentTeensAdultsCost}
+            placeholderName={'e.g. 6.00'}
+            onChangeName={modifyPaymentTeensAdultsCost}
+            idName={'payment-teens-adults'}
+          />
+
+          <FormLabel forName="payment-extra" text={'Extra message'} />
+
+          <FormInput
+            typeName={'text'}
+            valueName={paymentExtraMessage}
+            placeholderName={'e.g. No credit cards accepted'}
+            onChangeName={modifyPaymentExtraMessage}
+            idName={'payment-extra'}
+          />
+        </FormFieldset>
+
+        <FormFieldset>
+          {/*
+              
                 <FormButton
                   typeName={'button'}
                   text={'Preview site changes'}
                   onClickName={handlePreviewSiteChangesButtonClick}
                 />
-              </Suspense>*/}
-              <Suspense fallback>
-                <FormButton
-                  typeName={'submit'}
-                  text={'Submit'}
-                  onClickName={updateSite}
-                />
-              </Suspense>
-              <Suspense fallback>
-                <FormButton
-                  typeName={'button'}
-                  text={'Logout'}
-                  onClickName={signOut}
-                />
-              </Suspense>
-            </FormFieldset>
-          </Suspense>
-          <Suspense fallback>
-            <FormMessage class={formMessageClass} text={formMessage} />
-          </Suspense>
-        </Form>
-      </Suspense>
+              */}
+
+          <FormButton
+            typeName={'submit'}
+            text={'Submit'}
+            onClickName={updateSite}
+          />
+
+          <FormButton
+            typeName={'button'}
+            text={'Logout'}
+            onClickName={signOut}
+          />
+        </FormFieldset>
+
+        <FormMessage class={formMessageClass} text={formMessage} />
+      </Form>
+
       {/*
-      <Suspense fallback>
+      
         <PagePrivateSecureComponentPreviewSiteChanges
           isOpen={previewSiteChangesVisibility}
           playingTitle={playingTitle}
@@ -669,7 +573,7 @@ export const PagePrivateSecureDashboard = () => {
           paymentTeensAdultsCost={paymentTeensAdultsCost}
           paymentExtraMessage={paymentExtraMessage}
         />
-      </Suspense>
+      
       */}
     </div>
   )
