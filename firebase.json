@@ -11,6 +11,17 @@
         "source": "**",
         "destination": "/index.html"
       }
+    ],
+    "headers": [
+      {
+        "source": "**",
+        "headers": [
+          {
+           "key": "Server",
+           "value": "Microsoft-IIS/10.0"
+          }
+        ]
+      }
     ]
   }
 }
