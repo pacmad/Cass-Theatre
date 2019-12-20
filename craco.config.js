@@ -2,7 +2,7 @@ module.exports = {
   style: {
     postcss: {
       plugins: [
-        require('postcss-pxtorem') ({
+        require('postcss-pxtorem')({
           unitPrecision: 15,
           propList: ['*'],
           mediaQuery: true
@@ -11,7 +11,7 @@ module.exports = {
         require('postcss-combine-duplicated-selectors'),
         require('postcss-round-subpixels'),
         require('css-declaration-sorter'),
-        require('cssnano') ({
+        require('cssnano')({
           preset: 'advanced'
         })
       ],
