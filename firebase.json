@@ -35,6 +35,10 @@
           {
             "key": "Content-Security-Policy",
             "value": "default-src https:"
+          },
+          {
+            "key": "Feature-Policy",
+            "value": "oversized-images 'self'(2.0) *(inf)"
           }
         ]
       }
