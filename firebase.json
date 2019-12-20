@@ -1,11 +1,7 @@
 {
   "hosting": {
     "public": "build",
-    "ignore": [
-      "firebase.json",
-      "**/.*",
-      "**/node_modules/**"
-    ],
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
     "rewrites": [
       {
         "source": "**",
@@ -17,24 +13,24 @@
         "source": "**",
         "headers": [
           {
-           "key": "Server",
-           "value": "Microsoft-IIS/10.0"
+            "key": "Server",
+            "value": "Microsoft-IIS/10.0"
           },
           {
-           "key": "X-Frame-Options",
-           "value": "SAMEORIGIN"
+            "key": "X-Frame-Options",
+            "value": "SAMEORIGIN"
           },
           {
-           "key": "X-Content-Type-Options",
-           "value": "nosniff"
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
           },
           {
-           "key": "Referrer-Policy",
-           "value": "same-origin"
+            "key": "Referrer-Policy",
+            "value": "same-origin"
           },
           {
-           "key": "X-XSS-Protection",
-           "value": "1; mode=block"
+            "key": "X-XSS-Protection",
+            "value": "1; mode=block"
           }
         ]
       }
