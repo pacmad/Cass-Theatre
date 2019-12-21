@@ -14,7 +14,7 @@
         "headers": [
           {
             "key": "Server",
-            "value": "Microsoft-IIS/6.0"
+            "value": "openresty"
           },
           {
             "key": "X-Frame-Options",
