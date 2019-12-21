@@ -14,7 +14,7 @@
         "headers": [
           {
             "key": "Server",
-            "value": "openresty"
+            "value": "LiteSpeed"
           },
           {
             "key": "X-Frame-Options",
