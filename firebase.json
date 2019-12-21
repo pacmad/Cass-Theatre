@@ -14,7 +14,7 @@
         "headers": [
           {
             "key": "Server",
-            "value": "Microsoft-IIS/10.0"
+            "value": "Microsoft-IIS/6.0"
           },
           {
             "key": "X-Frame-Options",
