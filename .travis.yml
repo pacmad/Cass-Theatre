@@ -3,11 +3,16 @@ os:
 language: node_js
 node_js:
   - "stable"
+addons:
+  chrome: stable
+before_install:
+  - yarn global add @lhci/cli@0.3.x
 cache:
   directories:
     - node_modules
 script:
   - CI=false yarn build
+  - lhci autorun
 deploy:
   skip_cleanup: true
   provider: firebase
