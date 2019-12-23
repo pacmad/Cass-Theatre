@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, lazy, Suspense } from 'react'
 import { db, auth } from '../../../../App'
 import { Form } from '../../../../components/form/Form'
 import { FormButton } from '../../../../components/form/Button'
@@ -6,6 +6,11 @@ import { FormInput } from '../../../../components/form/Input'
 import { FormFieldset } from '../../../../components/form/Fieldset'
 import { FormLabel } from '../../../../components/form/Label'
 import { FormMessage } from '../../../../components/form/Message'
+const PagePrivateSecureComponentPreviewSiteChanges = lazy(() =>
+  import('./components/PreviewSiteChanges').then(module => ({
+    default: module.PagePrivateSecureComponentPreviewSiteChanges
+  }))
+)
 
 export const PagePrivateSecureDashboard = () => {
   let [items, getItems] = useState([])
@@ -528,14 +533,11 @@ export const PagePrivateSecureDashboard = () => {
         </FormFieldset>
 
         <FormFieldset>
-          {/*
-              
-                <FormButton
-                  typeName={'button'}
-                  text={'Preview site changes'}
-                  onClickName={handlePreviewSiteChangesButtonClick}
-                />
-              */}
+          <FormButton
+            typeName={'button'}
+            text={'Preview site changes'}
+            onClickName={handlePreviewSiteChangesButtonClick}
+          />
 
           <FormButton
             typeName={'submit'}
@@ -553,8 +555,7 @@ export const PagePrivateSecureDashboard = () => {
         <FormMessage class={formMessageClass} text={formMessage} />
       </Form>
 
-      {/*
-      
+      <Suspense fallback>
         <PagePrivateSecureComponentPreviewSiteChanges
           isOpen={previewSiteChangesVisibility}
           playingTitle={playingTitle}
@@ -573,8 +574,7 @@ export const PagePrivateSecureDashboard = () => {
           paymentTeensAdultsCost={paymentTeensAdultsCost}
           paymentExtraMessage={paymentExtraMessage}
         />
-      
-      */}
+      </Suspense>
     </div>
   )
 }
