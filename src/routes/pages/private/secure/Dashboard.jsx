@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect, lazy, Suspense } from 'react'
 import { db, auth } from '../../../../App'
 import { Form } from '../../../../components/form/Form'

@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
 import { db } from '../../../App'
 import { Hero } from '../../../components/Hero'

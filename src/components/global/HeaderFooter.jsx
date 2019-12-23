@@ -1,3 +1,4 @@
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, { useState, useEffect } from 'react'
 import { isLoggedIn } from '../../App'
 import { A } from 'hookrouter'
