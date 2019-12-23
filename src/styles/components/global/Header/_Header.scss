@@ -4,6 +4,7 @@
   @include flex(row);
   justify-content: center;
   transition: 0.35s all;
+  border-bottom: 1.5px solid;
   &__title {
     @include fontWeight(sm);
     @include fontSize(lg);
@@ -16,10 +17,11 @@
 
 /* Not scrolling */
 .global-header-not-scrolling {
-  border-bottom: 1.5px solid rgba(128, 128, 128, 0.253);
+  border-color: rgba(128, 128, 128, 0.253);
 }
 
 /* Scrolling */
 .global-header-scrolling {
   @include boxShadow(sm);
+  border-color: transparent;
 }
