@@ -2,11 +2,11 @@
   @include padding(md);
   @include borderRadius(sm);
   @include boxShadow(sm);
-  background-color: $color-primary;
+  background-color: black;
   position: sticky;
   bottom: 0;
   .global-site-message__text {
-    color: black;
+    color: $color-primary;
     @include mobile {
       @include fontSize(sm);
     }
