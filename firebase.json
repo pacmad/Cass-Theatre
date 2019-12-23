@@ -13,10 +13,6 @@
         "source": "**",
         "headers": [
           {
-            "key": "Server",
-            "value": "LiteSpeed"
-          },
-          {
             "key": "X-Frame-Options",
             "value": "SAMEORIGIN"
           },
