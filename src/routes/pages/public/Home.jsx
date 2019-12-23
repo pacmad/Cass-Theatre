@@ -26,12 +26,14 @@ export const PagePublicHome = () => {
         heroDescription={items.playingDescription}
         heroImage={items.playingImage}
       />
-      <Hero
-        heroType="full-screen"
-        heroTitle={items.startingTitle}
-        heroDescription={items.startingDescription}
-        heroImage={items.startingImage}
-      />
+      {items.startingTitle && (
+        <Hero
+          heroType="full-screen"
+          heroTitle={items.startingTitle}
+          heroDescription={items.startingDescription}
+          heroImage={items.startingImage}
+        />
+      )}
       {items.comingTitle && (
         <Hero
           heroType="full-screen"
