@@ -539,7 +539,7 @@ export const PagePrivateSecureDashboard = () => {
 
           <FormButton
             typeName={'submit'}
-            text={'Submit'}
+            text={'Update'}
             onClickName={updateSite}
           />
 
