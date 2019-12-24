@@ -49,11 +49,7 @@
     "postcss-preset-env": "6.7.0",
     "postcss-pxtorem": "4.0.1",
     "postcss-round-subpixels": "1.2.0",
-<<<<<<< HEAD
     "react-snap": "1.10.0",
     "webpack-bundle-analyzer": "^3.6.0"
-=======
-    "webpack-bundle-analyzer": "3.6.0"
->>>>>>> 523ccc4db8d17ca7911d29384de8e98c763c62ca
   }
 }
