@@ -1,5 +1,5 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useState, useEffect, lazy, Suspense } from 'react'
+import React, { useState, useEffect } from 'react'
 import { db, auth } from '../../../../App'
 import { Form } from '../../../../components/form/Form'
 import { FormButton } from '../../../../components/form/Button'
@@ -7,25 +7,9 @@ import { FormInput } from '../../../../components/form/Input'
 import { FormFieldset } from '../../../../components/form/Fieldset'
 import { FormLabel } from '../../../../components/form/Label'
 import { FormMessage } from '../../../../components/form/Message'
-const PagePrivateSecureComponentPreviewSiteChanges = lazy(() =>
-  import('./components/PreviewSiteChanges').then(module => ({
-    default: module.PagePrivateSecureComponentPreviewSiteChanges
-  }))
-)
 
 export const PagePrivateSecureDashboard = () => {
   let [items, getItems] = useState([])
-
-  let [
-    previewSiteChangesVisibility,
-    togglePreviewSiteChangesVisibility
-  ] = useState(false)
-
-  function handlePreviewSiteChangesButtonClick() {
-    togglePreviewSiteChangesVisibility(
-      (previewSiteChangesVisibility = !previewSiteChangesVisibility)
-    )
-  }
 
   /* Global Long Message */
   let [
@@ -535,12 +519,6 @@ export const PagePrivateSecureDashboard = () => {
 
         <FormFieldset>
           <FormButton
-            typeName={'button'}
-            text={'Preview site changes'}
-            onClickName={handlePreviewSiteChangesButtonClick}
-          />
-
-          <FormButton
             typeName={'submit'}
             text={'Update'}
             onClickName={updateSite}
@@ -555,27 +533,6 @@ export const PagePrivateSecureDashboard = () => {
 
         <FormMessage class={formMessageClass} text={formMessage} />
       </Form>
-
-      <Suspense fallback>
-        <PagePrivateSecureComponentPreviewSiteChanges
-          isOpen={previewSiteChangesVisibility}
-          playingTitle={playingTitle}
-          playingDescription={playingDescription}
-          playingImage={playingImage}
-          startingTitle={startingTitle}
-          startingDescription={startingDescription}
-          startingImage={startingImage}
-          comingTitle={comingTitle}
-          comingDescription={comingDescription}
-          comingImage={comingImage}
-          timeOpenTime={timeOpenTime}
-          timeShowtime={timeShowtime}
-          timeDaysOpen={timeDaysOpen}
-          paymentChildrenCost={paymentChildrenCost}
-          paymentTeensAdultsCost={paymentTeensAdultsCost}
-          paymentExtraMessage={paymentExtraMessage}
-        />
-      </Suspense>
     </div>
   )
 }
