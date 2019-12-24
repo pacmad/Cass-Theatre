@@ -1,7 +1,8 @@
 .global-site-message-bottom {
   @include padding(md);
-  @include borderRadius(sm);
   @include boxShadow(sm);
+  border-top-left-radius: map-get($borderRadius, 'sm');
+  border-top-right-radius: map-get($borderRadius, 'sm');
   background-color: black;
   position: sticky;
   bottom: 0;
