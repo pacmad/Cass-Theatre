@@ -8,6 +8,7 @@ cache:
     - node_modules
 script:
   - CI=false yarn build
+  - la build
 deploy:
   skip_cleanup: true
   provider: firebase
