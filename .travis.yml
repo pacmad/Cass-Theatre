@@ -10,6 +10,8 @@ cache:
 script:
   - sudo apt install libgconf-2-4 -y
   - sudo apt install gconf2 -y
+  - wget http://archive.ubuntu.com/ubuntu/pool/universe/g/gconf/libgconf-2-4_3.2.6-4ubuntu1_amd64.deb
+  - sudo dpkg -i libgconf-2-4_3.2.6-4ubuntu1_amd64.deb
   - CI=false yarn build
 deploy:
   skip_cleanup: true
