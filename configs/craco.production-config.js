@@ -45,5 +45,15 @@ module.exports = {
         }
       })
     ]
+  },
+  babel: {
+    presets: [
+      [
+        '@babel/preset-env',
+        {
+          targets: '>0.25%'
+        }
+      ]
+    ]
   }
 }
