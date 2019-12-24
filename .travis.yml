@@ -1,6 +1,6 @@
 os:
   - linux
-dist: eoan
+dist: bionic
 language: node_js
 node_js:
   - "stable"
@@ -8,7 +8,8 @@ cache:
   directories:
     - node_modules
 script:
-  - sudo apt install libgconf-2-4
+  - sudo apt install libgconf-2-4 -y
+  - sudo apt install gconf2 -y
   - CI=false yarn build
 deploy:
   skip_cleanup: true
