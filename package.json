@@ -13,8 +13,12 @@
   "scripts": {
     "start": "craco start --config configs/craco.development-config.js",
     "build": "craco build --config configs/craco.production-config.js",
+    "postbuild": "react-snap",
     "test": "craco test",
     "eject": "react-scripts eject"
+  },
+  "reactSnap": {
+    "inlineCss": true
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -45,6 +49,7 @@
     "postcss-preset-env": "6.7.0",
     "postcss-pxtorem": "4.0.1",
     "postcss-round-subpixels": "1.2.0",
+    "react-snap": "^1.23.0",
     "webpack-bundle-analyzer": "^3.6.0"
   }
 }
