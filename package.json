@@ -44,6 +44,7 @@
     "postcss-combine-duplicated-selectors": "8.0.3",
     "postcss-preset-env": "6.7.0",
     "postcss-pxtorem": "4.0.1",
-    "postcss-round-subpixels": "1.2.0"
+    "postcss-round-subpixels": "1.2.0",
+    "webpack-bundle-analyzer": "^3.6.0"
   }
 }
