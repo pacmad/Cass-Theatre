@@ -33,23 +33,27 @@
     ]
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-env": "7.7.7",
     "@craco/craco": "5.6.2",
     "autoprefixer": "9.7.3",
     "css-declaration-sorter": "5.0.0",
     "css-mqpacker": "7.0.0",
     "cssnano": "4.1.10",
     "cssnano-preset-advanced": "4.0.7",
-    "html-critical-webpack-plugin": "^2.1.0",
-    "html-webpack-plugin": "^3.2.0",
-    "mini-css-extract-plugin": "^0.9.0",
+    "html-critical-webpack-plugin": "2.1.0",
+    "html-webpack-plugin": "3.2.0",
+    "mini-css-extract-plugin": "0.9.0",
     "node-sass": "4.13.0",
     "postcss": "7.0.25",
     "postcss-combine-duplicated-selectors": "8.0.3",
     "postcss-preset-env": "6.7.0",
     "postcss-pxtorem": "4.0.1",
     "postcss-round-subpixels": "1.2.0",
+<<<<<<< HEAD
     "react-snap": "1.10.0",
     "webpack-bundle-analyzer": "^3.6.0"
+=======
+    "webpack-bundle-analyzer": "3.6.0"
+>>>>>>> 523ccc4db8d17ca7911d29384de8e98c763c62ca
   }
 }
