@@ -13,6 +13,10 @@
         "source": "**",
         "headers": [
           {
+            "key": "Server",
+            "value": "Varnish"
+          },
+          {
             "key": "X-Frame-Options",
             "value": "SAMEORIGIN"
           },
