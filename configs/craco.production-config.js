@@ -39,7 +39,7 @@ module.exports = {
         minify: true,
         extract: true,
         width: 375,
-        height: 565,
+        height: 812,
         penthouse: {
           blockJSRequests: false
         }
