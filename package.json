@@ -43,7 +43,7 @@
     "html-critical-webpack-plugin": "2.1.0",
     "html-webpack-plugin": "3.2.0",
     "mini-css-extract-plugin": "0.9.0",
-    "node-sass": "4.13.0",
+    "node-sass": "4.13.1",
     "postcss": "7.0.26",
     "postcss-combine-duplicated-selectors": "8.1.0",
     "postcss-preset-env": "6.7.0",
