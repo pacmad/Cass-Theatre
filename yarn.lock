@@ -4456,12 +4456,12 @@ css-color-names@0.0.4, css-color-names@^0.0.4:
   resolved "https://registry.yarnpkg.com/css-color-names/-/css-color-names-0.0.4.tgz#808adc2e79cf84738069b646cb20ec27beb629e0"
   integrity sha1-gIrcLnnPhHOAabZGyyDsJ762KeA=
 
-css-declaration-sorter@5.0.0:
-  version "5.0.0"
-  resolved "https://registry.yarnpkg.com/css-declaration-sorter/-/css-declaration-sorter-5.0.0.tgz#1be7a3a952496e62ca37d78337fbc71e9c1b555c"
-  integrity sha512-fV2UbCPWaT9IAD9s9a2+H2SHU9IYImR9le/BIgOkxKLp4F0pN+fkorqT2EO+8Kti8kbEkLLceKkmQI+DE5h/DQ==
+css-declaration-sorter@5.1.1:
+  version "5.1.1"
+  resolved "https://registry.yarnpkg.com/css-declaration-sorter/-/css-declaration-sorter-5.1.1.tgz#b3003e41ec693d90ff64df1fd66f85d642c5ef8d"
+  integrity sha512-lVfgNjx1IOpzsXEOp/UvziGPCuxCTlV0Wko8fxqw2VypAEQAyC3G9wX1zDuavUjcXXM7xn0kV++miJ16CItfXQ==
   dependencies:
-    postcss "^7.0.25"
+    postcss "^7.0.26"
     timsort "^0.3.0"
 
 css-declaration-sorter@^4.0.1:
@@ -10849,15 +10849,6 @@ postcss@^7.0.23:
   version "7.0.23"
   resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.23.tgz#9f9759fad661b15964f3cfc3140f66f1e05eadc1"
   integrity sha512-hOlMf3ouRIFXD+j2VJecwssTwbvsPGJVMzupptg+85WA+i7MwyrydmQAgY3R+m0Bc0exunhbJmijy8u8+vufuQ==
-  dependencies:
-    chalk "^2.4.2"
-    source-map "^0.6.1"
-    supports-color "^6.1.0"
-
-postcss@^7.0.25:
-  version "7.0.25"
-  resolved "https://registry.yarnpkg.com/postcss/-/postcss-7.0.25.tgz#dd2a2a753d50b13bed7a2009b4a18ac14d9db21e"
-  integrity sha512-NXXVvWq9icrm/TgQC0O6YVFi4StfJz46M1iNd/h6B26Nvh/HKI+q4YZtFN/EjcInZliEscO/WL10BXnc1E5nwg==
   dependencies:
     chalk "^2.4.2"
     source-map "^0.6.1"
