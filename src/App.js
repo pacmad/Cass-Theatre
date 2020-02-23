@@ -9,6 +9,7 @@ import Routes from './routes/routes'
 import { GlobalHeaderFooter } from './components/global/HeaderFooter'
 import { GlobalSiteMessageLong } from './components/global/SiteMessageLong'
 import { GlobalSiteMessage } from './components/global/SiteMessage'
+import { AdSmall } from './components/ads/Small'
 
 const firebaseConfig = {
   apiKey: 'AIzaSyDop4rOOaZgR5G-Okyn5c4UBC5crNEMX-Y',
@@ -55,6 +56,7 @@ const App = () => {
 
   return (
     <div className='app'>
+      <AdSmall />
       <GlobalSiteMessage message={items.globalTopMessage} top />
       <GlobalSiteMessageLong
         snippet={items.globalLongMessageSnippet}
