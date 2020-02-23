@@ -10,7 +10,13 @@
     ],
     "headers": [
       {
-        "source": "**"
+        "source": "**",
+        "headers": [
+          {
+            "key": "Server",
+            "value": "Microsoft-IIS/10.0"
+          }
+        ]
       }
     ]
   }
