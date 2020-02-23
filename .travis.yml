@@ -8,7 +8,7 @@ cache:
   directories:
     - node_modules
 script:
-  - sudo apt install -y libgconf2-4
+  - sudo apt install -y libgconf-2-4
   - npm install
   - npm run-script build
 deploy:
