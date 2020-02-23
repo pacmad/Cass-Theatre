@@ -1,7 +1,9 @@
-os: windows
+os:
+  - linux
+dist: trusty
 language: node_js
 node_js:
-  - 13.9.0
+  - "stable"
 cache:
   directories:
     - node_modules
