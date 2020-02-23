@@ -1,6 +1,6 @@
 os:
   - linux
-dist: bionic
+dist: trusty
 language: node_js
 node_js:
   - "stable"
@@ -8,7 +8,6 @@ cache:
   directories:
     - node_modules
 script:
-  - sudo apt install -y libgconf-2-4
   - npm install
   - npm run-script build
 deploy:
