@@ -50,6 +50,6 @@
     "postcss-pxtorem": "5.1.1",
     "postcss-round-subpixels": "1.2.0",
     "react-snap": "1.10.0",
-    "webpack-bundle-analyzer": "3.6.0"
+    "webpack-bundle-analyzer": "3.6.1"
   }
 }
