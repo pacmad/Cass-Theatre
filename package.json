@@ -8,7 +8,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-ga": "2.7.0",
-    "react-scripts": "3.4.0"
+    "react-scripts": "3.4.1"
   },
   "scripts": {
     "start": "craco start --config configs/craco.development-config.js",
