@@ -30,6 +30,7 @@ const App = () => (
           <Route exact path="/" component={Home} />
           <Route path="/login" component={Login} />
           <Protected path="/edit" component={Admin} />
+          <Route component={Home} />
         </Switch>
       </Router>
       <Footer />
