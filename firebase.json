@@ -27,10 +27,6 @@
           {
             "key": "X-XSS-Protection",
             "value": "1; mode=block"
-          },
-          {
-            "key": "Feature-Policy",
-            "value": "oversized-images 'self'(2.0) *(inf)"
           }
         ]
       }

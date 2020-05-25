@@ -1,9 +1,0 @@
-.global-site-message {
-  @include flex(row);
-  width: 100%;
-  justify-content: center;
-  &__text {
-    @include lineHeight(md);
-    text-align: center;
-  }
-}

@@ -1,55 +1,49 @@
 {
   "name": "cass-theatre",
-  "version": "0.1.0",
+  "version": "2.0.0",
   "private": true,
+  "author": "Drew Markel",
+  "license": "MIT",
   "dependencies": {
-    "firebase": "7.14.4",
-    "hookrouter": "1.2.3",
-    "react": "16.13.1",
-    "react-dom": "16.13.1",
-    "react-ga": "2.7.0",
-    "react-scripts": "3.4.1"
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.9.0",
+    "@types/react-dom": "^16.9.0",
+    "@types/react-router-dom": "^5.1.5",
+    "@types/styled-components": "^5.1.0",
+    "firebase": "^7.14.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-router-dom": "^5.2.0",
+    "react-scripts": "3.4.1",
+    "react-snap": "^1.23.0",
+    "styled-components": "^5.1.0",
+    "typescript": "3.9.3"
   },
   "scripts": {
-    "start": "craco start --config configs/craco.development-config.js",
-    "build": "craco build --config configs/craco.production-config.js",
-    "postbuild": "react-snap",
-    "test": "craco test",
-    "eject": "react-scripts eject"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "postbuild": "react-snap"
   },
   "reactSnap": {
+    "viewport": {
+      "width": 375,
+      "height": 812
+    },
     "inlineCss": true
   },
   "eslintConfig": {
     "extends": "react-app"
   },
-  "cracoConfig": "craco.config.js",
   "browserslist": {
     "production": [
-      "defaults"
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
     ],
     "development": [
-      "defaults"
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/preset-env": "7.9.6",
-    "@craco/craco": "5.6.4",
-    "autoprefixer": "9.8.0",
-    "css-declaration-sorter": "5.1.2",
-    "css-mqpacker": "7.0.0",
-    "cssnano": "4.1.10",
-    "cssnano-preset-advanced": "4.0.7",
-    "html-critical-webpack-plugin": "2.1.0",
-    "html-webpack-plugin": "4.3.0",
-    "mini-css-extract-plugin": "0.9.0",
-    "node-sass": "4.14.1",
-    "postcss": "7.0.30",
-    "postcss-combine-duplicated-selectors": "8.1.0",
-    "postcss-preset-env": "6.7.0",
-    "postcss-pxtorem": "5.1.1",
-    "postcss-round-subpixels": "1.2.0",
-    "react-snap": "1.10.0",
-    "webpack-bundle-analyzer": "3.7.0"
   }
 }
