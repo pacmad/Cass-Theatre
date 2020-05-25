@@ -14,6 +14,7 @@ const FooterStyles = styled.footer`
   background-color: white;
   border-top: 1px solid rgba(0, 0, 0, 0.27);
   padding: 10px 20px;
+  margin-top: 50px;
   .title {
     @media (min-width: 950px) {
       flex: 1;
