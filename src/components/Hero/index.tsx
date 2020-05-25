@@ -91,10 +91,14 @@ const HeroStyles = styled.div<HeroStylesProps>`
     .pictureSection {
       @media (max-width: 949px) {
         margin: 0 auto;
+        width: 100%;
+      }
+      @media (min-width: 950px) {
+        width: 50%;
       }
       height: 100%;
-      width: 50%;
-      svg {
+      svg,
+      img {
         border-radius: 5px;
         height: 100%;
         width: 100%;
