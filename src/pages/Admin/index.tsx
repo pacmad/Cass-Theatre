@@ -1,5 +1,5 @@
 import React from 'react'
-import AdminStyles from './styles'
+import './styles.scss'
 import { db, auth } from '../../db/functions'
 
 const Admin = () => {
@@ -83,7 +83,7 @@ const Admin = () => {
   }
 
   return (
-    <AdminStyles>
+    <form className="aForm">
       <h1 className="mainTitle">Edit</h1>
       <fieldset className="fieldset">
         <h2 className="title">Now Playing</h2>
@@ -221,7 +221,7 @@ const Admin = () => {
           Logout
         </button>
       </fieldset>
-    </AdminStyles>
+    </form>
   )
 }
 

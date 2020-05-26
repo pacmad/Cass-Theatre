@@ -1,6 +1,6 @@
 import React from 'react'
 import { hydrate, render } from 'react-dom'
-import './styles/resets.css'
+import './styles/resets.scss'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 
