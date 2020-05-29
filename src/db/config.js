@@ -1,6 +1,6 @@
 import firebase from 'firebase/app'
 
-const config: object = {
+const config = {
   apiKey: 'AIzaSyDop4rOOaZgR5G-Okyn5c4UBC5crNEMX-Y',
   authDomain: 'cass-theatre.firebaseapp.com',
   databaseURL: 'https://cass-theatre.firebaseio.com',

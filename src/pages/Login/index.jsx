@@ -3,16 +3,16 @@ import './styles.scss'
 import { auth } from '../../db/functions'
 
 const Login = () => {
-  let [password, setPassword] = React.useState<string>('')
+  let [password, setPassword] = React.useState('')
 
-  const signIn = (e: React.MouseEvent) => {
+  const signIn = e => {
     e.preventDefault()
     auth()
       .signInWithEmailAndPassword('admin@cass-theatre.web.app', password)
       .then(() => {
         window.location.replace('/edit')
       })
-      .catch((err: Error) => {
+      .catch(err => {
         console.error('An error occurred while logging in:', err)
         setTimeout(() => {
           window.location.replace('/')

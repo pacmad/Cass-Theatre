@@ -5,29 +5,23 @@ import Payment from '../../components/icons/Payment'
 import Address from '../../components/icons/Address'
 import { db } from '../../db/functions'
 
-type herosTypes = {
-  title: string
-  details: string[]
-  icon: JSX.Element
-}
-
 const Home = () => {
-  let [pageData, setPageData] = React.useState<any>([])
+  let [pageData, setPageData] = React.useState([])
 
   React.useEffect(() => {
     db()
       .collection('data')
       .doc('data')
       .get()
-      .then((doc: any) => {
+      .then(doc => {
         setPageData(doc.data())
       })
-      .catch((err: Error) => {
+      .catch(err => {
         console.error('An error occurred while retrieving data:', err)
       })
   }, [])
 
-  const heros: readonly herosTypes[] = [
+  const heros = [
     {
       title: 'Times',
       details: ['Opens: 7:00 PM', 'Showtime: 7:30 PM', 'Schedule: Wed-Sun'],
@@ -74,7 +68,12 @@ const Home = () => {
         />
       )}
       {heros.map(item => (
-        <Hero key={item.title} type="details" title={item.title} details={item.details}>
+        <Hero
+          key={item.title}
+          type="details"
+          title={item.title}
+          details={item.details}
+        >
           {item.icon}
         </Hero>
       ))}
